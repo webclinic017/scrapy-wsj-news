@@ -1,0 +1,845 @@
+
+<html>
+<head>
+<meta charset="UTF-8">
+<title>华尔街日报爬虫-2</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+<link rel="stylesheet" href="./kuang-style.css">
+<style>
+.dataframe {font-size: 14px;}
+.dataframe td:nth-child(1) {width: 8%;}
+.dataframe td:nth-child(3) {width: 15%;}
+.dataframe td:nth-child(5) {width: 40%;}
+</style>
+</head>
+<body>
+
+<div class="container">
+<div class="row">
+<div class="col-12 col-sm-12">
+<div class="body-container">
+<table border="0" class="dataframe table table-sm table-striped">
+  <thead>
+    <tr style="text-align: right;">
+      <th>时间</th>
+      <th>分类</th>
+      <th>标题</th>
+      <th>副标题</th>
+      <th>正文</th>
+      <th>图片</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>2020-11-27 22:19:00</td>
+      <td>Politics</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/milwaukee-county-vote-recount-gives-biden-small-boost-11606533582?mod=business_minor_pos4">Milwaukee County Vote Recount Gives Biden Small Boost</a></td>
+      <td>A conservative group in Wisconsin has already filed a lawsuit against election officials, seeking to block the state’s certification of results</td>
+      <td>MADISON, Wis.—Milwaukee County completed its recount of presidential ballots Friday, finding only small changes in vote totals, but President Trump’s attorneys appear ready for a legal challenge seeking to toss tens of thousands of ballots.<br />President-elect Joe Biden’s lead increased by 132 votes after county election officials recounted over 450,000 votes. Mr. Biden, a Democrat, won the state by nearly 20,600 votes, and his margin in Milwaukee and Dane counties was about 2-to-1.<br />Mr....</td>
+      <td><img src="../img/im-265634.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-27 18:09:00</td>
+      <td>Politics</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/house-to-vote-on-booting-chinese-stocks-from-u-s-over-audit-rules-11606518590?mod=markets_lead_pos3">House to Vote on Booting Chinese Stocks From U.S. Over Audit Rules</a></td>
+      <td>Alibaba, other companies could be forced to relocate listings overseas</td>
+      <td>WASHINGTON—Lawmakers next week are likely to force Chinese companies with shares traded on American exchanges to finally comply with audit-oversight rules—or leave U.S. markets altogether.<br />House leaders plan to consider a measure as early as Wednesday that would force Chinese firms such as Alibaba Group Holding Ltd. either to transition to getting an annual audit that is reviewed by U.S. regulators, or remove the shares from trading in the U.S. The House plans to vote under rules that limit debate and require a two-thirds...</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-27 18:09:00</td>
+      <td>Business</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/salesforce-delta-air-lines-best-buy-stocks-that-defined-the-week-11606518558?mod=business_featst_pos1">Salesforce, Delta Air Lines, Best Buy: Stocks That Defined the Week</a></td>
+      <td>Here are seven major companies whose stocks moved on the week’s news</td>
+      <td>Salesforce.com Inc.<br />Which business-software giant will become the go-to provider in a work-from-home world? Salesforce.com could put pressure on Microsoft Corp., as it is in advanced talks to buy workplace messenger maker Slack Technologies Inc. Having failed to capture Slack itself, Microsoft in 2016 launched its own competing workplace collaboration tool, called Teams. Slack would be the largest acquisition ever for Salesforce; Salesforce’s core business is in customer-relationship management software. Salesforce shares...</td>
+      <td><img src="../img/im-265617.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-27 17:46:00</td>
+      <td>Business</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/united-begins-flying-pfizers-covid-19-vaccine-11606512293?mod=business_lead_pos2">United Begins Flying Pfizer’s Covid-19 Vaccine</a></td>
+      <td>Carriers are positioning doses for quick distribution if vaccines are approved by regulators</td>
+      <td>United Airlines Holdings Inc. on Friday began operating charter flights to position doses of Pfizer Inc.’s Covid-19 vaccine for quick distribution if the shots are approved by regulators, according to people familiar with the matter.<br />The initial flights are one link in a global supply chain being assembled to tackle the logistical challenge of distributing Covid-19 vaccines. Pfizer has been laying the groundwork to move quickly if it gets approval from the Food and Drug Administration and other regulators world-wide.<br />Pfizer’s...</td>
+      <td><img src="../img/im-265569.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-27 17:20:00</td>
+      <td>World</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/iran-says-its-top-nuclear-scientist-mohsen-fakhrizadeh-killed-in-attack-11606493367">Iran Says Its Top Nuclear Scientist Killed in Attack</a></td>
+      <td>Mohsen Fakhrizadeh was widely regarded as the father of the country’s nuclear-weapons program</td>
+      <td>A top Iranian nuclear scientist, widely viewed as the father of the country’s nuclear-weapons program, was shot and killed Friday, dealing a blow to Tehran’s atomic ambitions and threatening to increase tensions between Iran and its foes.<br />Iran’s foreign minister, Javad Zarif, blamed “terrorists” for the death and said there were “serious indications” of Israeli involvement in the attack.<br />The...</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-27 17:05:00</td>
+      <td>Pro PE People</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/vistas-sheth-resigns-weeks-after-ceo-smith-settles-tax-probe-11606514717?mod=markets_lead_pos7">Vista’s Sheth Resigns Weeks After CEO Smith Settles Tax Probe</a></td>
+      <td>Brian Sheth left the technology investor barely a month after the yearslong tax investigation of Robert Smith ended</td>
+      <td>Vista Equity Partners co-founder Brian Sheth has departed the firm, confirming rumors about an impending split at the top of one of the most successful technology investment firms in private equity.<br />Vista announced Mr. Sheth’s resignation as president of the firm, effective immediately, on Thursday afternoon.<br />Mr. Sheth was widely seen as the...</td>
+      <td><img src="../img/im-265365.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-27 15:31:00</td>
+      <td>Pro Bankruptcy</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/hertz-to-sell-donlen-fleet-business-to-athene-for-875-million-11606509062?mod=business_lead_pos12">Hertz to Sell Donlen Fleet Business to Athene for $875 Million</a></td>
+      <td>Bankrupt rental-car company plans to use proceeds from the proposed sale to pay down debt</td>
+      <td>Hertz Global Holdings Inc. said it agreed to sell its Donlen Corp. fleet management business for at least $875 million to an Apollo Global Management Inc.-backed insurance company as the bankrupt rental car company looks to pay down debt.<br />In a bankruptcy-court filing Wednesday, Hertz said the planned sale of Donlen, which provides fleet-management services, could help the company reduce its secured debt and interest expenses, giving it more flexibility to reorganize in chapter 11.<br />Pending...</td>
+      <td><img src="../img/im-265534.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-27 15:24:00</td>
+      <td>World</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/video-of-police-beating-black-music-producer-roils-france-11606508672?mod=world_major_1_pos4">Video of Police Beating Black Music Producer Roils France</a></td>
+      <td>Government plans to appoint commission to review bill restricting publication of images of law enforcers</td>
+      <td>PARIS—A video of French police officers beating a Black music producer has pushed the government of President Emmanuel Macron to consider revising legislation that seeks to restrict people from publishing images of security forces.<br />The French news website Loopsider posted footage Thursday from a security camera inside the Paris music studio of Michel Zecler that shows three police officers punching the man and striking him with a baton. The video, which was recorded Saturday, then shows tear gas being deployed inside the music...</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-27 15:19:00</td>
+      <td>Markets</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/oil-prices-seen-remaining-subdued-into-2021-11606490833?mod=markets_lead_pos6">Oil Prices Seen Remaining Subdued Into 2021</a></td>
+      <td>Next week’s meeting of OPEC and its partners may drive the market in the short-term</td>
+      <td>Oil prices are expected to remain subdued into the new year, with murky prospects for the global economy and supply of crude weighing on the outlook.<br />Futures for West Texas Intermediate, the U.S. benchmark for oil, will likely be about $43.25 a barrel in the first quarter, according to a survey of 10 investment banks, suggesting the market will remain within a narrow band. WTI futures slid 0.4% to $45.53 a barrel Friday.<br />Next...</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-27 14:43:00</td>
+      <td>Politics</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/federal-judges-deny-trump-campaigns-appeal-of-pennsylvania-ballot-challenge-11606501438?mod=politics_lead_pos1">Court Denies Trump Campaign’s Appeal in Pennsylvania Ballot Challenge</a></td>
+      <td>Ruling strikes latest blow to president’s efforts to overturn his defeat, saying claims lack merit and would cause ‘drastic and unprecedented’ voter disenfranchisement</td>
+      <td>A federal appeals court Friday denied the Trump campaign’s appeal in Pennsylvania, writing that the case lacked proof and had no merit, and striking another blow to the president’s dwindling legal avenues to contest the outcome of the election.<br />The Philadelphia-based Third U.S. Circuit Court of Appeals said in its ruling that the Trump campaign hadn’t claimed fraud or that ballots were cast by illegal voters. The court noted the number of ballots the campaign had challenged were far smaller than Joe Biden’s margin of victory...</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-27 13:21:00</td>
+      <td>Business</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/mirror-entrepreneur-sold-her-fitness-startup-to-lululemon-letting-go-meant-sticking-around-11606492843?mod=business_featst_pos2">Mirror Entrepreneur Sold Her Fitness Startup to Lululemon. Letting Go Meant Sticking Around.</a></td>
+      <td>When Brynn Putnam sold her company for $500 million, she couldn’t walk away from what she created. She joins a list of prominent entrepreneurs who cashed in without checking out.</td>
+      <td>Brynn Putnam, a former ballerina, knows something about pivoting. That skill was put to the test this year when the 37-year-old entrepreneur finally got a boss.<br />Ms. Putnam created the Mirror, an at-home fitness product that streams workout classes to a reflective glass propped against the wall. As the pandemic increased the demand for such gadgets, Ms. Putnam adjusted by deciding to sell Mirror to Lululemon Athletica Inc. for $500 million.<br />Ms....</td>
+      <td><img src="../img/im-262302.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-27 13:19:00</td>
+      <td>Autos Industry</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/gm-plans-to-seek-banking-charter-to-grow-auto-lending-business-11606501125?mod=markets_lead_pos2">GM Plans to Seek Banking Charter to Grow Auto-Lending Business</a></td>
+      <td>Auto maker could file paperwork with federal and state regulators as soon as next month</td>
+      <td>General Motors Co. is looking to get back in the banking business.<br />The auto maker’s lending arm is drawing up plans to apply for a banking charter, a move that would allow it to accept deposits and expand its auto-finance business, according to people familiar with the matter.<br />General Motors Financial Company Inc. has been talking to federal...</td>
+      <td><img src="../img/im-265369.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-27 12:00:00</td>
+      <td>Risk & Compliance Journal</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/bean-counters-no-more-internal-audit-embraces-broader-risk-advisory-role-11606496400?mod=business_minor_pos16">Bean Counters No More, Internal Audit Embraces Broader Risk Advisory Role</a></td>
+      <td>Internal auditors are helping companies better manage an array of nonfinancial risks, the head of the Institute of Internal Auditors says</td>
+      <td></td>
+      <td><img src="../img/im-265021.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-27 12:00:00</td>
+      <td>Life & Arts</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/the-resurrection-of-the-office-phone-call-11606496400?mod=tech_featst_pos2">The Resurrection of the Office Phone Call</a></td>
+      <td>The Covid pandemic has brought back an old mode of communication that millennial workers used to shun; a happy medium between Zoom calls and instant messages</td>
+      <td>Call it the Goldilocks theory of the pandemic workplace.<br />Nonstop Zooms and video meetings are too taxing. Emails and Slack hold companies together, but written text can never capture the nuance of human conversation. What’s the answer? The humble phone call.<br />“A phone call is in many ways the happy medium,” says Marissa Shuffler, associate...</td>
+      <td><img src="../img/im-264520.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-27 11:36:00</td>
+      <td>Markets</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/opec-russia-alliance-lean-toward-keeping-oil-cuts-in-place-11606491881?mod=markets_lead_pos4">OPEC, Russia Alliance Lean Toward Keeping Oil Cuts in Place</a></td>
+      <td>Oil-price recovery has strengthened the case of those pushing to eventually return some shut-in production to the market</td>
+      <td>OPEC and its Russia-led partners are leaning toward extending oil production cuts for another two to three months, according to officials familiar with the discussions, a move they hope will keep markets tight even as prices start to recover from Covid-19-inspired lows earlier this year.<br />A deal isn’t done yet, these officials said, and issues related to several countries’ past compliance could still prevent an agreement when the group meets online next week to discuss the issue. Recently buoyant oil prices are also changing...</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-27 11:33:00</td>
+      <td>Business</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/amazon-promises-500-million-in-holiday-bonuses-for-front-line-staff-11606494834?mod=tech_lead_pos3">Amazon Promises $500 Million in Holiday Bonuses for Front-Line Staff</a></td>
+      <td>Employees working full time for all of December will qualify for a $300 payment</td>
+      <td>Amazon.com Inc. will pay front-line staff a special holiday bonus as the e-commerce giant responds to a surge in online sales during the coronavirus pandemic that is driving record results.<br />Full-time employees at Amazon from Dec. 1 through Dec. 31 qualify for a bonus of $300, while part-time employees will receive $150, Dave Clark, senior vice president of world-wide operations, said in a blog post. The special bonus will total more than $500 million, he said.<br />The...</td>
+      <td><img src="../img/im-265385.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-27 11:00:00</td>
+      <td>Politics</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/trumps-payroll-tax-deferral-creates-predicament-for-congress-11606492800">Trump’s Payroll-Tax Deferral Creates Predicament for Congress</a></td>
+      <td>Options for lawmakers and Biden administration to ease looming squeeze on workers include tax forgiveness, longer payback periods</td>
+      <td>WASHINGTON—President Trump’s decision to defer payroll taxes until the end of the year is leaving challenges for lawmakers to manage after he leaves office in January, and they haven’t figured out what—if anything—to do.<br />Members of Congress in both parties weren’t keen on the August executive action, which let employers stop collecting the 6.2% Social Security payroll tax from many workers in the final four months of 2020. The move was meant as a form of relief during the economic slump caused by the coronavirus pandemic,...</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-27 10:57:00</td>
+      <td>Life & Arts</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/the-predicament-of-counting-americans-by-race-11606492632?mod=politics_lead_pos6">The Census Predicament: Counting Americans by Race</a></td>
+      <td>The racial and ethnic categories used by the U.S. Census obscure the changing ways we think about identity and assimilation.</td>
+      <td><br />As director of the U.S. Census Bureau from 1998 to 2001, Kenneth Prewitt oversaw the first decennial count of the new century. When the enormous job of data collection was finally done, he arrived at a stark conclusion: The government should stop asking every American to report their race. “The race question is incoherent because race is incoherent,” said Prof. Prewitt, now a professor of public affairs at Columbia University. “We pay a price for not having a more subtle, nuanced set of numbers than what we currently have.”...</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-27 10:52:00</td>
+      <td>Markets</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/black-friday-is-big-in-taiwan-but-why-11606492322?mod=markets_featst_pos1">Black Friday Is Big in Taiwan, but Why?</a></td>
+      <td>The holiday shopping frenzy there isn’t hampered by coronavirus, but also isn’t prompted by a holiday</td>
+      <td>Among the holiday traditions many Americans will forgo this year is waking early up from our turkey-induced slumber to hit the stores at dawn on Black Friday. But we can at least live vicariously thanks to Taiwan.</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-27 10:00:00</td>
+      <td>Markets</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/women-do-talk-money-with-their-text-group-11606489200?mod=markets_featst_pos2">Women Do Talk Money, With Their Text Group</a></td>
+      <td>Pandemic-related issues spur women to join group chats to talk about emergency funds and investing</td>
+      <td>The pandemic has helped propel the growth of group chats as people seek ways to connect and ease feelings of isolation. The continuing economic stress and stock-market volatility has also inspired women to join such groups to talk to peers about emergency funds, investing and financial goals.<br />Money-focused text-messaging groups range in size but are often small, around four or five friends or peers who might text weekly or more, usually through iMessage or WhatsApp.<br />According...</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-27 10:00:00</td>
+      <td>Politics</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/medicaid-enrollment-surge-during-pandemic-leaves-states-looking-for-cost-cuts-11606489203?mod=politics_lead_pos3">Medicaid Enrollment Surge During Pandemic Leaves States Looking for Cost Cuts</a></td>
+      <td>State leaders consider reductions in services and health-care benefits for low-income and disabled Americans as budget crises loom</td>
+      <td>State leaders are weighing possible cuts to Medicaid services and health-care benefits to offset rising costs due to a surge of enrollees who have lost jobs and need health coverage as the coronavirus pandemic has intensified.<br />Congress boosted federal matching funds to states for Medicaid as part of its first coronavirus relief package, but many states are still struggling to afford the increasing pace of sign-ups in the program for low income and disabled people. Enrollment for the fiscal year ending Sept. 30, 2021, is expected...</td>
+      <td><img src="../img/im-265045.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-27 09:30:00</td>
+      <td>CFO Journal</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/wary-of-new-lockdowns-cfos-stand-ready-with-covid-contingency-plans-11606487401?mod=business_lead_pos6">Wary of New Lockdowns, CFOs Stand Ready With Covid Contingency Plans</a></td>
+      <td>Finance chiefs say they are better prepared to navigate inventory challenges and cost cuts than they were last spring</td>
+      <td></td>
+      <td><img src="../img/im-264719.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-27 09:00:00</td>
+      <td>Business</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/covid-19-vaccine-studies-may-suffer-as-volunteers-consider-dropping-out-11606485601?mod=politics_featst_pos3">Covid-19 Vaccine Studies May Suffer as Volunteers Consider Dropping Out</a></td>
+      <td>People who believe they got a placebo during testing say they want to leave to get the real shots once they are approved</td>
+      <td>Susan Baker volunteered for Johnson & Johnson’s vaccine trial to seek protection from Covid-19. For the same reason, she may drop out of the study.<br />The nurse practitioner from North Carolina has treated Covid-19 patients at her hospital. She takes care of people at high risk, including dialysis patients and her husband and father, both of whom have medical conditions. If she catches the virus and spreads it to anyone vulnerable, “I don’t know if I could forgive myself,” she said.<br />That...</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-27 09:00:00</td>
+      <td>Markets</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/investors-seek-new-election-data-11606485600?mod=markets_lead_pos3">Investors Seek New Election Data</a></td>
+      <td>Alternatives to polling include watching betting markets, voter-registration changes and social media</td>
+      <td>Wall Street is tired of getting political bets wrong.<br />Fund managers and research analysts are parsing alternative data for gauging election probabilities after twists and turns in the recent U.S. voting sent asset prices swinging. That means looking at everything from betting markets to historical changes in voter registrations and sentiment on Twitter.<br />The...</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-27 08:38:00</td>
+      <td>Markets</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/how-property-booms-eat-our-economic-future-11606466679?mod=markets_lead_pos13">How Property Booms Eat Our Economic Future</a></td>
+      <td>Growing body of research looking at U.S. and Chinese real-estate markets suggests long booms may drag on productivity of the economy</td>
+      <td>This October, U.S. housing sales hit their highest level since 2006. China’s residential real-estate investment was up 14% relative to the same month last year. Around the world, many housing markets have shrugged off a colossal economic slump, helped by low interest rates.<br />In the short term, such investment is a boost to economic activity in a year where headline figures have collapsed. But there are significant downsides. The fact that housing booms can be a longer-term risk to financial stability is well known, but a growing body of research suggests that even where there is no market blowup, surges in prices and investment can have a deleterious impact on productivity.<br />New evidence comes from the Bank for International Settlements, with a paper by economistSebastian Doerr showing that among U.S. listed companies, those with a higher share of real-estate assets are persistently less productive than their industry peers.<br />That alone wouldn’t be a problem as such. Some companies are always more productive than others. But rising real-estate prices make it easier for companies that own real estate to access funding because of their growing collateral, so multiyear booms in property prices compound the problem.<br />Looking at data covering the U.S. from 1993 to 2008, capital was reallocated toward productivity laggards over time, worsening the overall picture for the economy. For every 10% increase in real-estate prices, an industry would record a 0.6% relative decline in total-factor productivity due to the effect of skewed capital allocation.</td>
+      <td><img src="../img/im-265248.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-27 08:20:00</td>
+      <td>World</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/indias-economy-contracted-7-5-last-quarter-11606480136">India’s GDP Shrinks as Covid-19 Keeps Stranglehold on One of World’s Largest Economies</a></td>
+      <td>Once a powerful engine of growth, consumer spending has been choked off by pandemic that is keeping people at home</td>
+      <td>NEW DELHI—The coronavirus pandemic has strangled one of the most powerful engines of economic growth in the world: spending by India’s 1.3 billion consumers.<br />The country’s gross domestic product shrank 7.5% last quarter compared with a year earlier, India said Friday, as Covid-19 has transformed the world’s fastest-growing economy into one that is now among those contracting the fastest.<br />With...</td>
+      <td><img src="../img/im-265194.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-27 08:19:00</td>
+      <td>Markets</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/slack-tesla-moderna-what-to-watch-when-the-stock-market-opens-today-11606479178?mod=markets_major_pos11">Slack, Moderna, Burlington Stores: What to Watch When the Stock Market Opens Today</a></td>
+      <td>U.S. stock futures edge higher</td>
+      <td>Here’s what we are watching as markets kick into gear Friday.<br />U.S. stock futures edged up Friday, signaling that markets could end the week on an upbeat note with major indexes near all-time highs. Futures tied to the Dow Jones Industrial Average edged up 0.3% ahead of a short trading session, with markets scheduled to close at 1 p.m. ET.<br />Read our full market wrap here.Market Movers to WatchSlack fell 3.6% premarket. The communication software company’s shares have risen more than 39% this week on news that  Salesforce.com  was in advanced talks to buy it. Salesforce itself rose 0.8% premarket, paring some of its losses for the week.<br />Moderna shares jumped more than 5% ahead of the opening bell, suggesting they could add to gains of almost 12% so far this week.<br />Burlington Stores rose 2.3%.  Credit Suisse  on Wednesday raised its price target on the stock to $255 from $240.</td>
+      <td><img src="../img/im-265293.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-27 08:04:00</td>
+      <td>Markets</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/global-stock-markets-dow-update-11-27-2020-11606473515?mod=markets_lead_pos2">Dow, S&P 500 on Track to End Week Near Record Highs</a></td>
+      <td>Major technology stocks are poised to breach fresh all-time highs Friday, with Nasdaq-100 futures pointing to extended rally</td>
+      <td>U.S. stock futures edged up Friday, signaling that markets will end the week on an upbeat note with major indexes near all-time highs.<br />Futures tied to the Dow Jones Industrial Average edged up 0.2% ahead of a short trading session, with markets scheduled to close at 1 p.m. ET. The blue-chips index earlier this week breached the 30000 milestone for the first time in its history, before sliding lower Wednesday. Trading was suspended Thursday for the Thanksgiving holiday.<br />Contracts linked to the S&P 500 ticked 0.2% higher, suggesting that the broad-market gauge may erase its tepid loss from Wednesday. The index had climbed to a record Tuesday.<br />Major technology stocks, in particular, are poised to extend a rally that sent the Nasdaq Composite to its 44th record closing level of 2020 on Wednesday. Futures linked to the Nasdaq-100 index advanced 0.4% Friday.<br />Markets have been buoyant this week despite rising coronavirus infection levels across the U.S. and economic data pointing to a halting recovery that may curb consumer confidence. Investors appear to be looking ahead to next year, betting that Covid-19 vaccines will curb the pandemic and allow social and business activity to return to normal.</td>
+      <td><img src="../img/im-265259.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-27 08:00:00</td>
+      <td>Markets</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/covid-or-not-here-vimeo-comes-11606482000?mod=markets_lead_pos12">Covid-19 or Not, Here Vimeo Comes</a></td>
+      <td>As business increasingly moves online, Vimeo should have investors tuning in, even once they are physically back at work</td>
+      <td>Positive coronavirus vaccine data has created a whiplash effect for investors who until recently were hiding in pandemic beneficiaries. But with the timeline for recovery still uncertain, the best offense may still be a good defense.<br />One place to look is in and around e-commerce—a sector that is likely to continue its red-hot run during the holiday shopping season and beyond.  Shopify ,  for example, is up over 150% this year. And while its shares fell more than 13% the day  Pfizer  reported efficacy results, they have since recovered nearly all of those losses as investors digest both the long winter ahead of the Covid-19 vaccine as well as the fact that online shopping is likely to continue to grow in earnest, pandemic or not.<br />But while Shopify is certainly well loved at this point—its market capitalization now tops $126 billion—lesser-known opportunities are popping up for those investors paying close attention. One such play is  IAC/InterActiveCorp . ’s Vimeo, a video hosting and sharing platform used by a growing number of Shopify’s customers, among many others, to easily and effectively help tell their story and increase conversion online.<br />IAC said Vimeo raised $150 million in early November in an oversubscribed equity offering from outside investors that valued its software-as-a-service company at $2.75 billion. That implies big potential for a company that is currently operating at a $300 million annual revenue run rate implied by its third-quarter results.<br />For investors looking to turn movies into money, opportunity may soon knock. IAC said earlier this month it is considering a full spinoff of Vimeo, which would make it the 11th public company to come from IAC’s golden breeding grounds. Fostered by the very hands that helped turn public companies such as Expedia Group and Match Group into behemoths in their own right, Vimeo’s business was already accelerating before the pandemic. Its organic bookings growth consistently accelerated last year from 11% in the first quarter to 27% by the fourth quarter of 2019 according to IAC.</td>
+      <td><img src="../img/im-264951.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-27 08:00:00</td>
+      <td>Economy</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/floridas-approval-of-15-minimum-wage-sets-up-battle-in-other-states-11606482001">Florida’s Approval of $15 Minimum Wage Sets Up Battle in Other States</a></td>
+      <td>Advocates prepare to take up state-by-state fights with federal increase in doubt</td>
+      <td>Florida voters’ approval of a $15 minimum wage is fueling the hopes of advocates who aim to pass similar measures in other states, though still-elevated unemployment and lower costs of living in rural areas remain challenges.<br />More than 60% of Florida voters supported Amendment 2 this month, setting the state on a path to a $15-an-hour minimum wage by 2026. The measure’s success was notable because of Florida’s conservative leanings and the struggles its vital tourism industry, where many low-wage workers are employed, has...</td>
+      <td><img src="../img/im-262452.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-27 07:19:00</td>
+      <td>World</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/covid-19-infections-surge-at-worlds-largest-medical-glove-maker-11606479574">Covid-19 Infections Surge at One of World’s Largest Medical Glove Makers</a></td>
+      <td>Factories and workplaces across Malaysia are battling coronavirus outbreaks, a sign that industrial settings can become vectors of contagion as global demand recovers</td>
+      <td>KUALA LUMPUR, Malaysia—A sharp rise in coronavirus cases tied to factories and workplaces has led to a Covid-19 resurgence in Malaysia, a sign of how industrial settings—where laborers often work in crowded and poorly ventilated conditions—can become vectors of contagion as global demand recovers.<br />Malaysia’s government this week counted 83 active clusters of infections connected to workplaces around the country, most prominently an industrial area that houses the world’s largest glove manufacturer. More than 2,500 workers...</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-27 07:00:00</td>
+      <td>Markets</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/spotify-needs-more-than-a-cup-of-joe-11606478400?mod=markets_major_pos1">Spotify Needs More Than a Cup of Joe</a></td>
+      <td>Joe Rogan’s podcast, about to go exclusive, will need to deliver a big boost in paid users to justify the stock’s run</td>
+      <td>Joe Rogan has raised some eyebrows at  Spotify .  The question remains if he can bend many new ears—especially those willing to pay for the experience.<br />The mega-popular podcaster moved his show to the streaming platform on Sept. 1, per a deal valued at more than $100 million struck earlier in the year. Spotify has been hot on podcasts of late. It has also struck recent deals with Kim Kardashian and the DC Comics brand, and has made several acquisitions to beef up its podcast platform. This includes a $235 million outlay earlier this month for Megaphone, which provides production and advertising services to podcasters.<br />But the deal with Mr. Rogan is the most closely watched, as it brings an established star with a huge and dedicated following. It also brings a fair dose of heat, given Mr. Rogan’s penchant for booking highly controversial guests such as talk-radio host Alex Jones. A recent appearance by the latter sparked some consternation even among Spotify employees, who debated internally whether that show and others met the company’s content guidelines. Spotify Chief Executive Daniel Ek addressed the matter on the company’s third-quarter call last month, affirming the need to apply content policies evenly. “If we can’t do that, then there are other choices for a lot of creators to go to,” he said.<br />The company will learn soon whether Mr. Rogan’s show is truly worth the trouble. The program becomes exclusive to Spotify in December, which means the company’s fourth-quarter results will be the first to reflect any change in usage or revenue from the show’s fans who won’t be able to get it elsewhere. But the types of users will matter as well. Spotify’s most recent results showed a bigger jump in users for its free, advertising-driven service compared to subscribers for the premium tier. The company added 15 million users for the free tier, compared with six million premium subscribers in the third quarter. The company’s forecast implies similar outsize growth for the ad-driven tier in the fourth quarter.<br />Simply adding ears for advertising won’t be enough for Spotify to justify the investments it has made in podcasts—and the market-value boost the company has so far gotten for its effort. Despite some slippage since the third-quarter report on Oct. 29, Spotify’s shares are still up 67% since the deal with Mr. Rogan was announced in May.</td>
+      <td><img src="../img/im-264973.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-27 07:00:00</td>
+      <td>Tech</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/next-step-in-government-data-tracking-is-the-internet-of-things-11606478401?mod=tech_lead_pos1">Next Step in Government Data Tracking is the Internet of Things</a></td>
+      <td>U.S. Air Force experiments with monitoring peripherals—from autos to fitness trackers</td>
+      <td>WASHINGTON—U. S. government agencies from the military to law enforcement have been buying up mobile-phone data from the private sector to use in gathering intelligence, monitoring adversaries and apprehending criminals.<br />Now, the U.S. Air Force is experimenting with the next step.<br />The Air Force Research Laboratory is testing a commercial software...</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-27 07:00:00</td>
+      <td>Tech</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/slack-missed-out-on-the-pandemics-zoom-boom-leaving-it-vulnerable-11606478401?mod=tech_lead_pos2">Slack Missed Out on the Pandemic’s Zoom Boom, Leaving It Vulnerable</a></td>
+      <td>Without a strong video offering, the workplace collaboration tech pioneer failed to wow investors</td>
+      <td>Slack Technologies Inc. was a pioneer in developing tools to allow co-workers to collaborate online. When the pandemic sent millions of professionals working remotely, other companies seized the spotlight, leaving Slack a potential acquisition target.<br />While Slack has moved slowly on video, Zoom Video Communications Inc. and Microsoft Corp. were among those that reaped the rewards as videoconferences replaced in-person meetings across businesses.<br />Now,...</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-27 06:23:00</td>
+      <td>World</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/after-u-s-push-eu-set-to-launch-new-human-rights-sanctions-regime-11606476221?mod=politics_featst_pos1">After U.S. Push, EU Set to Target Human-Rights Violators</a></td>
+      <td>Doubts remain over how widely the European Union will wield sanctions, despite projecting itself as a champion of human rights</td>
+      <td>Last November, an aide to Mississippi Republican Sen. Roger Wicker called the Hungarian embassy to deliver a stern message. Prime Minister Viktor Orban was blocking passage of a European Union law similar to the U.S. Magnitsky Act on human rights. If opposition persisted, the aide warned, Sen. Wicker would start a campaign to spotlight the Hungarian nationalist leader, driving a wedge between Mr. Orban and the congressional Republicans he had long courted.<br />Within days, Hungarian officials said Mr. Orban would support an EU Magnitsky Act. Soon...</td>
+      <td><img src="../img/im-265192.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-27 06:18:00</td>
+      <td>World</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/kim-jong-un-doesnt-want-to-pick-a-fight-with-biden-for-now-south-korean-lawmakers-say-11606475879?mod=politics_lead_pos13">Kim Jong Un Doesn’t Want a Fight With Biden for Now, South Korean Lawmakers Say</a></td>
+      <td>North Korea sees negotiations with President-elect Joe Biden as potentially more difficult than with President Trump, South Korean intelligence officials tell lawmakers</td>
+      <td>SEOUL—North Korean leader Kim Jong Un has asked his government’s officials to refrain from provoking the U.S., an effort that is likely aimed at preserving the possibility of engaging with the incoming U.S. administration, South Korean intelligence officials told lawmakers.<br />The North sees negotiations with President-elect Joe Biden as potentially more difficult than with President Trump, they said Friday. Mr. Biden is likely to pursue discussions with Pyongyang the traditional way, they said, through working-level conversations...</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-27 05:56:00</td>
+      <td>Life & Arts</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/the-power-of-wi-fi-6-is-herebut-do-you-really-need-it-11606474613?mod=tech_lead_pos11">The Power of Wi-Fi 6 Is Here—But Do You Really Need It?</a></td>
+      <td>With more devices populating homes, updating to a Wi-Fi 6 router could help improve everyone’s internet experience. That said, they don’t come cheap.</td>
+      <td><br />Have you noticed that the collective demands of Zoom calls, Netflix streaming and your kids’ remote learning have slowed your once-zippy network to a crawl? While the dog is thrilled everyone’s home all the time, your router is not. To regain performance, some experts recommend upgrading to Wi-Fi 6, the latest generation of wireless internet, care of one of the new batch of routers (see below).<br />Wi-Fi...</td>
+      <td><img src="../img/im-263002.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-27 05:30:00</td>
+      <td>Tech</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/best-home-office-gadgets-gift-guide-2020-wfh-tech-11606346428?mod=tech_lead_pos5">The Ultimate Guide to the Best (Yet Boring) Home Office Gadget Gifts</a></td>
+      <td>Give the gift of work-from-home productivity, from laptop stands to USB-C dongles to 4K monitors</td>
+      <td>The best gadget I bought this year was a $50 piece of metal whose sole job is to prop up another piece of metal (my laptop). Actually, no, it was definitely a computer monitor. Scratch that, it was an Ethernet cord the length of a fire hose.<br />If you had told me a year ago that the must-have gadgets of 2020 were actually the most boring office gadgets of 2002, I’d have told you to slow down on the wine coolers. Yet here we are.<br />In...</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-27 05:30:00</td>
+      <td>Politics</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/renewable-energy-industry-readies-wish-lists-for-joe-biden-11606473001?mod=politics_lead_pos10">Renewable Energy Industry Readies Wish Lists for Joe Biden</a></td>
+      <td>Associations representing solar and wind power push new administration to take immediate steps, many of which don’t require congressional action</td>
+      <td>THE RENEWABLE ENERGY LOBBY gears up for a Joe Biden presidency much friendlier to their industry than the Trump administration. Within days of Biden’s victory, the associations representing the solar and wind industries pushed out their detailed agenda wish lists for the new administration to immediately act upon, many of which don’t require congressional action in what could be a divided government, depending on the outcome of the Georgia Senate runoffs.<br />The solar industry wants Biden to rescind tariffs on imported solar...</td>
+      <td><img src="../img/im-264851.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-27 05:30:00</td>
+      <td>Markets</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/cars-are-going-digital-but-detroit-has-a-long-road-ahead-11606473031?mod=markets_lead_pos5">Cars Are Going Digital, But Detroit Has a Long Road Ahead</a></td>
+      <td>It will be awhile until car makers can reap the benefits of turning your next vehicle into a giant smartphone</td>
+      <td>This is the first column in a four-part Heard on the Street series on how “smart” vehicles will affect the automotive, tech and insurance industries.<br />Tomorrow’s cars will behave more like giant smartphones than today’s. Drivers could enjoy the benefits sooner than manufacturers.<br />So-called connected cars aren’t new: The majority of vehicles sold in the U.S. today and almost half globally are already fitted with a modem. But vehicle electronics are only now being reconfigured to take full advantage of fast mobile broadband, notably to deliver smartphone-style updates “over the air.” This is a game-changer.<br />Take the  Ford  F-150, the bestselling vehicle in the U.S. since 1981. The new generation now arriving in showrooms debuts a new Ford-built software tech stack that will bring the kind of capabilities consumers are used to in smartphones. A “central brain” will deploy updates around the vehicle to fix bugs or add features, says Stuart Taylor, Ford’s head of connectivity. After launching on the F-150, the system will go into Ford’s other key new products, the Mustang Mach-E and revived 2021 Bronco.<br />More new vehicles will, like the Ford-150, have a crucial difference from their predecessors: They will improve even after leaving the dealership. For drivers, this promises to bring down the curtain on clunky infotainment systems that feel out of date even when new.</td>
+      <td><img src="../img/im-264180.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-27 05:30:00</td>
+      <td>Markets</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/the-stock-market-and-derivatives-are-sending-different-signals-11606473003?mod=markets_lead_pos1">The Stock Market and Derivatives Are Sending Different Signals</a></td>
+      <td>The Dow soared back to a record this week, but Wall Street’s fear gauge also remains elevated</td>
+      <td>Rising stock indexes suggest investors are breathing a sigh of relief right now. Wall Street’s fear gauge says otherwise, though.<br />Stocks have soared back to records, fueled by optimism about a coming vaccine for the novel coronavirus as well as relief that the election—widely anticipated for months—has passed. The Dow Jones Industrial Average has rallied 12.7% in November, on track for its strongest month since 1987. The S&P 500 has advanced 11% this month and hit a high on Tuesday.<br />Although market volatility has edged lower in recent days, the Cboe Volatility Index has hovered above 20 since Feb. 24, marking 194 consecutive trading sessions above that threshold. That is the longest such streak since one ending in 2009 during the financial crisis, according to Dow Jones Market Data. The gauge is based on options prices tied to the S&P 500 and tends to fall as stocks are rising.<br />The VIX at an elevated level signals investors remain cautious despite a stock market that is flying high, with concerns lingering that the volatility that gripped markets earlier in the year could return. It also reflects elevated prices for options bets tied to the S&P 500, which investors often tap to hedge portfolios or make directional bets on stocks.<br />The stretch is remarkable because it includes a period in which U.S. stocks tumbled into a bear market—defined as a drop of at least 20%—before rebounding back toward new highs. Despite the recent ascent for stocks, the elevated VIX signals some anxiety about the market’s path. Since Feb. 24, the S&P 500 has gained about 12.5%.</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-27 05:21:00</td>
+      <td>World</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/china-escalates-australia-trade-dispute-with-wine-tariffs-11606472504?mod=world_major_1_pos2">China Escalates Australia Trade Dispute With Wine Tariffs</a></td>
+      <td>Australia calls a Chinese finding that its exporters are dumping cheap wine ‘erroneous in fact and in substance’</td>
+      <td>SYDNEY—China imposed antidumping tariffs on Australian wine, escalating a monthslong trade dispute and forcing local vintners to seek other markets for millions of bottles during a pandemic.<br />China’s Ministry of Commerce said the temporary duties of 107.1% to 212.1% will take effect Saturday. They follow an investigation begun in August that concluded Australian exporters dumped cheap wine into the Chinese market, hurting the domestic wine industry. Australia’s government rejected these preliminary findings.<br />The...</td>
+      <td><img src="../img/im-265252.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-27 04:38:00</td>
+      <td>Markets</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/spanish-lenders-bbva-and-sabadell-abandon-merger-talks-11606469903?mod=markets_lead_pos11">Spanish Lenders BBVA and Sabadell Abandon Merger Talks</a></td>
+      <td>Breakdown demonstrates difficulties in getting deals done despite predictions of a wave of consolidation in European banking</td>
+      <td>Banco Bilbao Vizcaya Argentaria SA,  Spain’s second-largest lender by assets, and smaller peer  Banco de Sabadell SA  ended their merger talks because of disagreements over pricing, underlining that consolidation in Europe’s fragmented banking system remains complicated.<br />The banks disclosed the talks less than two weeks ago. BBVA said on Nov. 16 that it was conducting due diligence on Sabadell after agreeing to sell its operations in the U.S. to Pittsburgh-based  PNC Financial Services Group Inc.  for $11.6 billion.<br />European banks have faced intensifying pressure to merge as they struggle to make money in a negative-rates environment and as the pandemic pummels the economy. Shares of most of the region’s lenders have fallen sharply this year, with Sabadell—with its exposure to corporates and small businesses in Spain—declining more than 60%.<br />Sabadell’s shares were down 13% Friday morning, while BBVA’s were up close to 3%.<br />Another duo of Spanish lenders,  CaixaBank SA  and  Bankia SA,  agreed to merge in September. In Italy,  Intesa Sanpaolo  SpA is buying smaller rival UBI Banca SpA. A small Italian cooperative bank,  Credito Valtellinese  SpA, is currently considering an acquisition offer from France’s  Credit Agricole SA,  which has operations in the country. Regulators are hopeful for more deals, which would provide the scale banks need to be profitable in a sector where costs remain high.</td>
+      <td><img src="../img/im-265251.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-26 21:10:00</td>
+      <td>Markets</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/investors-bet-on-more-dollar-weakness-11606386601?mod=markets_lead_pos3">The Dollar Is Weak. Investors Bet It Will Slide Even More.</a></td>
+      <td>Forecasts assume Covid-19 recedes, encouraging investors to step back from the relative safety of U.S. assets</td>
+      <td>The dollar hit its lowest levels against a basket of currencies in more than two years this week—and investors think it’ll fall further.<br />The consensus view of a falling dollar is based on a big assumption: Covid-19 will be more or less conquered in the months ahead. Vaccines will allow economies around the world to return to normal within the next year, encouraging investors to step back from the relative safety of U.S. assets and invest in stocks, bonds and currencies outside the U.S.<br />The dollar hit its lowest levels against a basket of currencies in more than two years this week. Investors and analysts think it has further to fall. The only questions seem to be how much and how fast.<br />The slide in the dollar coincides with exuberance in the U.S. stock market, where the Dow Jones Industrial Average pierced 30000 for the first time on Tuesday before retreating Wednesday. A weak dollar can help stocks with big overseas operations since it makes earnings in foreign currencies worth more in dollar terms.<br />The  ICE  U.S. Dollar Index, which measures the dollar against a basket of currencies from major trading partners such as Japan and the eurozone, slid below 92 this week, its lowest level since 2018, according to FactSet. It is down more than 10.5% since its March peak.</td>
+      <td><img src="../img/im-263846.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-26 18:09:00</td>
+      <td>Politics</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/gop-sees-georgia-senate-races-as-firewall-after-trumps-loss-11606392002?mod=politics_lead_pos12">GOP Sees Georgia Senate Races as ‘Firewall’ After Trump’s Loss</a></td>
+      <td>With president’s role uncertain, McConnell directs colleagues to aid effort to keep Senate in Republican hands</td>
+      <td>WASHINGTON—With President Trump’s drive to remain in office hitting a dead end, Senate Republicans are redoubling their efforts in Georgia, where a pair of runoffs will determine which party controls the Senate.<br />Senate Majority Leader Mitch McConnell (R., Ky.) and Sen. Todd Young (R., Ind.), the departing chairman of the National Republican Senatorial Committee, have told colleagues that each of them needs to help Sens. David Perdue and Kelly Loeffler keep their seats in the Jan. 5 races, GOP aides said. Senators are traveling...</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-26 17:13:00</td>
+      <td>U.S.</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/supreme-courts-ruling-blocking-cuomos-covid-19-order-could-influence-other-cases-11606428800?mod=politics_featst_pos2">Supreme Court’s Ruling Blocking Cuomo’s Covid-19 Order Could Influence Other Cases</a></td>
+      <td>Up to 20 lawsuits involving houses of worship could be affected by high-court decision</td>
+      <td>The Supreme Court ruling that blocked New York from imposing strict limits on attendance at religious services could influence lawsuits in other states seeking to overturn similar rules on houses of worship.<br />Up to 20 cases involving houses of worship in states including Nevada, New Jersey, California and Oregon could be affected by the Supreme Court decision, legal experts say.<br />“It...</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-26 16:56:00</td>
+      <td>World</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/mexico-arrests-alleged-mastermind-of-massacre-that-killed-american-women-and-children-11606426939?mod=world_minor_pos1">Mexico Arrests Alleged Mastermind of Massacre That Killed American Women and Children</a></td>
+      <td>Capture of suspect in 2019 attack on members of breakaway Mormon community draws mixed response from relatives of victims</td>
+      <td>MEXICO CITY—Mexican security forces captured the alleged mastermind of a 2019 massacre that killed nine members of a breakaway Mexican-American Mormon community, an attack that shocked the U.S. and Mexico and strained bilateral relations.<br />The suspect was identified by a senior Mexican official as Roberto González, who is known as “The 32” and is considered one of the chieftains of Mexican gang La Línea. Mexican authorities said the suspect was arrested this week with two other members of his gang in the northern state of Chihuahua....</td>
+      <td><img src="../img/im-265181.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-26 14:46:00</td>
+      <td>Markets</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/german-prosecutors-examine-ernst-youngs-role-in-wirecard-collapse-11606420008?mod=markets_lead_pos6">German Prosecutors Examine Ernst & Young’s Role in Wirecard Collapse</a></td>
+      <td>Prosecutors in Munich are assessing a report from Germany’s accounting watchdog, ratcheting up pressure on the audit firm</td>
+      <td>German prosecutors are examining Ernst & Young’s role in the collapse of disgraced payments operator  Wirecard AG , ratcheting up pressure on the audit firm.<br />Munich prosecutors said they are evaluating a report by the country’s accounting watchdog into the company’s collapse this summer. The watchdog, known as Apas, launched an investigation into the work of the auditing firm’s local affiliate, EY GmbH, after Wirecard admitted that more than $2 billion of cash it had said was held in bank accounts on its behalf didn’t exist.<br />“We are still evaluating Apas’s report and haven’t yet made any decision about whether to bring any criminal charges,” a spokesperson for the prosecutor said. Under German law, any criminal cases would be against individuals rather than firms, she said.<br />The prosecutors’ review of Apas’s submission, which began some weeks ago, was earlier reported in the German newspaper Handelsblatt. Apas declined to comment, citing strict legal confidentiality around its investigations.<br />EY said it hadn’t been given a copy of the Apas report and so couldn’t speculate on its contents. “To date, we have no indications of any criminal conduct by the auditors at EY Germany,” a spokesperson said. “We continue to support all official investigations.”</td>
+      <td><img src="../img/im-265198.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-26 14:22:00</td>
+      <td>World</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/ethiopian-forces-surround-tigrays-capital-as-a-decisive-battle-looms-11606328684?mod=world_major_2_pos1">Ethiopian Forces Begin Decisive Battle in Tigray’s Capital</a></td>
+      <td>Western officials call for immediate end to fighting between government and restive region</td>
+      <td>Ethiopia’s government began what it called the final phase of a military operation on the encircled capital of the rebel-run northern region of Tigray on Thursday, drawing calls from the U.S. and United Nations for a halt to the fighting in the strategically important Horn of Africa nation.<br />Government forces backed by heavy artillery were positioned on the edge of Mekelle after three weeks of fighting with the regional government of Tigray, which wants a bigger voice in national rule.<br />The...</td>
+      <td><img src="../img/im-264646.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-26 13:37:00</td>
+      <td>World</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/ethiopia-what-we-know-about-the-war-in-the-tigray-region-11605530560?mod=world_major_2_pos2">Ethiopia: What We Know About the War in the Tigray Region</a></td>
+      <td>Conflict in the north of Africa’s second-most-populous nation is spreading across borders, threatening stability in a strategic region</td>
+      <td>Long-simmering tensions between Ethiopia’s federal government, led by Nobel Peace Prize-winning Prime Minister Abiy Ahmed, and defiant authorities in its northern Tigray region have erupted into a military confrontation. Hundreds of civilians have died, while tens of thousands have sought refuge in Sudan from airstrikes, as the conflict threatens to further destabilize the strategic Horn of Africa region.<br />Ethiopian ground troops and jet fighters are bombing targets across Tigray, trying...</td>
+      <td><img src="../img/im-260073.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-26 12:00:00</td>
+      <td>Gas Markets</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/u-k-s-centrica-seeks-to-sell-liquefied-natural-gas-portfolio-11606410051?mod=markets_minor_pos4">U.K.’s Centrica Seeks to Sell Liquefied Natural Gas Portfolio</a></td>
+      <td>Possible sale, say people familiar with the matter, comes as natural-gas prices show renewed life after hitting a low in June</td>
+      <td>Centrica  PLC, a major U.K.-based energy supplier, is trying to sell its portfolio of liquefied natural gas supply contracts and other assets, according to people familiar with the matter, as it seeks to simplify its operations amid volatile LNG prices.<br />The targeted value from such a deal couldn’t be learned. However, similar recent transactions suggest that Centrica, the owner of energy and electricity service provider British Gas, may actually need to pay any potential buyer to take the LNG business off its hands, underscoring the uncertain outlook for gas prices internationally.<br />The sale effort comes after Centrica in July agreed to sell its North American energy supply, services and trading business, Direct Energy, to  NRG Energy ,  Inc. for $3.6 billion.<br />The LNG business could offer potential buyers a quick, cheap way to enter the LNG market as an established player. Last year,  Total SA  struck a deal to acquire the noncore U.S. LNG business of  Toshiba Corp.  The Japan-based conglomerate paid the French energy major $800 million to take over its supply and transportation LNG contracts. At the time, Total said the acquisition fit its strategy to further expand its scale in the sector.<br />Any bet on Centrica’s LNG business would come amid forecasts that natural-gas prices are poised to extend their recent rebound in 2021, following a yearslong slump that reached its nadir in June. The slide in crude-oil prices during the pandemic prompted U.S. energy companies to throttle back output, pinching gas supplies because many wells produce gas as a byproduct.</td>
+      <td><img src="../img/im-265169.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-26 11:52:00</td>
+      <td>Pro Bankruptcy</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/sycamore-bids-540-million-for-ann-taylor-other-ascena-brands-11606409542?mod=markets_lead_pos4">Sycamore Bids $540 Million for Ann Taylor, Other Ascena Brands</a></td>
+      <td>Private equity firm moves to acquire Ann Taylor, Lane Bryant, Loft and Lou & Grey stores out of bankruptcy</td>
+      <td>Sycamore Partners has agreed to pay $540 million to buy Ann Taylor, Lane Bryant and other store brands from  Ascena Retail Group Inc.,  the brands’ bankrupt parent company said Thursday.<br />The proposed deal would also deliver the Loft and Lou & Grey brands to Sycamore, subject to approval from the bankruptcy court where Ascena filed for chapter 11 protection in July.<br />Ascena said Sycamore “has committed to retaining a substantial portion of the retail stores and associates” affiliated with the brands it is buying. As of late August, Ascena operated 1,500 stores throughout the U.S.<br />The company has already sold its Justice and Catherines brands out of bankruptcy as online-only businesses.<br />Permanent closures of retail stores in the country hit a record in the first half of 2020 as pandemic lockdowns and shoppers’ fear of disease curbed foot traffic, pushing Ascena and dozens of other retailers into bankruptcy.</td>
+      <td><img src="../img/im-265168.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-26 11:15:00</td>
+      <td>Tech</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/amazon-web-services-hit-by-outage-11606326714?mod=tech_featst_pos3">Amazon Web Services Hit by Outage</a></td>
+      <td>Company says it has resolved issues with cloud-software programs in its region covering Eastern part of U.S.</td>
+      <td>Amazon.com Inc. grappled with an hourslong outage tied to its enormous cloud-computing operation that affected many businesses, forcing them to warn their customers about product disruptions<br />The service interruption that affected a wide swath of customers began early Wednesday and lasted throughout the day as Amazon Web Services, as the online retailing giant’s cloud division is called, scrambled to fully restore functions. Amazon said early Thursday all services were back to normal operations.<br />Before...</td>
+      <td><img src="../img/im-264754.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-26 10:00:00</td>
+      <td>Markets</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/offices-and-malls-will-look-different-after-covid-19-11606402803?mod=markets_featst_pos1">Offices and Malls Will Look Different After Covid-19</a></td>
+      <td>Commercial properties will be helped by a coronavirus vaccine, but long-term pressures may accelerate postpandemic</td>
+      <td>This is the fifth and final column in a five-part Heard on the Street series on how the American economy might look once the Covid-19 pandemic is over.<br />The office and the shopping mall are two of the things most visibly changed by Covid-19. They also have the most potential to bounce back once a vaccine is distributed, but they could look quite different.<br />Early indicators suggest that many people want to continue going about their lives more remotely. About a quarter of office workers in a recent survey by  Jones Lang LaSalle  said they would like to work outside the office full-time post-pandemic. Meanwhile, Walmart Chief Executive Doug McMillon said this month the retailer was convinced that most of the behavioral shift to online shopping “will persist beyond the pandemic.”<br />Still, it would be overly simplistic to assume landlords are necessarily imperiled. Commercial real estate is a business that can take time to evolve because of long-term leases. A typical retail term is about six years while offices are closer to 10 years, according to  CoStar Group .  In addition, rent collection has stabilized for offices, with owners collecting more than 96% of the usual rent as of July, according to industry body Nareit, which tracks figures for listed real-estate investment trusts. Even for free-standing retail—think big-box stores—rent collection was about 95% in September.<br />The outlier is shopping centers, where rent collection has rebounded since the 49% nadir in May but was still only at about 82% in September. The closure of more than 11,100 retail stores has been announced in the U.S. this year through November, according to CoStar. Some empty department stores could have second lives as e-commerce distribution centers, though that may be an option for only the very worst-off malls since it can affect the tax treatment of a property.</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-26 10:00:00</td>
+      <td>Politics</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/social-medias-liability-shield-is-under-assault-11606402800?mod=tech_lead_pos4">Social Media’s Liability Shield Is Under Assault</a></td>
+      <td>There is growing pressure to revise Section 230 to make internet businesses more accountable for online content</td>
+      <td>WASHINGTON—The law that enabled the rise of social media and other internet businesses is facing threats unlike anything in its 24-year history, with potentially significant consequences for websites that host user content.<br />Section 230 of the Communications Decency Act was instrumental to the success of Silicon Valley tech giants such as Facebook Inc., Twitter Inc. and Alphabet Inc.’s Google and YouTube by giving them broad immunity for the content they publish from users on their sites.<br />There...</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-26 09:15:00</td>
+      <td>World</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/parents-in-china-find-a-third-child-is-now-sometimes-allowed-11606400104?mod=world_major_2_pos4">With Baby Steps, Chinese Parents Test Strictness of the Two-Child Policy</a></td>
+      <td>While Beijing hasn’t signaled it is ready to give up birth limits altogether, there are signs punishments have become less strict in some places; ‘one eye open, one eye closed’</td>
+      <td>When Zhang Yiqiu found herself pregnant with her third child two years ago, the Beijing businesswoman expected to face a fine or bureaucratic hurdles.<br />To her surprise, local officials praised her for her decision to have another child, she said, though they couldn’t provide the proper paperwork for her government health insurance to cover the birth because parents are still officially forbidden from having three children.<br />Ms....</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-26 08:50:00</td>
+      <td>World</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/south-koreas-central-bank-says-covid-19-rise-wont-derail-economic-recovery-11606391937?mod=world_major_1_pos3">South Korea’s Central Bank Says Covid-19 Rise Won’t Derail Economic Recovery</a></td>
+      <td>Bank of Korea issues a brighter outlook, forecasting a 1.1% contraction this year rather than the 1.3% it had expected</td>
+      <td>SEOUL—A jump in Covid-19 cases won’t knock South Korea’s economic recovery off track, the country’s central bank said.<br />The Bank of Korea on Thursday forecast the economy would contract 1.1% this year, an improvement on its earlier expectation for a 1.3% drop. The brighter outlook came as the country recorded its highest number of daily coronavirus cases since March 1, when it was suffering the worst outbreak outside China. The rise in infections was factored in, the bank said.<br />The...</td>
+      <td><img src="../img/im-265134.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-26 08:35:00</td>
+      <td>World</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/in-italys-south-warzone-doctors-are-called-to-the-rescue-amid-covid-19-upsurge-11606397699?mod=world_major_1_pos5">In Italy’s South, War Zone Doctors Are Called to the Rescue Amid Covid-19 Upsurge</a></td>
+      <td>Humanitarian group best known for assisting war and Ebola victims will help confront the crisis in Italy’s poorest region</td>
+      <td>ROME—Italy’s troubled south, which was largely spared earlier on in the pandemic, is now struggling to cope—so much so that the government is turning for help to a medical charity used to working in war zones.<br />The Milan-based nongovernmental organization Emergency is best known for assisting war victims in countries such as Afghanistan, or Ebola patients in Sierra Leone. It has now agreed to help confront the crisis in Italy’s poorest region of Calabria, where the dysfunctional health care system is ill-equipped to deal with...</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-26 08:00:00</td>
+      <td>Politics</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/biden-has-early-chances-to-show-allies-his-global-trade-agenda-11606395600">Biden Has Early Chances to Show Allies His Global Trade Agenda</a></td>
+      <td>Removing Trump’s tariffs, calling Group of 20 meeting among possible moves by new president</td>
+      <td>WASHINGTON—During his campaign, President-elect Joe Biden highlighted his intention to work closely with America’s allies to ease trade tensions and pressure China to abide by international rules.<br />He will have several early chances to do that after being sworn in Jan. 20.<br />The new president will have an opportunity to try to resolve a leadership...</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-26 08:00:00</td>
+      <td>U.S.</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/midwestern-governors-seek-more-federal-covid-19-aid-for-businesses-11606395603">Midwestern Governors Seek More Federal Covid-19 Aid for Businesses</a></td>
+      <td>Restaurants and others, hit with new restrictions as virus surges, point to grim months ahead without financial help</td>
+      <td>A growing number of governors are calling for another round of coronavirus-relief legislation from Washington, saying they are unable to provide additional funds to small businesses amid budget shortfalls.<br />The issue is gaining urgency as money from federal relief passed earlier this year runs out ahead of a year-end deadline to spend it.<br />States...</td>
+      <td><img src="../img/im-264965.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-26 07:54:00</td>
+      <td>World</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/mexico-confirms-its-economy-rebounded-in-third-quarter-11606395239?mod=world_minor_pos2">Mexico Confirms Its Economy Rebounded in Third Quarter</a></td>
+      <td>GDP expanded a seasonally adjusted 12.1% in the third period following a record 17% contraction in the previous quarter</td>
+      <td>MEXICO CITY—Mexico’s economy bounced back in the third quarter, led by increases in industrial output as business reopened from shutdowns to slow the spread of the coronavirus, but activity remained well below its year-earlier level, revised data show.<br />Gross domestic product, a measure of output in goods and services, expanded a seasonally adjusted 12.1% in the July-September period following a record 17% contraction in the second quarter, the National Statistics Institute said Thursday.<br />The...</td>
+      <td><img src="../img/im-265145.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-26 06:25:00</td>
+      <td>Economy</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/japans-stock-playing-central-bank-racks-up-56-billion-gain-11606389909?mod=markets_lead_pos7">Japan’s Stock-Playing Central Bank Racks Up $56 Billion Gain</a></td>
+      <td>Bank of Japan under Haruhiko Kuroda scores after boosting investments at stock-market bottom, but some say he shouldn’t play the market so much</td>
+      <td>TOKYO—One of Japan’s biggest stock investors just reported record gains of more than $50 billion after a well-timed bet. But the person who engineered the windfall won’t be getting a Wall Street-style bonus this holiday season, and some have even started saying he shouldn’t play the market so much.<br />That’s because the hot-hitting portfolio manager is Gov. Haruhiko Kuroda, head of Japan’s central bank. Mr. Kuroda has led the  Bank of Japan ’s  push, unusual among global central banks, to invest in the Tokyo stock market as a way of rousing the nation’s animal spirits.<br />In March, he doubled the BOJ’s annual ceiling for its purchases of exchange-traded funds to the equivalent of $115 billion. That was the month the stock market began surging after a pandemic-induced dip. It closed Thursday at a 29-year high, up 60% from this year’s low.<br />The superb timing helped the central bank report a record jump for a six-month period in its stock portfolio’s gains when it released its semiannual financial report Thursday. It said the market value of its holdings stood at the equivalent of nearly $400 billion as of Sept. 30, which represented an unrealized profit of $56 billion over what it paid.<br />Six months earlier, the BOJ had barely any unrealized profit left, and at one point in March Mr. Kuroda said it was carrying large losses.</td>
+      <td><img src="../img/im-265136.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-26 05:30:00</td>
+      <td>Markets</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/this-black-friday-avoid-credit-card-pitfalls-11606386600?mod=markets_lead_pos10">This Black Friday, Avoid Credit-Card Pitfalls</a></td>
+      <td>Here’s how to be strategic with your pandemic holiday spending—and debt</td>
+      <td>This year has been different in many ways, but Black Friday promises to be business as usual, even with the large portion of spending expected to take place online rather than in person.<br />Credit cards remain the top payment option for consumers this holiday season, according to a recent survey by the National Retail Foundation. Many of those planning to charge their shopping may already be in debt.<br />Almost 60% of cardholders who have existing credit-card debt said they would be adding to it this week, according to a poll by creditcards.com.<br />“One of the interesting things that we’ve seen around [recent] holidays is people are choosing to spend a little more on certain occasions in order to make up for how crummy 2020 has been,” said Matt Schulz, chief industry analyst at LendingTree. Mr. Schulz has observed this trend in relation to both Halloween and Thanksgiving, as people try to make up for missed birthday parties and graduations.<br />Here are some tips to keep both your cheer and your credit score up this holiday season.</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-26 05:30:00</td>
+      <td>Markets</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/outside-monitors-urge-deutsche-bank-to-quit-russia-11606386601?mod=markets_featst_pos2">Outside Monitors Urge Deutsche Bank to Quit Russia</a></td>
+      <td>Monitors appointed by New York regulators told the German lender it should drop plans to expand in Russia and shut its business there</td>
+      <td><br />Deutsche Bank AG  executives want to expand in Russia despite a legacy of missteps and massive fines. Outside monitors who watch over the bank’s money-laundering controls said it should shut the business instead, according to a person familiar with the communications.<br />The monitors, appointed by New York state’s Department of Financial Services, told the bank in October that efforts to improve its operation weren’t enough to make up for the large risks of doing business with Russian clients, the person said.<br />A Deutsche Bank spokesman declined to comment on its dialogue with monitors, but said it is conducting a risk analysis for several countries, including Russia. “As we work to continuously improve our controls in combating financial crime, our risk appetite must be in line with the maturity of those controls,” he added.<br />A Department of Financial Services spokeswoman declined to comment.</td>
+      <td><img src="../img/im-264605.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-26 05:06:00</td>
+      <td>Markets</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/jd-health-ipo-will-set-hearts-racing-11606384991?mod=markets_major_pos2">JD Health IPO Will Set Hearts Racing</a></td>
+      <td>Investors have already paid up for competitors and the regulatory environment looks less fraught than for Ant</td>
+      <td>The record initial public offering of fintech giant Ant Group crashed before taking off. Another Chinese tech listing in Hong Kong should fare better.<br />JD Health, an online health-care spinoff from e-commerce company  JD.com ,  has launched its IPO in Hong Kong, which could raise up to $4 billion including the overallotment option. That would make it the city’s largest listing this year after the IPO of Ant, backed by JD’s e-commerce rival Alibaba, was scuttled.<br />The Covid-19 pandemic has driven more people in China to seek medical help online. In the first six months of this year, average daily online consultations on JD Health’s platforms jumped to 86,100 from 14,835 a year earlier. While 2020 is certainly an anomaly, some of those users will likely stick around.<br />Virtual medical service, however, is still a nascent business for JD Health. The company makes almost all of its revenue from selling drugs and other health products online, either directly or from third-party vendors. The growth in online consultations will generate further demand for sales of prescription drugs for JD. But supportive government policies will likely be the real driver of growth for the online pharmacy business.<br />About two-thirds of drugs in China are sold through hospitals, but government policies could push more prescription drug sales through retail channels. Legislation revisions last year allowed online platforms to sell prescription drugs, while draft rules released this month laid out more specific regulations. The industry will no doubt be under stringent regulation and online platforms such as JD will spend a lot of resources on quality control. But with clearer rules, the industry will find it easier to navigate the regulatory landscape.</td>
+      <td><img src="../img/im-265130.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-26 04:45:00</td>
+      <td>Markets</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/shopping-mall-activists-score-an-early-win-11606383935?mod=markets_major_pos3">Shopping Mall Activists Score an Early Win</a></td>
+      <td>The owner of the Westfield chain issued new bonds cheaply, but still needs to sort out its $35 billion debt load</td>
+      <td>Trans-Atlantic mall giant  Unibail-Rodamco-Westfield  has pulled back from the brink. Finding a lasting fix for its debt problem will be more challenging.<br />Late Wednesday, Europe’s largest listed-property company by assets said it had issued bonds worth €2 billion, equivalent to $2.4 billion: one with a six-year maturity and coupon of 0.625% and an 11-year bond at 1.375%. Half of the cash will be used to refinance existing debt. The size and low cost of the issue is a win for activist investors who have been pushing for a new approach.<br />Along with French telecoms billionaire Xavier Niel, Unibail’s former chief executive Léon Bressler successfully persuaded investors to vote against a controversial €3.5 billion equity raise two weeks ago. Back then, Unibail’s chairman and chief executive warned that unless shareholders stumped up, the company could lose access to bond markets. Both men have since been ousted, with Mr. Bressler taking over as chairman.<br />News that a Covid-19 vaccine will soon be available helped the activists’ case. The yield on Unibail’s outstanding bonds has increased slightly since investors voted against the capital raise, but remains much lower than during the March selloff.<br />The new debt will come on top of net borrowings already equivalent to 12 times the earnings before interest, taxes, depreciation and amortization Unibail generated last year. To get that number down, the activists want Unibail to sell underperforming Westfield malls in the U.S. But with the rise of e-commerce weighing on the value of stores, it may be hard to find buyers at an acceptable price.</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-25 18:28:00</td>
+      <td>CMO Today</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/facebooks-latest-error-shakes-advertisers-confidence-11606346927?mod=tech_featst_pos1">Facebook’s Latest Error Shakes Advertisers’ Confidence</a></td>
+      <td>Company quietly told advertisers earlier this month that its ‘conversion lift’ tool, used to measure outcomes, overestimated some campaign results</td>
+      <td></td>
+      <td><img src="../img/im-264975.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-25 18:25:00</td>
+      <td>Economy</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/weekly-jobless-claims-coronavirus-11-25-2020-11606249439">U.S. Unemployment Claims Rose to 778,000 Last Week</a></td>
+      <td>Worker filings for jobless benefits are down sharply from a peak of nearly seven million in late March</td>
+      <td>Jobless claims rose for the second straight week, to 778,000, a sign the nationwide surge in virus cases was starting to weigh on the labor-market recovery.<br />Claims haven’t risen for two consecutive weeks since July. Worker filings for unemployment insurance are down sharply from a peak of nearly seven million in late March. But they remain higher than in any previous recession—the pre-pandemic peak was 695,000 in 1982—for records tracing back to 1967.<br />Unemployment...</td>
+      <td><img src="../img/im-264295.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-25 18:16:00</td>
+      <td>Economy</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/consumer-spending-personal-income-coronavirus-october-2020-11606261923">U.S. Consumer Spending Grows for Sixth Straight Month, Albeit Slower</a></td>
+      <td>Consumer spending rose 0.5% in October while household income fell sharply</td>
+      <td>The U.S. economy is recovering at a sturdy but slowing pace heading into the holidays.<br />Consumers stepped up their spending by a brisk 0.5% in October, down from a gain of 1.2% the month before, the Commerce Department said Wednesday. Factory orders for long-lasting goods rose a solid 1.3%, in part because businesses shelled out more for long-term projects, the agency said. Sales of newly built homes slipped last month but remained near the highest level in almost 14 years.<br />All...</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-25 17:50:00</td>
+      <td>World</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/maradonas-death-prompts-outpouring-of-grief-in-argentina-world-11606344640?mod=world_minor_pos3">Maradona’s Death Prompts Outpouring of Grief in Argentina, World</a></td>
+      <td>Soccer star was revered in his native land</td>
+      <td>Argentina declared three days of mourning as soccer fans across the nation poured into the streets to remember their fallen hero, the star striker Diego Maradona, after his death from a heart attack.<br />“Diego was Argentina in the world, he filled us with happiness and we will never be able to repay the joy,” President Alberto Fernández said shortly after authorities announced the death of the 60-year-old soccer player at his compound in Tigre outside of Buenos Aires.<br />In...</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-25 17:49:00</td>
+      <td>Risk & Compliance Journal</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/u-s-blacklists-militia-leader-for-alleged-human-rights-abuse-in-libya-11606344560?mod=business_minor_pos17">U.S. Blacklists Militia, Leader for Alleged Human Rights Abuse in Libya</a></td>
+      <td>The sanctions come as the U.S. uses sanctions as a tool to target corruption and alleged human rights abusers—a trend likely to continue under Biden</td>
+      <td></td>
+      <td><img src="../img/im-264972.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-25 17:26:00</td>
+      <td>Economy</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/fed-officials-discussed-asset-purchase-program-at-november-meeting-11606330877">Fed Signals New Guidance Coming on Asset-Purchase Program</a></td>
+      <td>Ways that purchases could be changed to provide more stimulus to the economy, if needed, were discussed</td>
+      <td>Federal Reserve officials this month discussed plans to provide more information about how long they will keep purchasing Treasury and mortgage-backed securities by linking the time frame for the stimulus program to economic conditions.<br />Minutes of the Nov 4-5 meeting released Wednesday showed officials were prepared to roll out the revised guidance as soon as their next meeting, set for Dec. 15-16. They also discussed ways that the purchases could be altered to provide more stimulus to the economy, if needed. But they didn’t...</td>
+      <td><img src="../img/im-250651.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-25 16:52:00</td>
+      <td>Markets</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/justice-department-clears-intuit-to-buy-credit-karma-11606341143?mod=markets_featst_pos3">Justice Department Clears Intuit to Buy Credit Karma</a></td>
+      <td>Credit Karma agreed to sell its tax-preparation business to Square to win antitrust approval</td>
+      <td>The Justice Department cleared Credit Karma Inc.’s pending $7.1 billion sale to TurboTax maker  Intuit Inc.  after the two companies agreed to divest Credit Karma’s burgeoning tax-preparation business to satisfy antitrust concerns.<br />Under a proposed settlement filed in federal court in Washington, D.C., Wednesday, Credit Karma and Intuit said they would sell Credit Karma Tax to  Square Inc.,  the financial-technology company run by Twitter Inc. Chief Executive Jack Dorsey. The Wall Street Journal reported last month that Square was in talks to acquire the tax-prep business.<br />Square said it would pay $50 million in cash for Credit Karma Tax, which entered the market in 2017 and helped more than two million individuals file their 2020 taxes. Around 41 million people used Intuit’s TurboTax to file their 2020 taxes.<br />The Justice Department argued that Credit Karma’s small but growing tax-prep business, which charges no fees, provided a check on Intuit’s ability to increase the prices it charges for paid versions of TurboTax and degrade the quality of free versions.<br />Allowing the two companies to move forward with the original deal would “further cement TurboTax’s dominance,” the department said in court papers.</td>
+      <td><img src="../img/im-264735.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-25 16:22:00</td>
+      <td>Business</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/the-covid-19-vaccine-when-will-it-be-available-for-you-11606339361?mod=business_minor_pos3">The Covid-19 Vaccine: When Will It Be Available for You?</a></td>
+      <td>First U.S. rollouts of doses could start in December, but health-care workers, older Americans likely to take priority over general population</td>
+      <td></td>
+      <td><img src="../img/im-264315.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-25 15:25:00</td>
+      <td>Deals</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/salesforce-has-held-talks-to-buy-slack-technologies-11606326392?mod=markets_major_pos12">Salesforce Is in Advanced Talks to Buy Slack Technologies</a></td>
+      <td>A deal would likely value Slack at more than $17 billion and mark Salesforce’s largest acquisition ever</td>
+      <td>Salesforce.com Inc.  is in advanced talks to buy  Slack Technologies Inc.,  according to people familiar with the matter, a deal that would unite a giant in business software with a buzzy newcomer on a mission to replace office email.<br />The companies could reach a deal within days—possibly by the time Salesforce reports its third-quarter financial results Tuesday, some of the people said. Slack, with a market value of more than $17 billion as of Wednesday morning, would be Salesforce’s largest acquisition ever. There is no guarantee the companies will reach an agreement.<br />Salesforce is the world’s biggest seller of software that companies use to manage their customer relationships. Started 21 years ago and run by co-founder Marc Benioff, it was a pioneer in providing software via the cloud through a subscription rather than a costly upfront installation. Mr. Benioff, chairman and chief executive, is one of Silicon Valley’s highest profile executives, a status he burnished with the purchase of Time magazine.<br />Salesforce has a market value of some $230 billion after years of big gains and its rich stock price—which trades at nearly 100 times its trailing-year profits—gives the company a valuable currency to use for takeovers.<br />Mr. Benioff has gradually moved to expand the services Salesforce offers to customers to become more of an all-purpose software provider, helping companies with everything from analyzing their data using artificial-intelligence tools to managing staff. That has put Salesforce in more direct competition with other business-software vendors including  Microsoft Corp.</td>
+      <td><img src="../img/im-264659.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-25 14:06:00</td>
+      <td>Markets</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/propane-is-cheap-go-ahead-buy-a-patio-heater-11606300203?mod=markets_minor_pos5">Propane Is Cheap. Go Ahead, Buy a Patio Heater.</a></td>
+      <td>Fortunately for those heating outdoor spaces during the Covid-19 pandemic, the U.S. has an ample propane supply</td>
+      <td>The coronavirus pandemic has made propane a hot commodity among Americans heating outdoor spaces and hunkering down in Covid cabins. Fortunately for them, the country is flooded with the fuel, and prices have rarely been lower heading into winter.<br />Spot-market propane prices at the Mont Belvieu, Texas, trading hub have more than doubled since dropping in late March to their lowest level in more than a quarter-century. But at 55 cents a gallon, they are still about one-third lower than the 10-year average for November.<br />Residential prices, which are cheaper in the middle of the country and more expensive in East Coast markets such as Florida and New England, have lately averaged $1.85 a gallon, the U.S. Energy Information Administration said Wednesday. That is the lowest for this time of year in more than a decade.<br />It isn’t as though there is no demand for propane, which belongs with butane and ethane to a class of hydrocarbons called natural-gas liquids, or NGLs.<br />The U.S. is exporting about four times as much propane as it shipped abroad in 2013, when the country became the world’s top propane exporter. At home, an uptick in residential demand has helped to offset lower use by businesses and farmers, who haven’t needed grain-drying equipment much this year because a lack of rain allowed them to let crops dry in the field.</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-25 13:30:00</td>
+      <td>Markets</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/covid-wont-steal-christmas-11606329052?mod=markets_major_pos3">Covid Won’t Steal Christmas</a></td>
+      <td>This holiday shopping season will be different, but there will be shopping</td>
+      <td>This holiday season will be different from any other, including what people choose to spend money on.<br />This year’s Black Friday comes at a critical juncture. New Covid-19 cases are rising sharply, millions of people remain out of work and a number of pandemic-assistance programs put in place during the spring stimulus rounds are set to expire at the end of the year.<br />Yet...</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-25 13:20:00</td>
+      <td>Markets</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/dol-fiduciary-regulation-for-retirement-plans-is-now-in-limbo-11606312803?mod=markets_major_pos4">Department of Labor Regulation for Retirement Plans Is Now in Limbo</a></td>
+      <td>Delays on proposed fiduciary rule have made it vulnerable to being scrapped under Biden administration</td>
+      <td>In June, the U.S. Department of Labor proposed a regulation to change the rules governing advice in retirement accounts to align with another Trump administration standard. But delays in completing the proposal, likely due in part to financial-industry opposition, have left it vulnerable to being scrapped after President-elect Joe Biden takes office.<br />“Time is quickly running out” on the proposed rule, said Jason Berkowitz, chief legal and regulatory affairs officer at the Insured Retirement Institute, a trade association for the annuities industry, which was critical of some proposed provisions.<br />The Labor Department declined to comment.<br />Such an outcome would mark the latest development in a decadeslong debate over what responsibilities brokers and other advisers have to clients when giving investment advice in 401(k)-type accounts and individual retirement accounts and how to manage conflicts of interest in the sale of investments in those accounts.<br />Tuesday, the Labor Department submitted the proposal to the White House Office of Management and Budget for review, a step toward finalizing the regulation.</td>
+      <td><img src="../img/im-263813.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-25 13:17:00</td>
+      <td>World</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/saudi-womens-rights-activist-championed-in-the-west-to-face-terrorism-charges-11606328249?mod=world_major_1_pos7">Saudi Women’s Rights Activist Championed in the West to Face Terrorism Charges</a></td>
+      <td>Loujain al-Hathloul became a focus of Western attention after her arrest in 2017</td>
+      <td>RIYADH—Saudi Arabia transferred the case of women’s rights activist Loujain al-Hathloul to a terrorism court, raising fears among supporters that she could remain in prison longer despite international pressure to release her.<br />Ms. Hathloul was picked up more than three years ago just as the conservative kingdom allowed women to drive, something she and other detained activists had long pushed for. She was charged with aiding an enemy country but also speaking with foreign journalists and diplomats, contacting Saudi dissidents...</td>
+      <td><img src="../img/im-264630.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-25 13:08:00</td>
+      <td>World</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/chinas-xi-congratulates-biden-weeks-after-other-leaders-11606327689?mod=world_major_2_pos5">China’s Xi Congratulates Biden Weeks After Other Leaders</a></td>
+      <td>Message, coming after Trump said administration will cooperate with transition, underlines Beijing’s desire to stabilize the relationship</td>
+      <td>HONG KONG—President Xi Jinping congratulated U.S. President-elect Joe Biden on his election victory, marking the Chinese leader’s first formal outreach to the incoming administration weeks after many other world leaders sent well wishes.<br />In the message sent Wednesday Mr. Xi called on Washington to advance bilateral relations. It came after President Trump said Monday his administration would cooperate with Mr. Biden’s transition to the White House, ending a delay amid growing bipartisan criticism as Mr. Trump’s long-shot effort...</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-25 12:56:00</td>
+      <td>Logistics Report</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/ge-appliances-turns-up-the-speed-on-supply-chain-upgrade-11606326996?mod=business_minor_pos19">GE Appliances Turns Up the Speed on Supply-Chain Upgrade</a></td>
+      <td>Coronavirus-driven disruptions in demand and production added urgency to an effort aimed at building visibility and flexibility</td>
+      <td></td>
+      <td><img src="../img/im-264684.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-25 09:33:00</td>
+      <td>World</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/european-powers-won-t-push-biden-for-swift-u-s-return-to-iranian-nuclear-deal-11606314800?mod=world_major_1_pos6">European Powers Won't Push Biden for Swift U.S. Return to Iranian Nuclear Deal</a></td>
+      <td>There is growing concern about Iran’s nuclear research, but European diplomats say they don’t want to rush new U.S. president to re-enter pact</td>
+      <td>European powers are looking to the incoming Biden administration to swiftly reduce nuclear tensions with Tehran but won’t press Washington to re-enter the 2015 nuclear accord with Iran quickly, according to senior diplomats.<br />While European countries remain supportive of the 2015 nuclear deal, officials from France, Britain and Germany—countries that helped negotiate the accord—say a full return to the agreement might not be achievable or even desirable before Iran’s presidential elections in June.<br />Amid...</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-25 09:33:00</td>
+      <td>Experts Blog</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/why-you-shouldnt-ask-a-charity-how-it-spends-your-donation-01606312613?mod=markets_minor_pos16">Why You Shouldn’t Ask a Charity How It Spends Your Donation</a></td>
+      <td></td>
+      <td>Dean Karlan (@deankarlan) is a professor of economics and finance at the Kellogg School of Management at Northwestern University and the co-director of the Global Poverty Research Lab.<br />When it comes to charitable giving, people want to know what their money is doing. How many lives were saved with their donation, how many children were fed with their donation.<br />This thinking, even if well-intentioned, puts the focus on the donor and their dollars--and not the recipient. Instead, I suggest two simple principles for donors to follow.<br />1.Do not ask charities what your money did.<br />For many nonprofits it is genuinely impossible to answer how exactly their efforts are different with those extra $10 or $1,000.</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-25 09:23:00</td>
+      <td>Economy</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/global-trade-stages-rapid-recovery-11606314229">Global Trade Stages Rapid Recovery</a></td>
+      <td>Led by China, the rebound in exports and imports of goods has been much quicker than in the aftermath of the global financial crisis</td>
+      <td>Global trade flows bounced back strongly in the summer, marking the largest rise in two decades as air and sea transport channels reopened while demand for consumer goods surged.<br />The rebound has been led by China, which has increased its share of total exports, and left trade volumes in September less than 2% below their levels at the end of 2019.<br />The...</td>
+      <td><img src="../img/im-264628.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-25 09:20:00</td>
+      <td>WSJ Logistics Report</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/todays-logistics-report-building-vaccine-supply-chains-deliverys-uphill-climb-farming-looks-up-11606314018?mod=business_minor_pos20">Today’s Logistics Report: Building Vaccine Supply Chains; Delivery’s Uphill Climb; Farming Looks Up</a></td>
+      <td>Today’s Top Supply Chain & Logistics News from WSJ</td>
+      <td></td>
+      <td><img src="../img/im-264342.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-25 07:59:00</td>
+      <td>World</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/china-drugmakers-face-pressure-to-prove-their-covid-19-vaccines-work-11606309143?mod=world_major_2_pos6">China Drugmakers Face Pressure to Prove Their Covid-19 Vaccines Work</a></td>
+      <td>The companies haven’t released results of late-stage trials while data from Western drugmakers show three candidates to be highly promising</td>
+      <td>TAIPEI—Pressure is mounting on Chinese drugmakers to show clinical evidence that their leading Covid-19 vaccines work, after early data on three Western-developed shots showed promising effectiveness against the disease.<br />Earlier this week, AstraZeneca PLC and the University of Oxford said their vaccine candidate was anywhere between 62% to 90% effective, joining two other Western vaccine rivals in providing data. The results could allow the U.S. and other countries to grant regulatory authorization and gear up distribution...</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-25 07:36:00</td>
+      <td>Business</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/exxon-documents-reveal-more-pessimistic-outlook-for-oil-prices-11606307763?mod=markets_minor_pos6">Exxon Documents Reveal More Pessimistic Outlook for Oil Prices</a></td>
+      <td>The oil giant has lowered its expectations for prices for much of the next decade, internal documents reviewed by The Wall Street Journal show</td>
+      <td>Exxon Mobil Corp.  has lowered its outlook on oil prices for much of the next decade, according to internal company documents reviewed by The Wall Street Journal.<br />As part of an internal financial-planning process conducted this fall, Exxon cut its expectations for future oil prices for each of the next seven years by 11% to 17%, according to the documents.<br />The sizable reduction suggests the Texas oil giant expects the fallout from the coronavirus pandemic to linger for much of the next decade. The fossil-fuel industry is also contending with increased competition from renewable-energy sources and electric vehicles, as well as the prospect of increased climate-change regulation around the world.<br />Unlike some rivals, Exxon doesn’t publish its internal views on commodity prices, which it views as proprietary. Some investors have pressured Exxon to release them, arguing that the forecasts are critical to understanding a company’s plans and the future value of its assets.<br />In 2019, Exxon had internally forecast that Brent oil prices, the global benchmark, would average around $62 a barrel for the next five years before increasing to $72 a barrel in 2026 and 2027, the documents state.</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-25 06:24:00</td>
+      <td>Markets</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/regulatory-pressure-mounts-on-coal-miner-that-rattled-chinas-bond-market-11606303492?mod=markets_minor_pos4">Regulatory Pressure Mounts on Coal Miner that Rattled China’s Bond Market</a></td>
+      <td>Investigation into state-owned Yongcheng Coal is escalated to country’s securities regulator</td>
+      <td>An investigation into a troubled Chinese state-owned coal miner was escalated to the country’s securities regulator, as authorities pile pressure on the company whose recent default rattled the bond market.<br />The National Association of Financial Market Institutional Investors, a self-regulating body supervised by China’s central bank, said late Tuesday that it had sent leads related to suspected violations of laws and regulations by Yongcheng Coal & Electricity Holding Group Co. to the China Securities Regulatory Commission. The industry group said it would also impose unspecified sanctions on the company and start an investigation into its parent, an energy and chemicals conglomerate.<br />Yongcheng Coal missed a deadline earlier this month to repay 1 billion yuan, equivalent to $152 million, in 270-day commercial paper that matured Nov. 10, after having sold new debt just weeks earlier. The company had also transferred some assets, including stakes in a local bank and several chemical firms, to other local state companies.<br />The miner’s failure to make the debt payment and recent bond defaults by an automotive business and a chip maker have caused unease among investors, sending yields on riskier corporate bonds higher. Yields rise as bond prices fall.<br />Yields on three-year Chinese corporate bonds with double-A credit ratings—a grade that in China’s domestic rating system indicates a significant amount of risk—rose to more than 4.482% on Tuesday, their highest since December 2018, according to Wind. They edged down slightly to 4.479% Wednesday but are still significantly higher than a few weeks ago.</td>
+      <td><img src="../img/im-264604.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-25 06:02:00</td>
+      <td>Moneybeat Blog</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/wsj-wealth-adviser-briefing-bank-application-boost-emerging-market-rebound-vacation-gift-ideas-01606302132?mod=markets_major_pos7">WSJ Wealth Adviser Briefing: Bank Application Boost, Emerging Market Rebound, Vacation Gift Ideas</a></td>
+      <td></td>
+      <td>Talk about an acquisition spree.<br />It wasn’t quite a year ago that Canadian wealth and asset manager CI Financial launched a U.S. expansion by striking a deal to purchase its first RIA firm, Surevest of Phoenix.<br />Now that’s it’s buying RGT Wealth Advisors, a Dallas-based RIA with about $4.7 billion in assets under advisement, CI is on track to own a network of U.S. firms advising on about $21 billion in assets. (RGT had $4.3 billion in AUM at the end of June, according to its latest Form ADV.)<br />Below, some of the best analysis and insight from WSJ writers and columnists, the Dow Jones Newswires team and occasionally beyond, on investing, the wealth-management business and more<br />ELECTION</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-25 05:40:00</td>
+      <td>Markets</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/dow-30000-covid-economy-market-buy-and-hold-11606238819?mod=markets_major_pos10">Behind Dow 30000: A Self-Perpetuating Upward Spiral</a></td>
+      <td>Low interest rates and a buy-the-dip mantra have put stocks in an ascending pattern, defying the pandemic and economic woes</td>
+      <td>The U.S. stock boom has its roots in tactics that fund managers, small savers and Robinhood traders alike have applied over the past decade:<br />Don’t hide from markets by hoarding cash.<br />Keep hold of your investments, and returns will follow.<br />When there’s a crisis, buy.<br />The Dow Jones Industrial Average closed above 30000 on Tuesday for the first time, extending an eight-month rebound that has taken many analysts by surprise. The blue-chip gauge advanced 454.97 points, or 1.5%, to 30046.24, continuing a recent winning streak that has put it on track for the best month since 1987.</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-25 05:34:00</td>
+      <td>World</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/europe-doubles-down-on-data-protection-to-ward-off-silicon-valley-chinese-influence-11606300456?mod=tech_lead_pos12">Europe Doubles Down on Data Protection to Ward Off Silicon Valley, Chinese Influence</a></td>
+      <td>New EU proposal aims to offer protections for corporate and public-service data as GDPR covers individuals</td>
+      <td>The European Union wants to take control of its own data, part of a broader effort to wrest digital influence from large companies in the U.S. and China.<br />The EU’s executive arm on Wednesday proposed new legislation aimed at creating an EU-wide data marketplace to facilitate sharing of industrial and government information—provided the data is protected according to European standards, under the eyes of the bloc’s regulators.<br />While...</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-25 05:30:00</td>
+      <td>CIO Journal</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/climate-researchers-enlist-big-cloud-providers-for-big-data-challenges-11606300202">Climate Researchers Enlist Big Cloud Providers for Big Data Challenges</a></td>
+      <td>Amazon, Google and Microsoft increasingly are providing the computing muscle scientists need to glean insights from vast stores of climate data</td>
+      <td></td>
+      <td><img src="../img/im-264156.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-25 05:30:00</td>
+      <td>CFO Journal</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/coca-cola-cfo-helps-company-make-cuts-operational-changes-11606300200?mod=business_minor_pos13">Coca-Cola CFO Helps Company Make Cuts, Operational Changes</a></td>
+      <td>The beverage giant is reducing the number of its brands and shrinking head count</td>
+      <td></td>
+      <td><img src="../img/im-264532.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-24 18:14:00</td>
+      <td>Economy</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/yellen-will-confront-a-cooling-economic-recovery-uncertain-stimulus-prospects-11606215601?mod=markets_major_pos13">Yellen Will Confront a Cooling Economic Recovery, Uncertain Stimulus Prospects</a></td>
+      <td>President-elect Joe Biden’s pick to head Treasury will need to forge a broad consensus on measures to maintain growth as virus cases rise</td>
+      <td>WASHINGTON—Janet Yellen, President-elect Joe Biden’s nominee to be Treasury secretary, will confront an economic recovery that appears to be losing momentum and uncertain prospects for additional stimulus from Congress.<br />If confirmed by the Senate, Ms. Yellen would play a key role pushing for more aid for an economy battered by the coronavirus pandemic and related shutdowns, especially if Congress is unable to reach an agreement on a relief package before Mr. Biden takes office on Jan. 20.<br />The rebound that began over the summer is showing signs of faltering as new virus cases surge and job growth slows, and much of the aid lawmakers passed earlier this year has run out. JPMorgan Chase & Co. economists said last week they expect the economy to shrink in the first quarter of 2021.<br />Ms. Yellen, a former Federal Reserve chair, will have to forge broad consensus on economic policy and sell ideas within the administration, on Capitol Hill and among the general public, said Tony Fratto, a Treasury official in the George W. Bush administration.<br />“Right now, we live in a country where people look at the same set of facts and come to diametrically opposite conclusions, so that is a big challenge for anybody who takes that job, to build support for your policy outcomes,” he said.</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-24 17:56:00</td>
+      <td>CFO Journal</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/sealed-air-names-new-finance-chief-as-incumbents-contract-nears-end-11606258592?mod=business_minor_pos14">Sealed Air Names New Finance Chief as Incumbent’s Contract Nears End</a></td>
+      <td>The packaging company hires Christopher J. Stephens to take over its finances</td>
+      <td></td>
+      <td><img src="../img/im-264424.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-24 17:20:00</td>
+      <td>World</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/u-s-other-foreign-donors-pledge-billions-in-aid-to-afghanistan-11606251285?mod=world_major_1_pos8">U.S., Other Foreign Donors Pledge Billions in Aid to Afghanistan</a></td>
+      <td>Kabul draws about $3 billion in pledges for 2021, depending on progress of peace talks with Taliban</td>
+      <td>The U.S., European Union and other international donors pledged billions of dollars in aid to war-torn Afghanistan, but said disbursement would depend on progress in talks between Kabul and the Taliban to end nearly two decades of fighting.<br />Over 100 countries and organizations committed about $3 billion in total development support to Afghanistan for 2021 at a quadrennial aid conference in Geneva, which was hosted virtually by the United Nations, Finland and Afghanistan this year due to the coronavirus pandemic. Annual commitments...</td>
+      <td><img src="../img/im-264088.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-24 17:04:00</td>
+      <td>Risk & Compliance Journal</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/jpmorgan-chase-unit-to-pay-250-million-penalty-over-poor-internal-controls-11606255474?mod=business_minor_pos18">JPMorgan Chase Unit to Pay $250 Million Penalty Over Poor Internal Controls</a></td>
+      <td>Regulator cites bank’s weak risk-management practices and an insufficient framework for avoiding conflicts of interest</td>
+      <td></td>
+      <td><img src="../img/im-264409.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-24 16:50:00</td>
+      <td>Economy</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/upbeat-investors-look-past-covid-19-related-woes-11606254616">Upbeat Investors Look Past Covid-19, Related Woes</a></td>
+      <td>Dow industrials close above 30000 for first time on hopes vaccines will set scene for economic recovery</td>
+      <td>Among the big reasons for climbing stock prices is investors’ optimism about the strength of the economic recovery in the years ahead.<br />While recent data show economic growth slowing and consumer confidence flagging, markets are forward-looking and betting the recovery will gain steam, analysts say, particularly with Covid-19 vaccines on the horizon. They are cheered by hopes the shots will ease uncertainty and eventually enable people to fill airplanes, sports stadiums, restaurants and other places of business hardest hit...</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-24 15:14:00</td>
+      <td>Markets</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/accelerating-rally-in-oil-prices-signals-optimism-about-global-growth-11606233299?mod=markets_minor_pos5">Accelerating Rally in Oil Prices Signals Optimism About Global Growth</a></td>
+      <td>U.S. crude-oil hits highest level since early March following sixth gain in seven sessions</td>
+      <td>A recent rise in oil prices continued on Tuesday, sending crude to its highest level since early March with investors wagering on a brighter economic outlook and higher demand for fuel.<br />U.S. crude-oil futures for January delivery advanced 4.3% to $44.91 a barrel, rallying for the sixth time in seven sessions and eclipsing their peak closing level from late August. Oil started the year above $60, briefly tumbled below $0 for the first time ever in April as coronavirus shutdowns crippled demand, then rebounded around $40 this summer.<br />Prices had hovered around the $40 level for months, but upbeat coronavirus vaccine trial results in recent weeks are igniting fresh gains. The data from  Moderna Inc.  and the duos of  Pfizer Inc.  and  BioNTech SE  and  AstraZeneca  PLC and the University of Oxford are fueling hopes that global consumers will be vaccinated more quickly than previously expected and could resume traveling.<br />That would be a boon for energy producers like  Chevron Corp.  and  Exxon Mobil Corp.  because oil demand rises when more people are driving and flying and ships laden with goods are traveling all over the world. The pandemic fueled a historic drop in fuel demand early in the year and prompted a fresh selloff in late October, but traders now expect a recovery in consumption to extend the oil rebound into 2021.<br />“It’s a total change of vibe,” said Robert Yawger, director of the futures division at Mizuho Securities USA. “Everything is much more positive now.”</td>
+      <td><img src="../img/im-264060.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-24 11:28:00</td>
+      <td>World</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/india-bans-more-chinese-apps-as-part-of-its-digital-campaign-to-pressure-beijing-11606235329?mod=tech_listb_pos1">India Bans More Chinese Apps as Part of Its Digital Campaign to Pressure Beijing</a></td>
+      <td>Tensions continue to simmer between two countries following deadly border clash earlier this year</td>
+      <td>NEW DELHI—India banned 43 more Chinese apps in New Delhi’s latest move to pressure China in the online industry as tensions fester following a deadly border clash between the neighboring countries.<br />India’s Ministry of Electronics and Information Technology issued an order citing growing concerns about data security in blocking the Chinese apps, effectively restricting China’s access to one of the largest and fastest-growing online markets in the world.<br />“This...</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+
+</body>
+</html>
