@@ -131,3 +131,5 @@ wsj/wsj/__pycache__/
 wsj/wsj/driver/
 wsj/wsj/spiders/
 wsj/wsj/*.py
+run.bat
+git.bat

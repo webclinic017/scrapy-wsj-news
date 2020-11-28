@@ -17,6 +17,21 @@
 .dataframe td:nth-child(4) {width: 40%;}
 .dataframe td:nth-child(5) {width: 10%;}
 </style>
+<script>
+$(document).ready(function() {
+  var th1 = $(".dataframe tr th:nth-child(1)");
+  th1.addClass("d-none").addClass("d-md-table-cell");
+  
+  var td1 = $(".dataframe tr td:nth-child(1)");
+  td1.addClass("d-none").addClass("d-md-table-cell");
+  
+  var th5 = $(".dataframe tr th:nth-child(5)");
+  th5.addClass("d-none").addClass("d-md-table-cell");
+  
+  var td5 = $(".dataframe tr td:nth-child(5)");
+  td5.addClass("d-none").addClass("d-md-table-cell");
+});
+</script>
 </head>
 <body>
 
