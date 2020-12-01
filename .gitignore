@@ -126,9 +126,5 @@ dmypy.json
 
 # project
 .idea/
-wsj/*.cfg
-wsj/wsj/__pycache__/
-wsj/wsj/driver/
-wsj/wsj/spiders/
-wsj/wsj/*.py
 *.bat
+wsj/
