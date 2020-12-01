@@ -1,0 +1,2673 @@
+
+<html>
+<head>
+<meta charset="UTF-8">
+<title>华尔街日报爬虫-1</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+<link rel="stylesheet" href="https://chankuang2008.github.io/kuang-style/css/kuang-style.css" crossorigin="anonymous">
+<style>
+body {font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji","SimHei", "PMingLiU", "Helvetica", "sans-serif";}
+.dataframe {font-size: 13px;}
+.dataframe td:nth-child(1) {width: 10%;}
+.dataframe td:nth-child(2) {width: 10%;}
+.dataframe td:nth-child(3) {width: 30%;}
+.dataframe td:nth-child(4) {width: 40%;}
+.dataframe td:nth-child(5) {width: 10%;}
+</style>
+<script>
+$(document).ready(function() {
+  var th1 = $(".dataframe tr th:nth-child(1)");
+  th1.addClass("d-none").addClass("d-md-table-cell");
+  
+  var td1 = $(".dataframe tr td:nth-child(1)");
+  td1.addClass("d-none").addClass("d-md-table-cell");
+  
+  var th5 = $(".dataframe tr th:nth-child(5)");
+  th5.addClass("d-none").addClass("d-md-table-cell");
+  
+  var td5 = $(".dataframe tr td:nth-child(5)");
+  td5.addClass("d-none").addClass("d-md-table-cell");
+});
+</script>
+</head>
+<body>
+
+<div class="container">
+<div class="row">
+<div class="col-12 col-sm-12">
+<div class="body-container">
+<table border="0" class="dataframe table table-sm table-striped">
+  <thead>
+    <tr style="text-align: right;">
+      <th>时间</th>
+      <th>分类</th>
+      <th>标题</th>
+      <th>副标题</th>
+      <th>图片</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>2020-12-01 12:00:00</td>
+      <td>Tech</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/amazon-makes-mac-commitment-opening-door-to-apple-developers-11606798804?mod=business_lead_pos11">Amazon Makes Mac Commitment, Opening Door to Apple Developers</a></td>
+      <td>Amazon’s cloud-computing arm is installing Macs, allowing software for Apple devices to be created and tested remotely</td>
+      <td><img src="../2020-12/img/im-266354.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-30 20:37:00</td>
+      <td>Politics</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/trump-coronavirus-adviser-scott-atlas-who-called-for-ending-lockdowns-resigns-11606786620?mod=politics_lead_pos5">Trump Coronavirus Adviser Scott Atlas, Who Called for Ending Lockdowns, Resigns</a></td>
+      <td>Atlas joined the White House team in August as Trump sparred with other health advisers</td>
+      <td><img src="../2020-11/img/im-266346.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-30 19:38:00</td>
+      <td>Markets</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/zoom-fatigue-sets-in-early-11606783128?mod=business_minor_pos10">Zoom Fatigue Sets In Early</a></td>
+      <td>Another blowout earnings report and forecast can’t keep up pandemic’s hottest stock</td>
+      <td><img src="../2020-11/img/im-266344.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-30 19:01:00</td>
+      <td>Markets</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/tesla-to-enter-s-p-500-at-full-weight-in-december-11606780897?mod=business_lead_pos4">Tesla to Enter S&P 500 at Full Weight in December</a></td>
+      <td>Weaving Tesla into the S&P 500 means shifting weightings of many other stocks to include the electric-vehicle maker</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-30 18:54:00</td>
+      <td>Politics</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/bidens-economic-team-draws-on-deep-experience-with-focus-on-jobs-wages-inequality-11606778884?mod=politics_lead_pos2">Biden’s Economic Team Draws on Deep Experience With Focus on Jobs, Wages, Inequality</a></td>
+      <td>Many are from ranks of Obama and Clinton Administrations, Biden’s presidential campaign</td>
+      <td><img src="../2020-11/img/im-266287.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-30 18:43:00</td>
+      <td>U.S.</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/former-zappos-ceo-tony-hsiehs-death-is-ruled-accident-by-medical-examiner-11606779833?mod=business_lead_pos7">Former Zappos CEO Tony Hsieh’s Death Is Ruled Accident by Medical Examiner</a></td>
+      <td>Tech entrepreneur died from complications of smoke inhalation, office says</td>
+      <td><img src="../2020-11/img/im-266322.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-30 18:18:00</td>
+      <td>Opinion</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/return-of-the-obama-economists-11606778301?mod=opinion_lead_pos1">Return of the Obama Economists</a></td>
+      <td>Biden’s policy advisers were in charge during the secular stagnation years.</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-30 18:16:00</td>
+      <td>Opinion</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/trumps-fair-banking-rule-11606778173?mod=opinion_lead_pos3">Trump’s Fair Banking Rule</a></td>
+      <td>Pushing back against the left’s red-lining of unpopular industries.</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-30 18:15:00</td>
+      <td>Opinion</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/de-blasio-gets-schooled-on-reopening-11606778117?mod=opinion_lead_pos4">De Blasio Gets Schooled on Reopening</a></td>
+      <td>He reopens some schools as public pressure beats the teachers union.</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-30 18:14:00</td>
+      <td>CIO Journal</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/northwestern-mutual-targets-resources-to-black-tech-founders-11606778053?mod=business_minor_pos10">Northwestern Mutual Targets Resources to Black Tech Founders</a></td>
+      <td>Insurer launched accelerator and $20 million pool exclusively for Black entrepreneurs</td>
+      <td><img src="../2020-11/img/im-266299.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-30 18:13:00</td>
+      <td>Opinion</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/chinas-wolf-warriors-try-wine-coercion-11606777975?mod=opinion_lead_pos2">China’s Wolf Warriors Try Wine Coercion</a></td>
+      <td>New tariffs against Australia send a menacing message.</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-30 18:01:00</td>
+      <td>Life & Arts</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/baltimore-ravens-outbreak-forces-third-postponement-11606777298">Baltimore Ravens’ Outbreak Forces Third Postponement</a></td>
+      <td>The Ravens were supposed to play the Pittsburgh Steelers on Thanksgiving but the game is now scheduled for Wednesday in a disruption that lays bare the turbulence the NFL will face</td>
+      <td><img src="../2020-11/img/im-266255.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-30 17:47:00</td>
+      <td>Opinion</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/trumps-march-to-atlanta-11606776426?mod=opinion_lead_pos8">Trump’s March to Atlanta</a></td>
+      <td>No one has a bigger stake in keeping the Senate Republican than the president.</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-30 17:45:00</td>
+      <td>Opinion</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/germany-wont-take-portugals-eu-split-11606776321?mod=opinion_lead_pos10">Germany Won’t Take Portugal’s EU Split</a></td>
+      <td>Prime Minister Costa veils his plan with pretty words about European values.</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-30 17:45:00</td>
+      <td>Business</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/exxon-slashes-spending-writes-down-assets-11606774099?mod=markets_minor_pos4">Exxon Slashes Spending, Writes Down Assets</a></td>
+      <td>Battered by three straight quarterly losses, oil giant pulls back from CEO Darren Woods’s aggressive plan to increase production by 2025</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-30 17:44:00</td>
+      <td>Opinion</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/bidens-blind-spot-11606775954?mod=opinion_lead_pos11">Biden’s Blind Spot</a></td>
+      <td>His economic advisers share a belief in the power of federal regulation and spending.</td>
+      <td><img src="../2020-11/img/im-266172.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-30 17:44:00</td>
+      <td>Opinion</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/ancient-history-isnt-colonialism-11606776241?mod=opinion_lead_pos7">Ancient History Isn’t Colonialism</a></td>
+      <td>Students at Brown nonsensically accuse Roman emperors of ‘white supremacy.’</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-30 17:43:00</td>
+      <td>Books</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/south-to-freedom-review-mexico-libre-11606776185?mod=opinion_reviews_pos1">‘South to Freedom’ Review: México Libre</a></td>
+      <td>The little-told story of runaway slaves in Mexico, and of relations between the U.S. and its southern neighbor in the antebellum period.</td>
+      <td><img src="../2020-11/img/im-266256.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-30 17:41:00</td>
+      <td>Opinion</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/how-biden-can-break-the-senate-stonewall-11606776086?mod=opinion_lead_pos5">How Biden Can Break the Senate Stonewall</a></td>
+      <td>Start with issues that cross party lines. For some ideas, look to November’s state ballot measures.</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-30 17:40:00</td>
+      <td>Markets</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/s-p-upgrades-itself-to-data-juggernaut-with-ihs-markit-deal-11606776035?mod=markets_lead_pos3">S&P Upgrades Itself to Data Juggernaut With IHS Markit Deal</a></td>
+      <td>Merger gives S&P boost in indexing, commodities and fixed-income data</td>
+      <td><img src="../2020-11/img/im-266167.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-30 17:38:00</td>
+      <td>Opinion</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/notable-quotable-schools-out-11606775916?mod=opinion_major_pos4">Notable & Quotable: School’s Out</a></td>
+      <td>‘How to help kids understand why school inexplicably opens and closes.’</td>
+      <td><img src="../2020-11/img/im-266238.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-30 17:21:00</td>
+      <td>Markets</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/the-market-expects-that-everything-will-be-awesome-11606774869?mod=markets_lead_pos2">The Market Expects That Everything Will Be Awesome</a></td>
+      <td>Optimism is high, but investing also involves comparing the future with what’s priced in</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-30 17:19:00</td>
+      <td>Opinion</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/biden-brings-traditional-values-to-diplomacy-11606774757?mod=opinion_major_pos16">Biden Brings Traditional Values to Diplomacy</a></td>
+      <td>America heads back to the future with a Biden-Harris reboot of Obama-Biden international agreements and alliances.</td>
+      <td><img src="../2020-11/img/im-263882.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-30 17:17:00</td>
+      <td>Opinion</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/remediating-student-debts-failing-grades-11606774629?mod=opinion_major_pos17">Remediating Student Debt’s Failing Grades</a></td>
+      <td>The expected taxpayer losses on student-loan debt highlight the disastrous consequence of shielding the higher-education industry from the loan losses incurred for its services.</td>
+      <td><img src="../2020-11/img/im-262337.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-30 17:15:00</td>
+      <td>Opinion</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/assassinations-and-irans-nuclear-program-11606774551?mod=opinion_major_pos18">Assassinations and Iran’s Nuclear Program</a></td>
+      <td>The assassination of an official of a U.N. member state in its territory is a dangerous game.</td>
+      <td><img src="../2020-11/img/im-265038.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-30 16:58:00</td>
+      <td>Music Review</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/plastic-hearts-by-miley-cyrus-review-back-to-the-future-11606773498?mod=opinion_major_pos13">‘Plastic Hearts’ by Miley Cyrus Review: Back to the Future</a></td>
+      <td>The star’s new album mines the sounds of the ’80s and tracks by artists like Billy Idol to craft a contemporary pop course in music history.</td>
+      <td><img src="../2020-11/img/im-266057.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-30 16:56:00</td>
+      <td>CFO Journal</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/bombardier-hires-new-cfo-as-it-works-to-transform-its-business-11606773398?mod=business_minor_pos4">Bombardier Hires New CFO as It Works to Transform Its Business</a></td>
+      <td>The Canadian plane and train maker is shedding assets and shrinking its operations</td>
+      <td><img src="../2020-11/img/im-266079.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-30 16:54:00</td>
+      <td>World</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/cuban-leadership-confronts-a-rare-dissident-movement-11606767900">Cuban Leadership Confronts a Rare Dissident Movement</a></td>
+      <td>Musicians, writers, painters and Black activists peacefully challenge Communist government’s grip on expression</td>
+      <td><img src="../2020-11/img/im-266146.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-30 16:48:00</td>
+      <td>Tech</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/zooms-pandemic-fueled-boom-continues-11606772231?mod=tech_lead_pos6">Zoom’s Pandemic-Fueled Boom Continues</a></td>
+      <td>Videoconferencing company lifted its outlook for a third time as it reported record sales</td>
+      <td><img src="../2020-11/img/im-265201.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-30 16:44:00</td>
+      <td>Economy</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/federal-reserve-extends-four-emergency-lending-programs-through-march-11606746423?mod=business_minor_pos4">Powell Says Fed Actions Unlocked $2 Trillion to Support Economy</a></td>
+      <td>Fed chief, Treasury secretary are set to testify Tuesday at congressional hearing</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-30 16:40:00</td>
+      <td>Markets</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/lloyds-bank-names-hsbcs-nunn-as-ceo-11606721977?mod=markets_major_pos11">Lloyds Bank Names HSBC’s Nunn as CEO</a></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-30 16:35:00</td>
+      <td>Economy</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/biden-economics-teams-views-in-their-own-words-11606772108?mod=politics_lead_pos3">Biden Economics Team’s Views, in Their Own Words</a></td>
+      <td>President-elect’s picks for top economic-policy jobs have focused on inequality, education and climate</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-30 16:35:00</td>
+      <td>Markets</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/opec-defers-decision-on-extending-output-curbs-11606752881?mod=business_minor_pos13">OPEC Defers Decision on Extending Output Curbs</a></td>
+      <td>Cartel to meet Thursday with Russia and its other oil producers to agree on a plan</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-30 16:33:00</td>
+      <td>Politics</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/omb-pick-neera-tanden-draws-gop-fire-11606771977?mod=politics_lead_pos1">OMB Pick Neera Tanden Draws GOP Fire</a></td>
+      <td>Head of the Center for American Progress has been a regular critic of Republicans on Twitter</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-30 16:20:00</td>
+      <td>Politics</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/mixed-views-at-supreme-court-on-breadth-of-federal-law-on-computer-fraud-11606771221?mod=business_minor_pos5">Supreme Court Weighs Breadth of Computer Hacking Law</a></td>
+      <td>Officer allegedly used law-enforcement database for personal purposes in a case that has drawn widespread attention</td>
+      <td><img src="../2020-11/img/im-265650.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-30 16:17:00</td>
+      <td>Politics</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/labor-department-published-flawed-estimates-of-weekly-jobless-claims-watchdog-says-11606752477?mod=politics_lead_pos4">Labor Department Published Flawed Estimates of Weekly Jobless Claims, Watchdog Says</a></td>
+      <td>Government Accountability Office also says jobless-benefits program underpaid millions amid the pandemic</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-30 16:17:00</td>
+      <td>Risk & Compliance Journal</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/sbm-offshore-faces-swiss-probe-over-legacy-bribery-allegations-11606771058?mod=business_minor_pos6">SBM Offshore Faces Swiss Probe Over Legacy Bribery Allegations</a></td>
+      <td>Notice by Swiss prosecutors comes as Dutch oil-services company completes three-year agreement with U.S. Justice Department</td>
+      <td><img src="../2020-11/img/im-266184.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-30 15:57:00</td>
+      <td>World</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/iran-nuclear-scientist-was-killed-with-new-method-tehran-says-11606764574?mod=politics_lead_pos12">Iran Nuclear Scientist Was Killed With ‘New Method,’ Tehran Says</a></td>
+      <td>Security official blames Israel, which he said had sought to kill Mohsen Fakhrizadeh for 20 years</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-30 15:48:00</td>
+      <td>World</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/u-s-blacklists-chinese-government-firm-accused-of-supporting-maduro-regime-11606750515?mod=politics_lead_pos13">U.S. Blacklists Chinese Defense Firm for Sales to Venezuela</a></td>
+      <td>Trump administration says China National Electronics Import & Export Corp. sold goods that aided repression by Maduro regime</td>
+      <td><img src="../2020-11/img/im-265948.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-30 15:41:00</td>
+      <td>Politics</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/arizona-certifies-narrow-victory-for-biden-11606768397?mod=politics_lead_pos2">Arizona Certifies Narrow Victory for Biden</a></td>
+      <td>Wisconsin also expected to finalize results, cementing president-elect’s wins in battleground states that decided the race</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-30 15:37:00</td>
+      <td>Markets</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/unicredit-ceo-jean-pierre-mustier-to-leave-bank-in-april-11606767508?mod=markets_featst_pos1">UniCredit CEO Jean Pierre Mustier to Leave Bank in April</a></td>
+      <td>Mustier’s decision to depart at the end of his mandate follows disagreements with the board over the lender’s strategy</td>
+      <td><img src="../2020-11/img/im-266217.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-30 15:32:00</td>
+      <td>Politics</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/navy-will-decommission-ship-damaged-in-five-day-blaze-11606768369?mod=politics_lead_pos10">Navy Will Decommission Ship Damaged in Five-Day Blaze</a></td>
+      <td>USS Bonhomme Richard, outfitted to carry and launch F-35 fighter jets, will be scrapped, Navy says</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-30 15:22:00</td>
+      <td>Politics</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/trump-expected-to-name-new-indo-pacific-command-head-11606753476?mod=politics_lead_pos7">Trump Expected to Name New Indo-Pacific Command Head</a></td>
+      <td>Shift in military’s Asia command tracks schedule for an expected change in leadership</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-30 15:14:00</td>
+      <td>Politics</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/fcc-chairman-ajit-pai-intends-to-leave-agency-11606751893?mod=politics_lead_pos5">FCC Chairman Pai to Step Down, Giving Biden Clearer Path to Reshape Agenda</a></td>
+      <td>January departure allows new administration to choose next head of telecommunications regulator</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-30 15:03:00</td>
+      <td>World</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/china-complains-of-u-s-harassment-of-chinese-airline-and-ship-crews-11606748497">China Complains of U.S. Harassment of Chinese Airline and Ship Crews</a></td>
+      <td>Beijing says it lodged complaints about questioning of arriving workers about Communist Party membership</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-30 14:40:00</td>
+      <td>Pro Bankruptcy</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/npcs-canceled-auctions-pave-way-for-sale-of-wendys-pizza-hut-chains-to-flynn-11606765228?mod=business_featst_pos1">NPC’s Canceled Auctions Pave Way for Sale Of Wendy’s, Pizza Hut Chains to Flynn</a></td>
+      <td>Wendy’s is in talks to drop its opposition to a sale to Flynn, the largest restaurant franchisee in the U.S.</td>
+      <td><img src="../2020-11/img/im-266090.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-30 14:22:00</td>
+      <td>Markets</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/nikola-teaches-gm-a-lesson-11606760549?mod=business_minor_pos10">Nikola Teaches GM a Lesson</a></td>
+      <td>Tesla’s disruption story may be the exception rather than the rule in the auto industry’s shift to electric vehicles</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-30 14:15:00</td>
+      <td>Music Review</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/dimensional-stardust-by-rob-mazurek-review-futuristic-big-band-sounds-11606763721?mod=opinion_major_pos14">‘Dimensional Stardust’ by Rob Mazurek Review: Futuristic Big-Band Sounds</a></td>
+      <td>The cornetist and composer leads his Exploding Star Orchestra on an album that deftly incorporates electronics into its rich, contrapuntal arrangements.</td>
+      <td><img src="../2020-11/img/im-266082.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-30 14:15:00</td>
+      <td>Markets</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/doordash-sets-ipo-terms-pushing-valuation-above-25-billion-11606747049?mod=tech_lead_pos4">DoorDash Sets IPO Terms Pushing Valuation as High as $32 Billion</a></td>
+      <td>San Francisco food-delivery company to sell 33 million shares at $75 to $85 each</td>
+      <td><img src="../2020-11/img/im-265902.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-30 14:05:00</td>
+      <td>Politics</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/georgia-secretary-of-state-denies-widespread-voting-fraud-allegations-11606762144?mod=politics_featst_pos1">Georgia Secretary of State Investigates Voting Groups But Denies Widespread Fraud</a></td>
+      <td>Raffensperger says machine recount on track to be completed Wednesday</td>
+      <td><img src="../2020-11/img/im-266053.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-30 13:43:00</td>
+      <td>Politics</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/governments-lawyer-urges-justices-to-delay-ruling-on-census-plan-11606761782?mod=politics_featst_pos2">Government’s Lawyer Urges Justices to Delay Ruling on Census Plan</a></td>
+      <td>President Trump is seeking to exclude illegal immigrants from count used to apportion congressional seats</td>
+      <td><img src="../2020-11/img/im-265921.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-30 13:42:00</td>
+      <td>World</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/thailand-uses-controversial-lese-majeste-law-against-pro-democracy-protesters-11606761747">Thailand Uses Controversial Lèse-Majesté Law Against Pro-Democracy Protesters</a></td>
+      <td>At least five activists are accused of defaming the monarchy, an offense punishable with up to 15 years in prison</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-30 13:39:00</td>
+      <td>Life & Arts</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/for-covid-long-haulers-a-little-known-diagnosis-offers-possible-treatmentsand-new-challenges-11606761541">For Covid Long-Haulers, a Little-Known Diagnosis Offers Possible Treatments—and New Challenges</a></td>
+      <td>A disorder called POTS offers some treatment paths, but they are often arduous.</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-30 13:36:00</td>
+      <td>Markets</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/bitcoin-hits-all-time-high-of-19-786-topping-record-from-december-2017-11606750573?mod=markets_lead_pos3">Bitcoin Price Hits All-Time High Above $19,000, Topping 2017 Record</a></td>
+      <td>Digital currency’s rise is driven by wave of new investors seeking big gains</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-30 12:53:00</td>
+      <td>Tech</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/facebook-nears-purchase-of-startup-in-deal-that-values-it-at-1-billion-11606750196?mod=business_lead_pos3">Facebook to Buy Kustomer, Startup Valued at $1 Billion</a></td>
+      <td>Target company, which specializes in customer-service platforms and chatbots, fits Facebook’s move into ‘social commerce’</td>
+      <td><img src="../2020-11/img/im-265924.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-30 12:47:00</td>
+      <td>Markets</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/a-fine-payoff-for-reading-the-ingredients-11606758427?mod=markets_lead_pos13">A Fine Payoff for Reading the Ingredients</a></td>
+      <td>Companies are being hit with class-action lawsuits by people who claim not to have read the packaging</td>
+      <td><img src="../2020-11/img/im-265986.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-30 12:39:00</td>
+      <td>Politics</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/joe-biden-chooses-brian-deese-as-top-economic-adviser-11606751298?mod=politics_featst_pos3">Joe Biden Chooses Brian Deese as Top Economic Adviser</a></td>
+      <td>Former Obama adviser to direct National Economic Council; his post doesn’t require Senate confirmation</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-30 12:07:00</td>
+      <td>Economy</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/u-s-regulators-press-banks-to-transition-from-libor-for-new-transactions-11606745216">U.S. Banks Urged to Stop Using Libor on New Loans by End of 2021</a></td>
+      <td>Regulators support plan to end benchmark in June 2023, allowing most existing transactions to mature</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-30 12:01:00</td>
+      <td>World</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/measures-of-chinese-economic-activity-signal-widening-recovery-11606712489?mod=world_major_2_pos4">Measures of Chinese Economic Activity Signal Widening Recovery</a></td>
+      <td>Manufacturing and nonmanufacturing reach highest levels in three and eight years, respectively</td>
+      <td><img src="../2020-11/img/im-265840.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-30 11:57:00</td>
+      <td>Opinion</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/media-treat-trumps-team-like-dogs-bidens-like-puppies-11606755432?mod=opinion_lead_pos8">Media Treat Trump’s Team Like Dogs, Biden’s Like Puppies</a></td>
+      <td>The largely celebratory coverage unwittingly emphasizes the triumph of the press’s own class.</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-30 11:56:00</td>
+      <td>Opinion</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/fake-claims-about-dominion-voting-systems-do-real-damage-11606755399?mod=opinion_lead_pos5">Fake Claims About Dominion Voting Systems Do Real Damage</a></td>
+      <td>Our machines have no secret ‘vote flipping’ algorithm. We have no ties to dictator Hugo Chávez.</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-30 11:23:00</td>
+      <td>Life & Arts</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/how-harry-styles-became-2020s-biggest-style-icon-11606753389">How Harry Styles Became 2020’s Biggest Style Icon</a></td>
+      <td>A recent Vogue photoshoot showing the singer in a full-length frock nearly broke the internet—underscoring the almost unprecedented influence he has over young men’s fashion decisions</td>
+      <td><img src="../2020-11/img/im-265966.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-30 11:09:00</td>
+      <td>Life & Arts</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/meet-the-mets-the-most-interesting-team-in-baseball-11606752603">Meet the Mets: The Most Interesting Team in Baseball</a></td>
+      <td>While baseball retrenches in the wake of the pandemic, new Mets owner Steve Cohen appears ready to act aggressively</td>
+      <td><img src="../2020-11/img/im-265943.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-30 10:32:00</td>
+      <td>Politics</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/heres-where-biden-will-face-early-foreign-policy-decisions-11606750321">Here’s Where Biden Will Face Early Foreign-Policy Decisions</a></td>
+      <td>President-elect must weigh whether to undo some of Trump’s executive actions—on Iran, Afghanistan and climate change, among others</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-30 09:14:00</td>
+      <td>Life & Arts</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/broncos-coronavirus-quarterbacks-will-ravens-steelers-game-happen-11606745183">Hi, It’s the Denver Broncos. Can You Play Quarterback Tomorrow?</a></td>
+      <td>A coronavirus scramble thrusts an unknown into a starring role after a team loses four QBs. Now what happens with the Ravens and the Steelers game?</td>
+      <td><img src="../2020-11/img/im-265890.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-30 09:08:00</td>
+      <td>Markets</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/ihs-markit-s-p-global-moderna-what-to-watch-when-the-stock-market-opens-today-11606738683?mod=markets_major_pos12">Nikola, IHS Markit, Moderna: What to Watch When the Stock Market Opens Today</a></td>
+      <td>U.S. stock futures are down Monday, but the Dow is set to round out its best month since 1987</td>
+      <td><img src="../2020-11/img/im-265780.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-30 08:55:00</td>
+      <td>National Security</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/lebanons-central-bank-fuels-corruption-extremism-concerns-11606744393?mod=markets_lead_pos10">Lebanon’s Central Bank Fuels Corruption, Extremism Concerns</a></td>
+      <td>U.S. and allies seek a forensic audit to check for money laundering, corruption and ties to Hezbollah</td>
+      <td><img src="../2020-11/img/im-265867.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-30 08:38:00</td>
+      <td>Business</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/gm-nikola-agree-to-scaled-down-supply-agreement-11606742652?mod=tech_lead_pos1">GM, Nikola Agree to Scaled-Down Supply Agreement</a></td>
+      <td>Auto maker will no longer take equity stake in electric-truck startup, as previously planned</td>
+      <td><img src="../2020-11/img/im-265886.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-30 08:16:00</td>
+      <td>Politics</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/facebook-google-to-face-new-antitrust-suits-in-u-s-11606742163?mod=tech_lead_pos2">Facebook, Google to Face New Antitrust Suits in U.S.</a></td>
+      <td>Federal and state authorities, probing whether the tech giants abused their power in the internet economy, are preparing as many as four cases</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-30 08:15:00</td>
+      <td>World</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/in-europes-nursing-homes-a-soaring-covid-19-death-toll-and-the-pain-of-isolation-11606742116?mod=world_major_1_pos4">In Europe’s Nursing Homes, a Soaring Covid-19 Death Toll and the Pain of Isolation</a></td>
+      <td>Many facilities on the continent resist isolating residents, saying prolonged solitude is also harmful</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-30 08:13:00</td>
+      <td>Life & Arts</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/what-are-the-health-risks-of-disinfectants-11606742010">What Are the Health Risks of Disinfectants?</a></td>
+      <td>Disinfecting cleaners used against Covid-19 generally are safe, doctors and medical researchers say, but here’s what you need to know about potential health hazards.</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-30 08:05:00</td>
+      <td>Markets</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/global-stock-markets-dow-update-11-30-2020-11606732360?mod=markets_lead_pos2">Dow on Track to Finish Best Month in Over Three Decades</a></td>
+      <td>Stocks have soared in November, briefly pushing the blue-chips index over 30000 for the first time in its history</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-30 07:51:00</td>
+      <td>Business</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/the-rise-and-falland-rise-againof-chinese-ev-startup-nio-11606732206?mod=tech_lead_pos3">How NIO, a Chinese EV Startup, Rose, Fell and Rose Again</a></td>
+      <td>After nearing bankruptcy, NIO has recently surged to become the world’s fourth most valuable auto maker, surpassing GM and Daimler</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-30 07:19:00</td>
+      <td>World</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/chinese-wolf-warrior-diplomat-enrages-australia-with-twitter-post-11606731906">Chinese ‘Wolf Warrior’ Diplomat Enrages Australia With Twitter Post</a></td>
+      <td>Australian prime minister demands apology for official’s use of a photo, which Australia says is doctored, showing an Australian soldier apparently threatening an Afghan child</td>
+      <td><img src="../2020-11/img/im-265853.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-30 07:05:00</td>
+      <td>Markets</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/emissions-clampdown-sends-rhodium-prices-on-explosive-rally-11606737904?mod=markets_lead_pos7">Emissions Clampdown Sends Rhodium Prices on Explosive Rally</a></td>
+      <td>Already the most expensive precious metal and one of the rarest elements on Earth, rhodium prices have more than doubled in 2020</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-30 07:00:00</td>
+      <td>Markets</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/extended-stay-america-is-a-pandemic-sleeper-hit-11606737600?mod=markets_lead_pos11">Extended Stay America Is a Pandemic Sleeper Hit</a></td>
+      <td>The lodging chain has outperformed peers and should continue to do well despite a subdued holiday season</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-30 07:00:00</td>
+      <td>Business</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/moderna-to-ask-health-regulators-to-authorize-its-covid-19-vaccine-11606737602?mod=business_lead_pos3">Moderna to Ask Health Regulators to Authorize Its Covid-19 Vaccine</a></td>
+      <td>Timing could make shot the second for U.S. use by year-end, alongside Pfizer and BioNTech’s vaccine</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-30 06:02:00</td>
+      <td>Moneybeat Blog</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/wsj-wealth-adviser-briefing-investors-seek-new-election-data-grads-look-for-work-home-office-gifts-01606734135?mod=markets_major_pos7">WSJ Wealth Adviser Briefing: Investors Seek New Election Data, Grads Look for Work, Home Office Gifts</a></td>
+      <td>Curated news and analysis for wealth advisers and their clients from WSJ reporters and columnists</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-30 05:51:00</td>
+      <td>World</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/tokyo-stock-exchanges-ceo-resigns-over-daylong-shutdown-11606733476?mod=markets_lead_pos3">Tokyo Stock Exchange’s CEO Resigns Over Daylong Shutdown</a></td>
+      <td>Regulator says TSE’s ‘never stop’ slogan left it unprepared to restart when glitches happened</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-30 05:47:00</td>
+      <td>Markets</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/chinas-sour-grapes-spell-trouble-for-australian-wine-11606733275?mod=markets_lead_pos13">China’s Sour Grapes Spell Trouble for Australian Wine</a></td>
+      <td>Australian wine is the latest commodity in Beijing’s crosshairs, leaving companies like Treasury Wines with few palatable options</td>
+      <td><img src="../2020-11/img/im-265856.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-30 05:30:00</td>
+      <td></td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/companies-urged-to-adjust-hiring-requirements-for-cyber-jobs-11606732200?mod=tech_lead_pos7">Companies Urged to Adjust Hiring Requirements for Cyber Jobs</a></td>
+      <td>Researchers say cyber talent is available but often not considered</td>
+      <td><img src="../2020-11/img/im-264943.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-30 05:30:00</td>
+      <td>CFO Journal</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/weight-loss-firm-noom-names-first-cfo-11606732201?mod=business_featst_pos3">Weight-Loss Firm Noom Names First CFO</a></td>
+      <td>Michael Noonan joined the company earlier this month from Booking Holdings</td>
+      <td><img src="../2020-11/img/im-264711.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-30 05:30:00</td>
+      <td>Markets</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/the-world-is-bingeing-on-debtand-smashing-records-11606732203?mod=markets_lead_pos6">The World’s Appetite for Debt is Smashing Records</a></td>
+      <td>Companies and governments have issued $9.7 trillion of debt this year</td>
+      <td><img src="../2020-11/img/im-265696.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-30 05:30:00</td>
+      <td>Business</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/the-oil-patch-took-a-heavy-hit-from-the-pandemic-11606732200?mod=business_lead_pos5">Troubles in the Oil Patch: Low Prices to Lost Jobs</a></td>
+      <td>Despite a recent oil rally, energy companies are riding out a historic downturn. Collectively, they have lost more market value, on a percentage basis, than any other major sector this year.</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-30 05:30:00</td>
+      <td>Markets</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/the-stock-markets-rally-is-finally-widening-11606732202?mod=markets_lead_pos5">The Stock Market’s Rally Is Finally Widening</a></td>
+      <td>More companies in the S&P 500 are rising as technology stocks share the stage</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-30 05:27:00</td>
+      <td>Finance</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/credit-suisse-spied-on-more-employees-than-previously-disclosed-11606731591?mod=markets_lead_pos4">Credit Suisse Spied on More Employees Than Previously Disclosed</a></td>
+      <td>As Swiss bank moves to recover from spying scandal, two prior instances of physical surveillance emerge</td>
+      <td><img src="../2020-11/img/im-265877.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-30 04:53:00</td>
+      <td>Markets</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/driver-data-is-a-help-and-a-hazard-for-auto-insurers-11606729983?mod=tech_lead_pos11">Driver Data Is a Help and a Hazard for Auto Insurers</a></td>
+      <td>Auto insurers will need to partner with digitally savvy startups as the explosive growth of vehicle data empowers new competitors</td>
+      <td><img src="../2020-11/img/im-265433.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-30 03:47:00</td>
+      <td>Markets</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/hong-kongs-bankless-leader-reveals-the-long-arm-of-the-u-s-treasury-11606725876?mod=markets_major_pos1">Hong Kong’s Bankless Leader Reveals the Long Arm of the U.S. Treasury</a></td>
+      <td>International lenders fear secondary sanctions; here’s why</td>
+      <td><img src="../2020-11/img/im-265848.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-29 22:38:00</td>
+      <td>Deals</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/s-p-global-in-advanced-talks-to-buy-ihs-markit-for-about-44-billion-11606697244?mod=markets_lead_pos1">S&P Global Nears Deal to Buy IHS Markit for About $44 Billion</a></td>
+      <td>Landmark deal would combine two of the largest providers of data to Wall Street</td>
+      <td><img src="../2020-11/img/im-265780.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-29 21:59:00</td>
+      <td>Politics</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/biden-to-name-rouse-tanden-to-economic-team-11606684256?mod=politics_lead_pos1">Joe Biden Fills Out His Economic Team</a></td>
+      <td>President-elect’s picks include Neera Tanden to head the Office of Management and Budget and Cecilia Rouse to chair the Council of Economic Advisers</td>
+      <td><img src="../2020-11/img/im-265742.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-29 20:28:00</td>
+      <td>Politics</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/biden-injures-ankle-over-thanksgiving-weekend-11606699070?mod=politics_lead_pos3">Biden Injures Ankle Over Thanksgiving Weekend</a></td>
+      <td>Hairline fractures will require the president-elect to wear a walking boot for several weeks</td>
+      <td><img src="../2020-11/img/im-265800.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-29 20:00:00</td>
+      <td>Life & Arts</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/your-home-office-ergonomics-are-still-a-messdo-something-about-it-11606698000">Your Home-Office Ergonomics Are Still a Mess—Do Something About It</a></td>
+      <td>With the pandemic not slowing down and many workplaces shut down for winter, your long-term health may depend on getting your desk set up well</td>
+      <td><img src="../2020-11/img/im-264836.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-29 19:08:00</td>
+      <td>Markets</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/investors-pile-into-risky-etfs-during-wild-market-rally-11606665600?mod=markets_lead_pos2">Investors Pile Into Risky ETFs During Wild Market Rally</a></td>
+      <td>A hunt for bigger returns has led investors to plow money into funds offering a chance to double or triple daily returns but at sizable risk</td>
+      <td><img src="../2020-11/img/im-265430.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-29 18:48:00</td>
+      <td>Business</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/airbnb-doordash-aim-for-higher-than-expected-valuations-ahead-of-debuts-11606689243?mod=business_lead_pos1">Airbnb, DoorDash Aim for Higher-Than-Expected Valuations Ahead of Debuts</a></td>
+      <td>Airbnb plans to target a range of around $30 billion to $33 billion, while DoorDash will seek a valuation of around $25 billion to $28 billion</td>
+      <td><img src="../2020-11/img/im-265732.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-29 18:37:00</td>
+      <td>Business</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/thanksgiving-draws-travel-to-a-pandemic-peak-11606691175?mod=business_lead_pos4">Thanksgiving Draws Travel to a Pandemic Peak</a></td>
+      <td>Airport screenings were elevated this weekend, and some chose to drive rather than fly</td>
+      <td><img src="../2020-11/img/im-265727.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-29 17:37:00</td>
+      <td>World</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/irans-nuclear-efforts-pose-growing-threat-to-its-foes-despite-setbacks-11606673767">Iran’s Nuclear Efforts Pose Growing Threat to Its Foes Despite Setbacks</a></td>
+      <td>Friday’s killing sets back country’s nuclear program, but U.S. and its allies still face major challenges in trying to constrain Tehran’s nuclear ambitions</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-29 17:25:00</td>
+      <td>World</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/former-zappos-chief-exalted-customer-service-and-set-high-bar-for-rivals-11606687557?mod=business_lead_pos6">Former Zappos Chief Tony Hsieh Exalted Customer Service, Set High Bar for Rivals</a></td>
+      <td>Entrepreneur nurtured online shoe seller, was bestselling author and management guru</td>
+      <td><img src="../2020-11/img/im-265735.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-29 17:16:00</td>
+      <td>Politics</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/trump-calls-justice-fbi-missing-in-action-on-election-allegations-11606680518?mod=business_minor_pos4">Trump Calls Justice, FBI ‘Missing in Action’ on Election Allegations</a></td>
+      <td>Federal officials and state election authorities agree they have seen no evidence of tampering with voting systems</td>
+      <td><img src="../2020-11/img/im-265730.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-29 17:10:00</td>
+      <td>Opinion</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/canceling-student-debt-would-be-a-brahmin-bailout-11606687827?mod=opinion_lead_pos7">Canceling Student Debt Would Be a ‘Brahmin Bailout’</a></td>
+      <td>The Democratic Party looks to build policy around the interests of its educated elite voters.</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-29 17:08:00</td>
+      <td>Opinion</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/deploying-big-data-to-determine-how-well-vaccines-work-11606687711?mod=opinion_lead_pos10">Deploying Big Data to Determine How Well Vaccines Work</a></td>
+      <td>As the initial rollout starts, it’s time to start planning a registry to monitor health outcomes.</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-29 17:06:00</td>
+      <td>Opinion</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/notable-quotable-trump-11606687613?mod=opinion_major_pos4">Notable & Quotable: Trump</a></td>
+      <td>‘The problem for Trump’s reelection was not that his response was too anti-lockdown and loosey-goosey. On the contrary.’</td>
+      <td><img src="../2020-11/img/im-265726.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-29 16:18:00</td>
+      <td>Opinion</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/venezuelas-guide-to-election-theft-11606684680?mod=opinion_lead_pos9">Venezuela’s Guide to Election Theft</a></td>
+      <td>Americans have a legal path when a vote is disputed. Chávez denied all recourse.</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-29 16:16:00</td>
+      <td>Opinion</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/how-to-stop-the-paris-climate-accord-11606684590?mod=opinion_lead_pos6">How to Stop the Paris Climate Accord</a></td>
+      <td>Trump should submit it for the Senate to ratify, or rather reject.</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-29 15:54:00</td>
+      <td>Business</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/black-friday-was-a-bust-for-many-stores-better-for-online-11606676355">Black Friday Was a Bust for Many Stores, Better for Online</a></td>
+      <td>Foot traffic plunges by half amid coronavirus pandemic while online sales jump; consumers turn to Amazon and big-box chains that offer one-stop shopping</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-29 15:14:00</td>
+      <td>World</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/ethiopias-tigray-group-once-powerful-now-battles-government-forces-in-bid-for-survival-11606677423">Ethiopia’s Tigray Group, Once Powerful, Now Battles Government Forces in Bid for Survival</a></td>
+      <td>Deepening conflict has led to hundreds of civilian deaths and displaced tens of thousands as some analysts fear the country could slide into civil war</td>
+      <td><img src="../2020-11/img/im-265716.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-29 15:04:00</td>
+      <td>World</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/white-house-aide-kushner-to-hold-talks-in-saudi-arabia-qatar-11606680001?mod=world_major_1_pos7">White House Aide Kushner to Hold Talks in Saudi Arabia, Qatar</a></td>
+      <td>Focus of talks expected to be on mending rift between Qatar and other Arab states, officials say</td>
+      <td><img src="../2020-11/img/im-265728.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-29 15:00:00</td>
+      <td>Life & Arts</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/how-transit-agencies-are-trying-to-make-your-commute-safe-11606680000">How Transit Agencies Are Trying to Make Your Commute Safe</a></td>
+      <td>Masks, social distancing and public-private partnerships can help mass transportation systems weather the impact of the Covid pandemic</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-29 15:00:00</td>
+      <td>Economy</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/economy-week-ahead-november-jobs-report-trade-manufacturing-11606680000">Economy Week Ahead: November Jobs Report, Trade, Manufacturing</a></td>
+      <td>Data out this week is likely to show the U.S. labor market continuing to heal slowly</td>
+      <td><img src="../2020-11/img/im-265544.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-29 14:59:00</td>
+      <td>World</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/french-police-officers-face-assault-charges-in-beating-of-black-music-producer-11606676446">French Police Officers Face Assault Charges in Beating of Black Music Producer</a></td>
+      <td>Prosecutors want three of the accused to stay in jail as probe determines if trial should take place</td>
+      <td><img src="../2020-11/img/im-265724.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-29 14:56:00</td>
+      <td>Books</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/inferno-review-from-hell-raiser-to-hero-11606679764">‘Inferno’ Review: From Hell-Raiser to Hero</a></td>
+      <td>For once in his error-prone life, an airman does everything right—as his bomber is consumed by ﬁre and a crashing landing seems inevitable.</td>
+      <td><img src="../2020-11/img/im-265723.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-29 14:42:00</td>
+      <td>Opinion</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/can-republicans-regroup-on-health-care-11606678968?mod=opinion_lead_pos1">Can Republicans Regroup on Health Care?</a></td>
+      <td>The party needs to address its biggest policy vulnerability.</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-29 14:41:00</td>
+      <td>Opinion</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/team-obamas-iran-illusions-11606678886?mod=opinion_lead_pos2">Team Obama’s Iran Illusions</a></td>
+      <td>Its gurus have learned nothing in their years out of power.</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-29 14:40:00</td>
+      <td>Opinion</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/the-election-lost-in-pennsylvania-court-11606678818?mod=opinion_lead_pos3">The Election Lost in Pennsylvania Court</a></td>
+      <td>She was up by four votes, until the state Supreme Court ruled.</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-29 12:53:00</td>
+      <td>Opinion</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/another-bold-strike-against-iran-11606672416?mod=opinion_lead_pos5">Another Bold Strike Against Iran</a></td>
+      <td>The killing of Mohsen Fakhrizadeh demonstrates Israel’s capabilities and constrains Biden’s options.</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-29 12:52:00</td>
+      <td>Opinion</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/beware-the-dow-30k-euphoria-11606672322?mod=opinion_lead_pos8">Beware the Dow 30K Euphoria</a></td>
+      <td>The market always dives en route to long-term rises. And tech stocks look wobbly.</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-29 12:22:00</td>
+      <td>World</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/indias-farmer-protests-challenge-modis-market-deregulations-11606658282">India’s Farmer Protests Challenge Modi’s Market Deregulations</a></td>
+      <td>Prime minister’s push to overhaul agricultural markets in an effort to boost growth meets resistance</td>
+      <td><img src="../2020-11/img/im-265690.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-29 12:00:00</td>
+      <td>U.S.</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/state-local-governments-slashed-spending-after-covid-next-year-could-be-worse-11606669200?mod=politics_lead_pos2">State, Local Governments Slashed Spending After Covid. Next Year Could Be Worse.</a></td>
+      <td>After drawing on reserves and federal aid, Kansas City leaders cut staff, turn off the city’s fountains and brace for 2021</td>
+      <td><img src="../2020-11/img/im-252149.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-29 10:58:00</td>
+      <td>Opinion</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/schools-out-but-its-not-about-the-children-11606665501?mod=opinion_major_pos16">School’s Out, But It’s Not About the Children</a></td>
+      <td>The decision to close schools in New York is far from a “data-driven, science-driven” decision.</td>
+      <td><img src="../2020-11/img/im-265352.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-29 10:57:00</td>
+      <td>Opinion</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/bad-polling-and-the-accuracy-of-predictions-11606665418?mod=opinion_major_pos17">Bad Polling and the Accuracy of Predictions</a></td>
+      <td>Guesses by political pollsters, the CBO, the World Health Organization or the Intergovernmental Panel on Climate Change deserve the same assumption of scientific accuracy that a forecast for weather a week from now deserves.</td>
+      <td><img src="../2020-11/img/im-263409.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-29 10:55:00</td>
+      <td>Opinion</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/actors-equity-errs-more-eyeballs-build-demand-11606665325?mod=opinion_major_pos18">Actors’ Equity Errs; More Eyeballs Build Demand</a></td>
+      <td>Equity Association is ignoring a fundamental marketing insight that was demonstrated in Chicago by the contrasting views of William Wirtz (Chicago Blackhawks) and P.K. Wrigley (Chicago Cubs).</td>
+      <td><img src="../2020-11/img/im-263079.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-29 10:00:00</td>
+      <td>Markets</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/platinum-draws-investors-as-gold-rally-stalls-11606662000?mod=markets_lead_pos3">Platinum Draws Investors as Gold Rally Stalls</a></td>
+      <td>Disruptions caused by the pandemic are expected to lead to the largest shortage of platinum on record</td>
+      <td><img src="../2020-11/img/im-263844.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-29 09:18:00</td>
+      <td>Life & Arts</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/the-nfls-thanksgiving-weekend-has-become-a-covid-crisis-11606659525">The NFL’s Thanksgiving Weekend Has Become a Covid Crisis</a></td>
+      <td>The league will shut down for two days to regroup from a weekend in which top teams were sidelined, a local government rendered the San Francisco 49ers homeless and the Denver Broncos played without a quarterback</td>
+      <td><img src="../2020-11/img/im-265689.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-29 09:00:00</td>
+      <td>U.S.</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/restaurant-holdouts-defy-covid-19-shutdown-orders-11606658401?mod=business_lead_pos2">Restaurant Holdouts Defy Covid-19 Shutdown Orders</a></td>
+      <td>Rising coronavirus cases pose new threat to battered restaurant businesses</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-29 08:00:00</td>
+      <td>U.S.</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/biden-plans-to-roll-back-trump-era-education-policies-11606654802?mod=politics_lead_pos1">Biden Plans to Roll Back Trump-Era Education Policies</a></td>
+      <td>President-elect wants to expand resources for public schools and reinstate several civil-rights guidelines that were rescinded</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-29 08:00:00</td>
+      <td>Shipping Matters</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/britain-braces-for-logistics-havoc-as-brexits-final-act-looms-11606654800?mod=business_featst_pos1">Britain Braces for Logistics Havoc as Brexit’s Final Act Looms</a></td>
+      <td>Customs checks, tariffs and more paperwork are coming after Jan. 1, and shipping specialists expect rattled supply chains</td>
+      <td><img src="../2020-11/img/im-264722.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-29 07:34:00</td>
+      <td>World</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/australia-threatens-wto-action-against-china-as-trade-row-intensifies-11606631382">Australia Threatens WTO Action Against China as Trade Row Intensifies</a></td>
+      <td>Australian barley exports to China have mostly stopped after Beijing imposed tariffs in May</td>
+      <td><img src="../2020-11/img/im-265683.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-29 07:00:00</td>
+      <td>Business</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/pharmacies-add-freezers-train-staff-to-handle-covid-19-vaccination-drive-11606651217?mod=business_lead_pos1">Pharmacies Add Freezers, Train Staff to Handle Covid-19 Vaccination Drive</a></td>
+      <td>Retailers are preparing to administer coronavirus shots, but many guidelines remain uncertain</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-29 07:00:00</td>
+      <td>Life & Arts</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/do-you-have-e-charisma-on-zoom-heres-how-to-get-it-11606651200">Do You Have E-Charisma on Zoom? Here’s How to Get It</a></td>
+      <td>The flair and charm that works for in-person meetings doesn’t come across the same way on a video chat; ‘E-charisma involves a completely different set of skills’</td>
+      <td><img src="../2020-11/img/im-263977.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-29 05:30:00</td>
+      <td>Markets</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/teslas-s-p-500-debut-is-set-to-put-100-billion-in-trades-in-motion-11606645801?mod=markets_lead_pos1">Tesla’s S&P 500 Debut Is Set to Put $100 Billion in Trades in Motion</a></td>
+      <td>Asset managers and trading desks will be scrambling next month to account for the market juggernaut</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-29 05:30:00</td>
+      <td>Economy</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/disparity-in-jobless-rates-suggests-black-workers-face-slower-recovery-11606645801">Disparity in Jobless Rates Suggests Black Workers Face Slower Recovery</a></td>
+      <td>For Black Americans to have the same job prospects as whites, they often need to hold more-advanced credentials</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-28 21:14:00</td>
+      <td>Politics</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/pennsylvania-high-court-rejects-lawsuit-challenging-election-11606616081?mod=politics_lead_pos3">Pennsylvania High Court Rejects Lawsuit Challenging Election</a></td>
+      <td>Justices throw out a lower court’s order preventing state from certifying dozens of contests</td>
+      <td><img src="../2020-11/img/im-265682.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-28 20:00:00</td>
+      <td>World</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/iran-vows-to-avenge-killed-nuclear-scientist-but-says-it-wont-be-lured-to-conflict-11606584350?mod=world_major_1_pos7">Iran Vows to Avenge Slain Nuclear Scientist, Says It Won’t Be Lured Into Conflict</a></td>
+      <td>Tehran accuses Israel of trying to sow chaos as it weighs possible diplomatic re-engagement with the Biden administration</td>
+      <td><img src="../2020-11/img/im-265643.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-28 19:51:00</td>
+      <td>World</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/former-zappos-ceo-tony-hsieh-dies-at-46-11606572300?mod=business_lead_pos2">Former Zappos CEO Tony Hsieh Dies at 46 From Injuries Connected to House Fire</a></td>
+      <td>The Harvard-educated son of immigrants was a pioneer of e-commerce and well known for his quirky management theories and customer obsession</td>
+      <td><img src="../2020-11/img/im-265640.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-28 18:28:00</td>
+      <td>Life & Arts</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/vanderbilts-sarah-fuller-achieves-college-football-milestone-11606602881">Vanderbilt’s Sarah Fuller Achieves College Football Milestone With Kickoff</a></td>
+      <td>Soccer goalkeeper becomes first woman to play a down of football in one of the five major conferences</td>
+      <td><img src="../2020-11/img/im-265674.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-28 13:43:00</td>
+      <td>World</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/in-france-thousands-protest-macrons-effort-to-restrict-images-of-police-11606580450">In France, Thousands Protest Macron’s Effort to Restrict Images of Police</a></td>
+      <td>Demonstrations are a test of civil liberties in an era of coronavirus-linked curbs</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-28 13:00:00</td>
+      <td>WSJ. Magazine</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/perfect-garden-home-mallorca-luciano-giubbilei-11606336971">The Perfect Garden Home You’ve Been Dreaming of All Year</a></td>
+      <td>Landscape and garden designer Luciano Giubbilei finds a new creative retreat in the former home of a Mallorcan country potter.</td>
+      <td><img src="../2020-11/img/im-264519.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-28 12:23:00</td>
+      <td>World</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/ethiopian-forces-launch-offensive-on-tigray-capital-11606580985">Ethiopian Forces Launch Offensive on Tigray Capital</a></td>
+      <td>Shelling begins in Mekelle, moving the three-week conflict into a new phase that could destabilize the wider region</td>
+      <td><img src="../2020-11/img/im-265651.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-28 12:07:00</td>
+      <td>U.S.</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/texas-attorney-generals-legal-woes-potentially-hinder-google-case-11606583230?mod=business_minor_pos6">Texas Attorney General’s Legal Woes Potentially Hinder Google Case</a></td>
+      <td>Republican Ken Paxton has been accused by some former staffers of illegally using office to benefit donor</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-28 12:01:00</td>
+      <td>Life & Arts</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/after-covid-19-broadways-next-comeback-11606539660">After Covid-19, Broadway’s Next Comeback</a></td>
+      <td>It won’t be easy, but New York theater will recover from the current shutdown—just as it weathered the Depression, the AIDS crisis and 9/11.</td>
+      <td><img src="../2020-11/img/im-264730.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-28 11:00:00</td>
+      <td>Business</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/solar-power-booms-in-texas-11606579200?mod=business_lead_pos4">Solar Power Booms in Texas</a></td>
+      <td>The state, a leader in wind energy, will be home to the nation’s largest solar farm, part of an expected surge in development</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-28 10:02:00</td>
+      <td>Markets</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/the-economy-is-still-vulnerable-trade-could-be-a-refuge-11606575720?mod=business_minor_pos10">The Economy Is Still Vulnerable. Trade Could Be a Refuge.</a></td>
+      <td>Exporters are recovering strongly even as domestically focused services industries suffer amid Covid-19’s resurgence</td>
+      <td><img src="../2020-11/img/im-265332.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-28 09:03:00</td>
+      <td>Markets</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/stocks-say-covid-recovery-is-nigh-bonds-tell-a-different-story-11606572182?mod=markets_lead_pos5">Stocks Say Covid Recovery Is Nigh. Bonds Tell a Different Story.</a></td>
+      <td>All-important Treasury market is a holdout in reflecting increased economic optimism from Covid-19 vaccine news</td>
+      <td><img src="../2020-11/img/im-265389.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-28 08:00:00</td>
+      <td>Tech</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/teslas-delayed-semi-truck-tests-elon-musks-ability-to-scale-up-11606568448?mod=business_lead_pos2">Tesla’s Delayed Semi Truck Tests Elon Musk’s Ability to Scale Up</a></td>
+      <td>Silicon Valley car maker set bar higher after the pandemic hardly dented growth plans</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-28 07:00:00</td>
+      <td>Film Review</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/federico-fellini-iconically-italian-11606564801">Federico Fellini: Iconically Italian</a></td>
+      <td>A new collection of the auteur’s films from Criterion celebrates the humor, compassion and style that make his work unforgettable.</td>
+      <td><img src="../2020-11/img/im-264302.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-28 07:00:00</td>
+      <td>Opinion</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/dave-brubeck-beyond-take-five-11606564800?mod=opinion_major_pos13">Dave Brubeck, Beyond ‘Take Five’</a></td>
+      <td>Born 100 years ago, the pianist and composer found immense success melding musical classicism with polyrhythmic experiment.</td>
+      <td><img src="../2020-11/img/im-264312.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-28 06:00:00</td>
+      <td>Life & Arts</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/this-doctor-elevated-his-yoga-practice20-feet-off-the-ground-11606561200">This Doctor Elevated His Yoga Practice—20 Feet Off the Ground</a></td>
+      <td>A chance encounter with aerial silks helped Dr. Robert Sullivan build his core strength and overcome his fear of heights</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-28 05:33:00</td>
+      <td>World</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/bidens-nato-amity-sparks-debate-among-european-allies-11606559627?mod=world_major_1_pos4">Biden’s NATO Amity Sparks Debate Among European Allies</a></td>
+      <td>President-elect’s reassurance of the U.S.’s commitment to NATO has prompted disagreements among Europe’s leaders</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-28 05:30:00</td>
+      <td>Business</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/china-is-ready-to-restart-cruises-but-big-companies-are-left-out-11606559435?mod=business_lead_pos3">China Is Ready to Restart Cruises, but Big Companies Are Left Out</a></td>
+      <td>Royal Caribbean and Carnival spent the past decade carving out China’s cruise market, but can’t yet participate in its revival</td>
+      <td><img src="../2020-11/img/im-265170.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-28 05:30:00</td>
+      <td>Politics</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/biden-aims-to-appoint-liberal-judges-after-trumps-conservative-push-11606559402?mod=politics_lead_pos11">Biden Aims to Appoint Liberal Judges After Trump’s Conservative Push</a></td>
+      <td>President-elect will seek nominees who see robust role for judiciary in addressing national problems, protecting individual rights</td>
+      <td><img src="../2020-11/img/im-265037.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-28 05:30:00</td>
+      <td>Politics</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/states-explored-litigation-to-challenge-u-s-policy-on-climate-change-11606559400?mod=business_minor_pos4">States Explored Litigation to Challenge U.S. Policy on Climate Change</a></td>
+      <td>Options included getting courts to require federal action to reduce emissions of greenhouse gases, documents show</td>
+      <td><img src="../2020-11/img/im-265399.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-28 05:30:00</td>
+      <td>Markets</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/pausing-loan-payments-during-coronavirus-is-producing-uneven-results-11606559401?mod=markets_lead_pos2">Pausing Loan Payments During Coronavirus Is Producing Uneven Results</a></td>
+      <td>Federal relief programs for mortgages and student loans were relatively easy to get and flexible. Programs for credit cards, auto and personal loans were more happenstance.</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-27 22:19:00</td>
+      <td>Politics</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/milwaukee-county-vote-recount-gives-biden-small-boost-11606533582?mod=business_minor_pos4">Milwaukee County Vote Recount Gives Biden Small Boost</a></td>
+      <td>A conservative group in Wisconsin has already filed a lawsuit against election officials, seeking to block the state’s certification of results</td>
+      <td><img src="../2020-11/img/im-265634.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-27 18:32:00</td>
+      <td>Opinion</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/who-is-an-american-person-11606519964?mod=opinion_lead_pos3">Who Is an American ‘Person’?</a></td>
+      <td>The Supreme Court considers the Census and undocumented immigrants.</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-27 18:28:00</td>
+      <td>Opinion</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/home-is-no-haven-for-irans-regime-11606519724?mod=opinion_lead_pos10">Home Is No Haven for Iran’s Regime</a></td>
+      <td>The killing of a top nuclear scientist dramatizes the ayatollahs’ domestic vulnerability.</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-27 18:27:00</td>
+      <td>Opinion</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/biden-iran-and-the-bomb-11606519663?mod=opinion_lead_pos1">Biden, Iran and the Bomb</a></td>
+      <td>Will he throw away Trump’s Mideast gains to return to a bad nuclear deal?</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-27 18:24:00</td>
+      <td>Opinion</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/edward-p-lazear-11606519485?mod=opinion_lead_pos2">Edward P. Lazear</a></td>
+      <td>A pioneer in labor economics and a Journal contributor.</td>
+      <td><img src="../2020-11/img/im-265557.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-27 18:23:00</td>
+      <td>Opinion</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/the-social-media-fact-check-farce-11606519380?mod=opinion_lead_pos4">The Social Media Fact-Check Farce</a></td>
+      <td>A study says Twitter’s anti-Trump ‘corrections’ make some people more likely to believe Trump.</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-27 18:21:00</td>
+      <td>Opinion</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/when-the-experts-fail-everyone-else-pays-the-price-11606519279?mod=opinion_lead_pos7">When the Experts Fail, Everyone Else Pays the Price</a></td>
+      <td>What happens when the most respected authorities get it wrong and ruin lives and economies? Not much.</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-27 18:20:00</td>
+      <td>Opinion</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/covid-was-hiding-among-colds-and-flus-11606519224?mod=opinion_lead_pos8">Covid Was Hiding Among Colds and Flus</a></td>
+      <td>Too much focus on Washington and magic fixes has impeded grass-roots adaptation.</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-27 18:19:00</td>
+      <td>Opinion</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/notable-quotable-denver-mayor-michael-b-hancock-11606519148?mod=opinion_major_pos4">Notable & Quotable: Denver Mayor Michael B. Hancock</a></td>
+      <td>‘I fully acknowledge that I have urged everyone to stay home and avoid unnecessary travel.’</td>
+      <td><img src="../2020-11/img/im-265353.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-27 18:16:00</td>
+      <td>Opinion</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/nobody-knows-im-a-bad-chess-player-11606518981?mod=opinion_lead_pos9">Nobody Knows I’m a Bad Chess Player</a></td>
+      <td>Online games are always available at any skill level—even none whatsoever.</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-27 18:09:00</td>
+      <td>Politics</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/house-to-vote-on-booting-chinese-stocks-from-u-s-over-audit-rules-11606518590?mod=markets_lead_pos3">House to Vote on Booting Chinese Stocks From U.S. Over Audit Rules</a></td>
+      <td>Alibaba, other companies could be forced to relocate listings overseas</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-27 18:09:00</td>
+      <td>Business</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/salesforce-delta-air-lines-best-buy-stocks-that-defined-the-week-11606518558?mod=business_featst_pos1">Salesforce, Delta Air Lines, Best Buy: Stocks That Defined the Week</a></td>
+      <td>Here are seven major companies whose stocks moved on the week’s news</td>
+      <td><img src="../2020-11/img/im-265617.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-27 18:05:00</td>
+      <td>Opinion</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/hispanic-trump-voters-annoy-obama-11606518338?mod=opinion_minor_pos1">Hispanic Trump Voters Annoy Obama</a></td>
+      <td>The former president is still working on an explanation.</td>
+      <td><img src="../2020-11/img/im-265525.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-27 17:46:00</td>
+      <td>Business</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/united-begins-flying-pfizers-covid-19-vaccine-11606512293?mod=business_lead_pos2">United Begins Flying Pfizer’s Covid-19 Vaccine</a></td>
+      <td>Carriers are positioning doses for quick distribution if vaccines are approved by regulators</td>
+      <td><img src="../2020-11/img/im-265569.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-27 17:37:00</td>
+      <td>Books</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/veblen-review-scourge-of-the-elites-11606504616">‘Veblen’ Review: Scourge of the Elites</a></td>
+      <td>His critique of wealth struck a chord in a progressive era, and to some still does.</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-27 17:35:00</td>
+      <td>Books</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/big-girl-small-town-review-salt-of-the-earth-11606516553">‘Big Girl, Small Town’ Review: Salt of the Earth</a></td>
+      <td>The Troubles may be over, but Michelle Gallen’s heroine has problems all her own.</td>
+      <td><img src="../2020-11/img/im-265059.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-27 17:34:00</td>
+      <td>Books</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/times-monster-review-empire-of-the-historians-11606516465">‘Time’s Monster’ Review: Empire of the Historians</a></td>
+      <td>Does academic history always serve the ends of the powerful?</td>
+      <td><img src="../2020-11/img/im-265062.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-27 17:31:00</td>
+      <td>Books</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/politics-partisan-media-and-the-talk-radio-revolution-11606516300">Politics: Partisan Media and the Talk-Radio Revolution</a></td>
+      <td>How a generation of populist broadcasters brought conservative ideas to a national audience.</td>
+      <td><img src="../2020-11/img/im-265497.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-27 17:20:00</td>
+      <td>World</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/iran-says-its-top-nuclear-scientist-mohsen-fakhrizadeh-killed-in-attack-11606493367">Iran Says Its Top Nuclear Scientist Killed in Attack</a></td>
+      <td>Mohsen Fakhrizadeh was widely regarded as the father of the country’s nuclear-weapons program</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-27 17:05:00</td>
+      <td>Pro PE People</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/vistas-sheth-resigns-weeks-after-ceo-smith-settles-tax-probe-11606514717?mod=markets_lead_pos7">Vista’s Sheth Resigns Weeks After CEO Smith Settles Tax Probe</a></td>
+      <td>Brian Sheth left the technology investor barely a month after the yearslong tax investigation of Robert Smith ended</td>
+      <td><img src="../2020-11/img/im-265365.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-27 16:53:00</td>
+      <td>Opinion</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/noonan-focuses-on-the-wrong-bogus-dispute-11606514021?mod=opinion_major_pos16">Noonan Focuses on the Wrong Bogus Dispute</a></td>
+      <td>I find Peggy Noonan’s concerns about the damage to our Republic to be about four years too late.</td>
+      <td><img src="../2020-11/img/im-262566.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-27 16:49:00</td>
+      <td>Opinion</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/american-idealism-in-practice-and-theory-11606513758?mod=opinion_major_pos17">American Idealism in Practice and Theory</a></td>
+      <td>That “collective security and collective endeavors were in each nation’s self-interest” should be obvious to all.</td>
+      <td><img src="../2020-11/img/im-262774.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-27 16:48:00</td>
+      <td>Opinion</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/trump-at-least-tried-to-get-china-north-korea-deals-11606513678?mod=opinion_major_pos18">Trump at Least Tried to Get China, North Korea Deals</a></td>
+      <td>President Trump has been adamant about leveling the playing field and requiring foreign countries like China to play the trading game fairly and honestly.</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-27 16:16:00</td>
+      <td>Life & Arts</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/lamar-jackson-tests-positive-as-the-ravens-outbreak-tests-the-nfl-11606496073">Lamar Jackson Tests Positive as the Ravens Outbreak Tests the NFL</a></td>
+      <td>Baltimore’s game against the Pittsburgh Steelers was already postponed, and getting the game in shows the high-wire act of smoothly finishing the NFL season</td>
+      <td><img src="../2020-11/img/im-265392.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-27 15:31:00</td>
+      <td>Pro Bankruptcy</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/hertz-to-sell-donlen-fleet-business-to-athene-for-875-million-11606509062?mod=business_lead_pos12">Hertz to Sell Donlen Fleet Business to Athene for $875 Million</a></td>
+      <td>Bankrupt rental-car company plans to use proceeds from the proposed sale to pay down debt</td>
+      <td><img src="../2020-11/img/im-265534.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-27 15:25:00</td>
+      <td>World</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/secret-meeting-in-desert-between-israeli-saudi-leaders-failed-to-reach-normalization-agreement-11606508754">Secret Meeting in Desert Between Israeli,  Saudi Leaders Failed to Reach Normalization Agreement</a></td>
+      <td>Saudi crown prince backed away from U.S.-brokered deal to solidify bulwark against Iran</td>
+      <td><img src="../2020-11/img/im-265518.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-27 15:24:00</td>
+      <td>World</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/video-of-police-beating-black-music-producer-roils-france-11606508672?mod=world_major_1_pos4">Video of Police Beating Black Music Producer Roils France</a></td>
+      <td>Government plans to appoint commission to review bill restricting publication of images of law enforcers</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-27 15:19:00</td>
+      <td>Markets</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/oil-prices-seen-remaining-subdued-into-2021-11606490833?mod=markets_lead_pos6">Oil Prices Seen Remaining Subdued Into 2021</a></td>
+      <td>Next week’s meeting of OPEC and its partners may drive the market in the short-term</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-27 14:43:00</td>
+      <td>Politics</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/federal-judges-deny-trump-campaigns-appeal-of-pennsylvania-ballot-challenge-11606501438?mod=politics_lead_pos1">Court Denies Trump Campaign’s Appeal in Pennsylvania Ballot Challenge</a></td>
+      <td>Ruling strikes latest blow to president’s efforts to overturn his defeat, saying claims lack merit and would cause ‘drastic and unprecedented’ voter disenfranchisement</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-27 14:32:00</td>
+      <td>Life & Arts</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/shurabet-el-eid-holiday-soup-11606505524">Shurabet El Eid (Holiday Soup)</a></td>
+      <td>Even scaled-down celebrations call for exceptional spice and color. Paprika-rubbed roast chicken, pomegranate-flecked wheat berry pudding and more will satisfy a small gathering with outsize expectations.</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-27 13:58:00</td>
+      <td>Life & Arts</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/designer-philippe-starck-finds-inspiration-in-the-uncanny-paintings-of-neo-rauch-11606503494">Designer Philippe Starck Finds Inspiration in the Uncanny Paintings of Neo Rauch</a></td>
+      <td>Mr. Starck, whose designs range from chairs to a space station lounge, finds the work of Mr. Rauch ‘fertile soil’ for his imagination.</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-27 13:46:00</td>
+      <td>Opinion</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/the-constitution-will-survive-covid-19-11606502792?mod=opinion_lead_pos5">The Constitution Will Survive Covid-19</a></td>
+      <td>The pandemic may justify extraordinary measures, but judges won’t accept the most draconian ones.</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-27 13:44:00</td>
+      <td>Opinion</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/hunting-aims-for-a-comeback-in-locked-down-michigan-11606502672?mod=opinion_lead_pos6">Hunting Aims for a Comeback in Locked-Down Michigan</a></td>
+      <td>The state has seen a 67% increase in new hunters prowling the forests this year—me among them.</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-27 13:44:00</td>
+      <td>Life & Arts</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/kubbeh-maqliyeh-fried-kubbeh-11606502656">Kubbeh Maqliyeh (Fried Kubbeh)</a></td>
+      <td>Even scaled-down celebrations call for exceptional spice and color. Paprika-rubbed roast chicken, pomegranate-flecked wheat berry pudding and more will satisfy a small gathering with outsize expectations.</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-27 13:37:00</td>
+      <td>Life & Arts</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/burbara-wheat-berry-pudding-11606502251">Burbara (Wheat Berry Pudding)</a></td>
+      <td>Even scaled-down celebrations call for exceptional spice and color. Paprika-rubbed roast chicken, pomegranate-flecked wheat berry pudding and more will satisfy a small gathering with outsize expectations.</td>
+      <td><img src="../2020-11/img/im-264478.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-27 13:21:00</td>
+      <td>Business</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/mirror-entrepreneur-sold-her-fitness-startup-to-lululemon-letting-go-meant-sticking-around-11606492843?mod=business_featst_pos2">Mirror Entrepreneur Sold Her Fitness Startup to Lululemon. Letting Go Meant Sticking Around.</a></td>
+      <td>When Brynn Putnam sold her company for $500 million, she couldn’t walk away from what she created. She joins a list of prominent entrepreneurs who cashed in without checking out.</td>
+      <td><img src="../2020-11/img/im-262302.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-27 13:19:00</td>
+      <td>Autos Industry</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/gm-plans-to-seek-banking-charter-to-grow-auto-lending-business-11606501125?mod=markets_lead_pos2">GM Plans to Seek Banking Charter to Grow Auto-Lending Business</a></td>
+      <td>Auto maker could file paperwork with federal and state regulators as soon as next month</td>
+      <td><img src="../2020-11/img/im-265369.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-27 13:16:00</td>
+      <td>Opinion</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/fireworks-over-religious-liberty-11606420438?mod=opinion_major_pos1">Fireworks Over Religious Liberty</a></td>
+      <td>The Supreme Court says Cuomo’s restrictions on worship violate the First Amendment.</td>
+      <td><img src="../2020-11/img/im-265193.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-27 12:00:00</td>
+      <td>Life & Arts</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/the-resurrection-of-the-office-phone-call-11606496400?mod=tech_featst_pos2">The Resurrection of the Office Phone Call</a></td>
+      <td>The Covid pandemic has brought back an old mode of communication that millennial workers used to shun; a happy medium between Zoom calls and instant messages</td>
+      <td><img src="../2020-11/img/im-264520.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-27 12:00:00</td>
+      <td>Risk & Compliance Journal</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/bean-counters-no-more-internal-audit-embraces-broader-risk-advisory-role-11606496400?mod=business_minor_pos16">Bean Counters No More, Internal Audit Embraces Broader Risk Advisory Role</a></td>
+      <td>Internal auditors are helping companies better manage an array of nonfinancial risks, the head of the Institute of Internal Auditors says</td>
+      <td><img src="../2020-11/img/im-265021.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-27 11:36:00</td>
+      <td>Markets</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/opec-russia-alliance-lean-toward-keeping-oil-cuts-in-place-11606491881?mod=markets_lead_pos4">OPEC, Russia Alliance Lean Toward Keeping Oil Cuts in Place</a></td>
+      <td>Oil-price recovery has strengthened the case of those pushing to eventually return some shut-in production to the market</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-27 11:33:00</td>
+      <td>Business</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/amazon-promises-500-million-in-holiday-bonuses-for-front-line-staff-11606494834?mod=tech_lead_pos3">Amazon Promises $500 Million in Holiday Bonuses for Front-Line Staff</a></td>
+      <td>Employees working full time for all of December will qualify for a $300 payment</td>
+      <td><img src="../2020-11/img/im-265385.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-27 11:16:00</td>
+      <td>Books</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/five-best-on-decline-and-fall-11606493772?mod=ig_booksnovember28">Five Best: On Decline and Fall</a></td>
+      <td>From Adrian Wooldridge, co-author of ‘The Wake-Up Call: Why the Pandemic Has Exposed the Weakness of the West, and How to Fix It.’</td>
+      <td><img src="../2020-11/img/im-265063.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-27 11:15:00</td>
+      <td>Books</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/fiction-a-beast-fable-in-the-city-of-light-11606493697?mod=ig_booksnovember28">Fiction: A Beast Fable in the City of Light</a></td>
+      <td>Novels from Jane Smiley and Ellen Cooney, and a collection of short stories by Pergentino José.</td>
+      <td><img src="../2020-11/img/im-264773.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-27 11:08:00</td>
+      <td>Books</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/sometimes-you-have-to-lie-louise-fitzhughs-rebellion-11606493298?mod=ig_booksnovember28">‘Sometimes You Have to Lie’: Louise Fitzhugh’s Rebellion</a></td>
+      <td>The creator of ‘Harriet the Spy’ was a literary outsider herself.</td>
+      <td><img src="../2020-11/img/im-265064.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-27 11:07:00</td>
+      <td>Books</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/two-books-on-phil-ochs-forgotten-how-to-bow-11606493246?mod=ig_booksnovember28">‘I’m Gonna Say It Now’ Review: Troubadour and Troublemaker</a></td>
+      <td>The legacy of Phil Ochs’s folk-music rebellion lives on in words that still spark fires.</td>
+      <td><img src="../2020-11/img/im-265061.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-27 11:00:00</td>
+      <td>Politics</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/trumps-payroll-tax-deferral-creates-predicament-for-congress-11606492800">Trump’s Payroll-Tax Deferral Creates Predicament for Congress</a></td>
+      <td>Options for lawmakers and Biden administration to ease looming squeeze on workers include tax forgiveness, longer payback periods</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-27 10:57:00</td>
+      <td>Life & Arts</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/the-predicament-of-counting-americans-by-race-11606492632?mod=politics_lead_pos6">The Census Predicament: Counting Americans by Race</a></td>
+      <td>The racial and ethnic categories used by the U.S. Census obscure the changing ways we think about identity and assimilation.</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-27 10:52:00</td>
+      <td>Markets</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/black-friday-is-big-in-taiwan-but-why-11606492322?mod=markets_featst_pos1">Black Friday Is Big in Taiwan, but Why?</a></td>
+      <td>The holiday shopping frenzy there isn’t hampered by coronavirus, but also isn’t prompted by a holiday</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-27 10:12:00</td>
+      <td>Real Estate</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/the-best-christmas-tree-ornaments-from-catalogsas-chosen-by-design-pros-11606489974">The Best Christmas Tree Ornaments From Catalogs—as Chosen by Design Pros</a></td>
+      <td>We asked picky interior designers to look at mass-market retailers’ offerings—and select affordable holiday decorations they’d hang on their own trees</td>
+      <td><img src="../2020-11/img/im-265346.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-27 10:00:00</td>
+      <td>Markets</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/women-do-talk-money-with-their-text-group-11606489200?mod=markets_featst_pos2">Women Do Talk Money, With Their Text Group</a></td>
+      <td>Pandemic-related issues spur women to join group chats to talk about emergency funds and investing</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-27 10:00:00</td>
+      <td>Politics</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/medicaid-enrollment-surge-during-pandemic-leaves-states-looking-for-cost-cuts-11606489203?mod=politics_lead_pos3">Medicaid Enrollment Surge During Pandemic Leaves States Looking for Cost Cuts</a></td>
+      <td>State leaders consider reductions in services and health-care benefits for low-income and disabled Americans as budget crises loom</td>
+      <td><img src="../2020-11/img/im-265045.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-27 09:30:00</td>
+      <td>CFO Journal</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/wary-of-new-lockdowns-cfos-stand-ready-with-covid-contingency-plans-11606487401?mod=business_lead_pos6">Wary of New Lockdowns, CFOs Stand Ready With Covid Contingency Plans</a></td>
+      <td>Finance chiefs say they are better prepared to navigate inventory challenges and cost cuts than they were last spring</td>
+      <td><img src="../2020-11/img/im-264719.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-27 09:01:00</td>
+      <td>Life & Arts</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/the-best-salad-recipe-to-get-you-through-the-winter-11606485694">The Best Salad Recipe to Get You Through the Winter</a></td>
+      <td>When sunshine is in short supply, citrus arrives to save us. It lights up this refreshing salad anchored with salty slices of cured meat.</td>
+      <td><img src="../2020-11/img/im-263998.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-27 09:00:00</td>
+      <td>Business</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/covid-19-vaccine-studies-may-suffer-as-volunteers-consider-dropping-out-11606485601?mod=politics_featst_pos3">Covid-19 Vaccine Studies May Suffer as Volunteers Consider Dropping Out</a></td>
+      <td>People who believe they got a placebo during testing say they want to leave to get the real shots once they are approved</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-27 09:00:00</td>
+      <td>Markets</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/investors-seek-new-election-data-11606485600?mod=markets_lead_pos3">Investors Seek New Election Data</a></td>
+      <td>Alternatives to polling include watching betting markets, voter-registration changes and social media</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-27 08:38:00</td>
+      <td>Markets</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/how-property-booms-eat-our-economic-future-11606466679?mod=markets_lead_pos13">How Property Booms Eat Our Economic Future</a></td>
+      <td>Growing body of research looking at U.S. and Chinese real-estate markets suggests long booms may drag on productivity of the economy</td>
+      <td><img src="../2020-11/img/im-265248.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-27 08:20:00</td>
+      <td>World</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/indias-economy-contracted-7-5-last-quarter-11606480136">India’s GDP Shrinks as Covid-19 Keeps Stranglehold on One of World’s Largest Economies</a></td>
+      <td>Once a powerful engine of growth, consumer spending has been choked off by pandemic that is keeping people at home</td>
+      <td><img src="../2020-11/img/im-265194.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-27 08:19:00</td>
+      <td>Markets</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/slack-tesla-moderna-what-to-watch-when-the-stock-market-opens-today-11606479178?mod=markets_major_pos11">Slack, Moderna, Burlington Stores: What to Watch When the Stock Market Opens Today</a></td>
+      <td>U.S. stock futures edge higher</td>
+      <td><img src="../2020-11/img/im-265293.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-27 08:04:00</td>
+      <td>Markets</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/global-stock-markets-dow-update-11-27-2020-11606473515?mod=markets_lead_pos2">Dow, S&P 500 on Track to End Week Near Record Highs</a></td>
+      <td>Major technology stocks are poised to breach fresh all-time highs Friday, with Nasdaq-100 futures pointing to extended rally</td>
+      <td><img src="../2020-11/img/im-265259.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-27 08:00:00</td>
+      <td>Economy</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/floridas-approval-of-15-minimum-wage-sets-up-battle-in-other-states-11606482001">Florida’s Approval of $15 Minimum Wage Sets Up Battle in Other States</a></td>
+      <td>Advocates prepare to take up state-by-state fights with federal increase in doubt</td>
+      <td><img src="../2020-11/img/im-262452.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-27 08:00:00</td>
+      <td>Markets</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/covid-or-not-here-vimeo-comes-11606482000?mod=markets_lead_pos12">Covid-19 or Not, Here Vimeo Comes</a></td>
+      <td>As business increasingly moves online, Vimeo should have investors tuning in, even once they are physically back at work</td>
+      <td><img src="../2020-11/img/im-264951.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-27 07:19:00</td>
+      <td>World</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/covid-19-infections-surge-at-worlds-largest-medical-glove-maker-11606479574">Covid-19 Infections Surge at One of World’s Largest Medical Glove Makers</a></td>
+      <td>Factories and workplaces across Malaysia are battling coronavirus outbreaks, a sign that industrial settings can become vectors of contagion as global demand recovers</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-27 07:00:00</td>
+      <td>Masterpiece</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/adventure-in-ambiguity-11606478401?mod=opinion_reviews_pos2">Adventure in Ambiguity</a></td>
+      <td>E.B.</td>
+      <td><img src="../2020-11/img/im-264293.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-27 07:00:00</td>
+      <td>Markets</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/spotify-needs-more-than-a-cup-of-joe-11606478400?mod=markets_major_pos1">Spotify Needs More Than a Cup of Joe</a></td>
+      <td>Joe Rogan’s podcast, about to go exclusive, will need to deliver a big boost in paid users to justify the stock’s run</td>
+      <td><img src="../2020-11/img/im-264973.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-27 07:00:00</td>
+      <td>Life & Arts</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/why-statement-coats-are-the-going-out-tops-of-2020-11606478444">Why Statement Coats Are the ‘Going-Out Tops’ of 2020</a></td>
+      <td>As we continue to socialize outside, standout outerwear is the priority this winter—what’s underneath doesn’t matter</td>
+      <td><img src="../2020-11/img/im-265190.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-27 07:00:00</td>
+      <td>Tech</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/next-step-in-government-data-tracking-is-the-internet-of-things-11606478401?mod=tech_lead_pos1">Next Step in Government Data Tracking is the Internet of Things</a></td>
+      <td>U.S. Air Force experiments with monitoring peripherals—from autos to fitness trackers</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-27 07:00:00</td>
+      <td>Tech</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/slack-missed-out-on-the-pandemics-zoom-boom-leaving-it-vulnerable-11606478401?mod=tech_lead_pos2">Slack Missed Out on the Pandemic’s Zoom Boom, Leaving It Vulnerable</a></td>
+      <td>Without a strong video offering, the workplace collaboration tech pioneer failed to wow investors</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-27 06:23:00</td>
+      <td>World</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/after-u-s-push-eu-set-to-launch-new-human-rights-sanctions-regime-11606476221?mod=politics_featst_pos1">After U.S. Push, EU Set to Target Human-Rights Violators</a></td>
+      <td>Doubts remain over how widely the European Union will wield sanctions, despite projecting itself as a champion of human rights</td>
+      <td><img src="../2020-11/img/im-265192.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-27 06:18:00</td>
+      <td>World</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/kim-jong-un-doesnt-want-to-pick-a-fight-with-biden-for-now-south-korean-lawmakers-say-11606475879?mod=politics_lead_pos13">Kim Jong Un Doesn’t Want a Fight With Biden for Now, South Korean Lawmakers Say</a></td>
+      <td>North Korea sees negotiations with President-elect Joe Biden as potentially more difficult than with President Trump, South Korean intelligence officials tell lawmakers</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-27 05:56:00</td>
+      <td>Life & Arts</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/the-power-of-wi-fi-6-is-herebut-do-you-really-need-it-11606474613?mod=tech_lead_pos11">The Power of Wi-Fi 6 Is Here—But Do You Really Need It?</a></td>
+      <td>With more devices populating homes, updating to a Wi-Fi 6 router could help improve everyone’s internet experience. That said, they don’t come cheap.</td>
+      <td><img src="../2020-11/img/im-263002.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-27 05:30:00</td>
+      <td>Markets</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/the-stock-market-and-derivatives-are-sending-different-signals-11606473003?mod=markets_lead_pos1">The Stock Market and Derivatives Are Sending Different Signals</a></td>
+      <td>The Dow soared back to a record this week, but Wall Street’s fear gauge also remains elevated</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-27 05:30:00</td>
+      <td>Tech</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/best-home-office-gadgets-gift-guide-2020-wfh-tech-11606346428?mod=tech_lead_pos5">The Ultimate Guide to the Best (Yet Boring) Home Office Gadget Gifts</a></td>
+      <td>Give the gift of work-from-home productivity, from laptop stands to USB-C dongles to 4K monitors</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-27 05:30:00</td>
+      <td>Markets</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/cars-are-going-digital-but-detroit-has-a-long-road-ahead-11606473031?mod=markets_lead_pos5">Cars Are Going Digital, But Detroit Has a Long Road Ahead</a></td>
+      <td>It will be awhile until car makers can reap the benefits of turning your next vehicle into a giant smartphone</td>
+      <td><img src="../2020-11/img/im-264180.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-27 05:30:00</td>
+      <td>Politics</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/renewable-energy-industry-readies-wish-lists-for-joe-biden-11606473001?mod=politics_lead_pos10">Renewable Energy Industry Readies Wish Lists for Joe Biden</a></td>
+      <td>Associations representing solar and wind power push new administration to take immediate steps, many of which don’t require congressional action</td>
+      <td><img src="../2020-11/img/im-264851.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-27 05:21:00</td>
+      <td>World</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/china-escalates-australia-trade-dispute-with-wine-tariffs-11606472504?mod=world_major_1_pos2">China Escalates Australia Trade Dispute With Wine Tariffs</a></td>
+      <td>Australia calls a Chinese finding that its exporters are dumping cheap wine ‘erroneous in fact and in substance’</td>
+      <td><img src="../2020-11/img/im-265252.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-27 04:38:00</td>
+      <td>Markets</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/spanish-lenders-bbva-and-sabadell-abandon-merger-talks-11606469903?mod=markets_lead_pos11">Spanish Lenders BBVA and Sabadell Abandon Merger Talks</a></td>
+      <td>Breakdown demonstrates difficulties in getting deals done despite predictions of a wave of consolidation in European banking</td>
+      <td><img src="../2020-11/img/im-265251.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-26 21:10:00</td>
+      <td>Markets</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/investors-bet-on-more-dollar-weakness-11606386601?mod=markets_lead_pos3">The Dollar Is Weak. Investors Bet It Will Slide Even More.</a></td>
+      <td>Forecasts assume Covid-19 recedes, encouraging investors to step back from the relative safety of U.S. assets</td>
+      <td><img src="../2020-11/img/im-263846.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-26 19:00:00</td>
+      <td>Life & Arts</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/backcountry-skiing-a-beginners-guide-to-the-sport-of-covid-winter-11606435234">Backcountry Skiing: A Beginner’s Guide to the Sport of Covid Winter</a></td>
+      <td>You needn’t be a daredevil to go backcountry skiing—just willing to clomp up a hill. Around the U.S., several new spots are easing newcomers into a sport where utter seclusion is the whole point.</td>
+      <td><img src="../2020-11/img/im-265189.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-26 18:09:00</td>
+      <td>Politics</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/gop-sees-georgia-senate-races-as-firewall-after-trumps-loss-11606392002?mod=politics_lead_pos12">GOP Sees Georgia Senate Races as ‘Firewall’ After Trump’s Loss</a></td>
+      <td>With president’s role uncertain, McConnell directs colleagues to aid effort to keep Senate in Republican hands</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-26 18:00:00</td>
+      <td>Life & Arts</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/black-friday-what-about-sock-friday-cozy-holiday-gifts-make-comfy-return-11606431600">Black Friday? What About Sock Friday? Cozy Holiday Gifts Make Comfy Return</a></td>
+      <td>Amid a stubborn, stay-at-home pandemic, basic gifts outclass luxury items</td>
+      <td><img src="../2020-11/img/im-264978.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-26 17:13:00</td>
+      <td>U.S.</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/supreme-courts-ruling-blocking-cuomos-covid-19-order-could-influence-other-cases-11606428800?mod=politics_featst_pos2">Supreme Court’s Ruling Blocking Cuomo’s Covid-19 Order Could Influence Other Cases</a></td>
+      <td>Up to 20 lawsuits involving houses of worship could be affected by high-court decision</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-26 16:56:00</td>
+      <td>World</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/mexico-arrests-alleged-mastermind-of-massacre-that-killed-american-women-and-children-11606426939?mod=world_minor_pos1">Mexico Arrests Alleged Mastermind of Massacre That Killed American Women and Children</a></td>
+      <td>Capture of suspect in 2019 attack on members of breakaway Mormon community draws mixed response from relatives of victims</td>
+      <td><img src="../2020-11/img/im-265181.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-26 14:58:00</td>
+      <td>Opinion</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/a-speedy-recovery-depends-on-more-aid-will-trump-deliver-11606420721?mod=opinion_major_pos5">A Speedy Recovery Depends on More Aid. Will Trump Deliver?</a></td>
+      <td>The economy can’t wait until January for more help for states, businesses and the unemployed.</td>
+      <td><img src="../2020-11/img/im-263790.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-26 14:57:00</td>
+      <td>Opinion</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/woke-capitalism-in-a-secular-world-11606420629?mod=opinion_major_pos6">Woke Capitalism in a Secular World</a></td>
+      <td>Principles grounded in faith or existential commitment should guide companies.</td>
+      <td><img src="../2020-11/img/im-264807.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-26 14:55:00</td>
+      <td>Books</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/escape-artist-review-great-expectations-11606420511?mod=ig_booksnovember28">‘Escape Artist’ Review: Great Expectations</a></td>
+      <td>As a journalist in the early years of the 20th century, Harry Perry Robinson played eyewitness to many historical events. Does that make him ‘great’?</td>
+      <td><img src="../2020-11/img/im-265182.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-26 14:51:00</td>
+      <td>Opinion</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/the-truth-about-chinese-bonds-11606420312?mod=opinion_major_pos2">The Truth About Chinese Bonds</a></td>
+      <td>Beijing’s latest stab at financial reform is one of its riskiest.</td>
+      <td><img src="../2020-11/img/im-265050.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-26 14:46:00</td>
+      <td>Markets</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/german-prosecutors-examine-ernst-youngs-role-in-wirecard-collapse-11606420008?mod=markets_lead_pos6">German Prosecutors Examine Ernst & Young’s Role in Wirecard Collapse</a></td>
+      <td>Prosecutors in Munich are assessing a report from Germany’s accounting watchdog, ratcheting up pressure on the audit firm</td>
+      <td><img src="../2020-11/img/im-265198.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-26 14:22:00</td>
+      <td>World</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/ethiopian-forces-surround-tigrays-capital-as-a-decisive-battle-looms-11606328684?mod=world_major_2_pos1">Ethiopian Forces Begin Decisive Battle in Tigray’s Capital</a></td>
+      <td>Western officials call for immediate end to fighting between government and restive region</td>
+      <td><img src="../2020-11/img/im-264646.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-26 13:37:00</td>
+      <td>World</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/ethiopia-what-we-know-about-the-war-in-the-tigray-region-11605530560?mod=world_major_2_pos2">Ethiopia: What We Know About the War in the Tigray Region</a></td>
+      <td>Conflict in the north of Africa’s second-most-populous nation is spreading across borders, threatening stability in a strategic region</td>
+      <td><img src="../2020-11/img/im-260073.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-26 12:00:00</td>
+      <td>Gas Markets</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/u-k-s-centrica-seeks-to-sell-liquefied-natural-gas-portfolio-11606410051?mod=markets_minor_pos4">U.K.’s Centrica Seeks to Sell Liquefied Natural Gas Portfolio</a></td>
+      <td>Possible sale, say people familiar with the matter, comes as natural-gas prices show renewed life after hitting a low in June</td>
+      <td><img src="../2020-11/img/im-265169.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-26 11:52:00</td>
+      <td>Pro Bankruptcy</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/sycamore-bids-540-million-for-ann-taylor-other-ascena-brands-11606409542?mod=markets_lead_pos4">Sycamore Bids $540 Million for Ann Taylor, Other Ascena Brands</a></td>
+      <td>Private equity firm moves to acquire Ann Taylor, Lane Bryant, Loft and Lou & Grey stores out of bankruptcy</td>
+      <td><img src="../2020-11/img/im-265168.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-26 11:15:00</td>
+      <td>Tech</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/amazon-web-services-hit-by-outage-11606326714?mod=tech_featst_pos3">Amazon Web Services Hit by Outage</a></td>
+      <td>Company says it has resolved issues with cloud-software programs in its region covering Eastern part of U.S.</td>
+      <td><img src="../2020-11/img/im-264754.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-26 10:07:00</td>
+      <td>Tech</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/fly-fishing-the-ernest-hemingway-way-11606403239">Fly-Fishing the Ernest Hemingway Way</a></td>
+      <td>A new fly-fishing heritage collection inspired by the ‘Old Man and the Sea’ author’s favored gear lets anglers cast lines like the legend</td>
+      <td><img src="../2020-11/img/im-264230.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-26 10:00:00</td>
+      <td>Markets</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/offices-and-malls-will-look-different-after-covid-19-11606402803?mod=markets_featst_pos1">Offices and Malls Will Look Different After Covid-19</a></td>
+      <td>Commercial properties will be helped by a coronavirus vaccine, but long-term pressures may accelerate postpandemic</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-26 10:00:00</td>
+      <td>Politics</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/social-medias-liability-shield-is-under-assault-11606402800?mod=tech_lead_pos4">Social Media’s Liability Shield Is Under Assault</a></td>
+      <td>There is growing pressure to revise Section 230 to make internet businesses more accountable for online content</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-26 09:33:00</td>
+      <td>Real Estate</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/how-the-snail-mail-renaissance-is-soothing-americans-tired-of-zoom-11606401233">How the Snail-Mail Renaissance Is Soothing Americans Tired of Zoom</a></td>
+      <td>Isolated, stressed and weary of screens, people are reaching out with super-creative letters delivered by the U.S. Postal Service</td>
+      <td><img src="../2020-11/img/im-264410.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-26 09:15:00</td>
+      <td>World</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/parents-in-china-find-a-third-child-is-now-sometimes-allowed-11606400104?mod=world_major_2_pos4">With Baby Steps, Chinese Parents Test Strictness of the Two-Child Policy</a></td>
+      <td>While Beijing hasn’t signaled it is ready to give up birth limits altogether, there are signs punishments have become less strict in some places; ‘one eye open, one eye closed’</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-26 08:50:00</td>
+      <td>World</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/south-koreas-central-bank-says-covid-19-rise-wont-derail-economic-recovery-11606391937?mod=world_major_1_pos3">South Korea’s Central Bank Says Covid-19 Rise Won’t Derail Economic Recovery</a></td>
+      <td>Bank of Korea issues a brighter outlook, forecasting a 1.1% contraction this year rather than the 1.3% it had expected</td>
+      <td><img src="../2020-11/img/im-265134.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-26 08:35:00</td>
+      <td>World</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/in-italys-south-warzone-doctors-are-called-to-the-rescue-amid-covid-19-upsurge-11606397699?mod=world_major_1_pos5">In Italy’s South, War Zone Doctors Are Called to the Rescue Amid Covid-19 Upsurge</a></td>
+      <td>Humanitarian group best known for assisting war and Ebola victims will help confront the crisis in Italy’s poorest region</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-26 08:00:00</td>
+      <td>Politics</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/biden-has-early-chances-to-show-allies-his-global-trade-agenda-11606395600">Biden Has Early Chances to Show Allies His Global Trade Agenda</a></td>
+      <td>Removing Trump’s tariffs, calling Group of 20 meeting among possible moves by new president</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-26 08:00:00</td>
+      <td>U.S.</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/midwestern-governors-seek-more-federal-covid-19-aid-for-businesses-11606395603">Midwestern Governors Seek More Federal Covid-19 Aid for Businesses</a></td>
+      <td>Restaurants and others, hit with new restrictions as virus surges, point to grim months ahead without financial help</td>
+      <td><img src="../2020-11/img/im-264965.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-26 07:54:00</td>
+      <td>World</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/mexico-confirms-its-economy-rebounded-in-third-quarter-11606395239?mod=world_minor_pos2">Mexico Confirms Its Economy Rebounded in Third Quarter</a></td>
+      <td>GDP expanded a seasonally adjusted 12.1% in the third period following a record 17% contraction in the previous quarter</td>
+      <td><img src="../2020-11/img/im-265145.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-26 06:25:00</td>
+      <td>Economy</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/japans-stock-playing-central-bank-racks-up-56-billion-gain-11606389909?mod=markets_lead_pos7">Japan’s Stock-Playing Central Bank Racks Up $56 Billion Gain</a></td>
+      <td>Bank of Japan under Haruhiko Kuroda scores after boosting investments at stock-market bottom, but some say he shouldn’t play the market so much</td>
+      <td><img src="../2020-11/img/im-265136.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-26 05:30:00</td>
+      <td>Markets</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/outside-monitors-urge-deutsche-bank-to-quit-russia-11606386601?mod=markets_featst_pos2">Outside Monitors Urge Deutsche Bank to Quit Russia</a></td>
+      <td>Monitors appointed by New York regulators told the German lender it should drop plans to expand in Russia and shut its business there</td>
+      <td><img src="../2020-11/img/im-264605.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-26 05:30:00</td>
+      <td>Markets</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/this-black-friday-avoid-credit-card-pitfalls-11606386600?mod=markets_lead_pos10">This Black Friday, Avoid Credit-Card Pitfalls</a></td>
+      <td>Here’s how to be strategic with your pandemic holiday spending—and debt</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-26 05:06:00</td>
+      <td>Markets</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/jd-health-ipo-will-set-hearts-racing-11606384991?mod=markets_major_pos2">JD Health IPO Will Set Hearts Racing</a></td>
+      <td>Investors have already paid up for competitors and the regulatory environment looks less fraught than for Ant</td>
+      <td><img src="../2020-11/img/im-265130.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-26 04:45:00</td>
+      <td>Markets</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/shopping-mall-activists-score-an-early-win-11606383935?mod=markets_major_pos3">Shopping Mall Activists Score an Early Win</a></td>
+      <td>The owner of the Westfield chain issued new bonds cheaply, but still needs to sort out its $35 billion debt load</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-25 19:14:00</td>
+      <td>Opinion</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/hindu-nationalists-crazy-crackdown-on-love-jihad-11606349657?mod=opinion_major_pos7">Hindu Nationalists’ Crazy Crackdown on ‘Love Jihad’</a></td>
+      <td>Converts will need special permission to marry someone of a different religious background.</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-25 19:11:00</td>
+      <td>Opinion</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/justice-for-michael-flynn-11606349462?mod=opinion_major_pos9">Justice for Michael Flynn</a></td>
+      <td>Trump’s pardon for his onetime national security adviser rights a grievous wrong.</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-25 19:11:00</td>
+      <td>Opinion</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/blessings-in-a-hard-year-11606349509?mod=opinion_major_pos8">Blessings in a Hard Year</a></td>
+      <td>Among the unexpected gifts of 2020 is a newfound appreciation for people who keep America running.</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-25 18:59:00</td>
+      <td>Opinion</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/gm-drives-in-political-reverse-11606348737?mod=opinion_major_pos3">GM Drives in Political Reverse</a></td>
+      <td>Mary Barra drops support for a Trump suit against California.</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-25 18:28:00</td>
+      <td>CMO Today</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/facebooks-latest-error-shakes-advertisers-confidence-11606346927?mod=tech_featst_pos1">Facebook’s Latest Error Shakes Advertisers’ Confidence</a></td>
+      <td>Company quietly told advertisers earlier this month that its ‘conversion lift’ tool, used to measure outcomes, overestimated some campaign results</td>
+      <td><img src="../2020-11/img/im-264975.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-25 18:25:00</td>
+      <td>Economy</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/weekly-jobless-claims-coronavirus-11-25-2020-11606249439">U.S. Unemployment Claims Rose to 778,000 Last Week</a></td>
+      <td>Worker filings for jobless benefits are down sharply from a peak of nearly seven million in late March</td>
+      <td><img src="../2020-11/img/im-264295.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-25 18:16:00</td>
+      <td>Economy</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/consumer-spending-personal-income-coronavirus-october-2020-11606261923">U.S. Consumer Spending Grows for Sixth Straight Month, Albeit Slower</a></td>
+      <td>Consumer spending rose 0.5% in October while household income fell sharply</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-25 17:50:00</td>
+      <td>World</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/maradonas-death-prompts-outpouring-of-grief-in-argentina-world-11606344640?mod=world_minor_pos3">Maradona’s Death Prompts Outpouring of Grief in Argentina, World</a></td>
+      <td>Soccer star was revered in his native land</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-25 17:49:00</td>
+      <td>Risk & Compliance Journal</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/u-s-blacklists-militia-leader-for-alleged-human-rights-abuse-in-libya-11606344560?mod=business_minor_pos17">U.S. Blacklists Militia, Leader for Alleged Human Rights Abuse in Libya</a></td>
+      <td>The sanctions come as the U.S. uses sanctions as a tool to target corruption and alleged human rights abusers—a trend likely to continue under Biden</td>
+      <td><img src="../2020-11/img/im-264972.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-25 17:26:00</td>
+      <td>Economy</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/fed-officials-discussed-asset-purchase-program-at-november-meeting-11606330877">Fed Signals New Guidance Coming on Asset-Purchase Program</a></td>
+      <td>Ways that purchases could be changed to provide more stimulus to the economy, if needed, were discussed</td>
+      <td><img src="../2020-11/img/im-250651.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-25 16:52:00</td>
+      <td>Markets</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/justice-department-clears-intuit-to-buy-credit-karma-11606341143?mod=markets_featst_pos3">Justice Department Clears Intuit to Buy Credit Karma</a></td>
+      <td>Credit Karma agreed to sell its tax-preparation business to Square to win antitrust approval</td>
+      <td><img src="../2020-11/img/im-264735.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-25 16:41:00</td>
+      <td>Television Review</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/empires-of-new-york-review-big-apple-bigger-characters-11606340514?mod=opinion_major_pos13">‘Empires of New York’ Review: Big Apple, Bigger Characters</a></td>
+      <td>A docuseries looks at the outsize and era-defining personalities of Ivan Boesky, Donald Trump, John Gotti, Leona Helmsley and Rudolph Giuliani in 1980s New York.</td>
+      <td><img src="../2020-11/img/im-264885.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-25 16:34:00</td>
+      <td>Film Review</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/zappa-review-a-rock-star-savant-11606340068?mod=opinion_major_pos14">‘Zappa’ Review: A Rock Star Savant</a></td>
+      <td>A compelling documentary delivers a comprehensive portrait of provocative musical polymath Frank Zappa.</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-25 16:32:00</td>
+      <td>Television Review</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/the-flight-attendant-review-taking-off-from-reality-11606339970?mod=opinion_major_pos15">‘The Flight Attendant’ Review: Taking Off From Reality</a></td>
+      <td>A flight attendant struggles to return to the real world after waking up in a hotel room in Thailand and discovering a grisly scene.</td>
+      <td><img src="../2020-11/img/im-264749.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-25 16:22:00</td>
+      <td>Business</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/the-covid-19-vaccine-when-will-it-be-available-for-you-11606339361?mod=business_minor_pos3">The Covid-19 Vaccine: When Will It Be Available for You?</a></td>
+      <td>First U.S. rollouts of doses could start in December, but health-care workers, older Americans likely to take priority over general population</td>
+      <td><img src="../2020-11/img/im-264315.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-25 15:25:00</td>
+      <td>Deals</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/salesforce-has-held-talks-to-buy-slack-technologies-11606326392?mod=markets_major_pos12">Salesforce Is in Advanced Talks to Buy Slack Technologies</a></td>
+      <td>A deal would likely value Slack at more than $17 billion and mark Salesforce’s largest acquisition ever</td>
+      <td><img src="../2020-11/img/im-264659.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-25 14:06:00</td>
+      <td>Markets</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/propane-is-cheap-go-ahead-buy-a-patio-heater-11606300203?mod=markets_minor_pos5">Propane Is Cheap. Go Ahead, Buy a Patio Heater.</a></td>
+      <td>Fortunately for those heating outdoor spaces during the Covid-19 pandemic, the U.S. has an ample propane supply</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-25 13:30:00</td>
+      <td>Markets</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/covid-wont-steal-christmas-11606329052?mod=markets_major_pos3">Covid Won’t Steal Christmas</a></td>
+      <td>This holiday shopping season will be different, but there will be shopping</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-25 13:20:00</td>
+      <td>Markets</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/dol-fiduciary-regulation-for-retirement-plans-is-now-in-limbo-11606312803?mod=markets_major_pos4">Department of Labor Regulation for Retirement Plans Is Now in Limbo</a></td>
+      <td>Delays on proposed fiduciary rule have made it vulnerable to being scrapped under Biden administration</td>
+      <td><img src="../2020-11/img/im-263813.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-25 13:17:00</td>
+      <td>Business</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/there-are-more-female-ceos-than-ever-and-many-of-them-are-in-retail-11606328235?mod=business_minor_pos1">There Are More Female CEOs Than Ever, and Many of Them Are in Retail</a></td>
+      <td>Lauren Hobart’s appointment to helm of Dick’s Sporting Goods brings number of women running Fortune 500 companies to a record</td>
+      <td><img src="../2020-11/img/im-264226.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-25 13:17:00</td>
+      <td>World</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/saudi-womens-rights-activist-championed-in-the-west-to-face-terrorism-charges-11606328249?mod=world_major_1_pos7">Saudi Women’s Rights Activist Championed in the West to Face Terrorism Charges</a></td>
+      <td>Loujain al-Hathloul became a focus of Western attention after her arrest in 2017</td>
+      <td><img src="../2020-11/img/im-264630.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-25 13:08:00</td>
+      <td>World</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/chinas-xi-congratulates-biden-weeks-after-other-leaders-11606327689?mod=world_major_2_pos5">China’s Xi Congratulates Biden Weeks After Other Leaders</a></td>
+      <td>Message, coming after Trump said administration will cooperate with transition, underlines Beijing’s desire to stabilize the relationship</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-25 13:04:00</td>
+      <td>Life & Arts</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/recipes-for-a-smaller-holiday-meal-with-big-flavor-11606327488">Recipes for a Smaller Holiday Meal With Big Flavor</a></td>
+      <td>Even scaled-down celebrations call for exceptional spice and color. Paprika-rubbed roast chicken, pomegranate-flecked wheat berry pudding and more will satisfy a small gathering with outsize expectations.</td>
+      <td><img src="../2020-11/img/im-264479.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-25 12:56:00</td>
+      <td>Logistics Report</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/ge-appliances-turns-up-the-speed-on-supply-chain-upgrade-11606326996?mod=business_minor_pos19">GE Appliances Turns Up the Speed on Supply-Chain Upgrade</a></td>
+      <td>Coronavirus-driven disruptions in demand and production added urgency to an effort aimed at building visibility and flexibility</td>
+      <td><img src="../2020-11/img/im-264684.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-25 12:46:00</td>
+      <td>Opinion</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/thanksgiving-and-the-american-character-11606326409?mod=opinion_minor_pos2">Thanksgiving and the American Character</a></td>
+      <td>A former colleague’s exploration of the great holiday.</td>
+      <td><img src="../2020-11/img/im-264621.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-25 09:33:00</td>
+      <td>World</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/european-powers-won-t-push-biden-for-swift-u-s-return-to-iranian-nuclear-deal-11606314800?mod=world_major_1_pos6">European Powers Won't Push Biden for Swift U.S. Return to Iranian Nuclear Deal</a></td>
+      <td>There is growing concern about Iran’s nuclear research, but European diplomats say they don’t want to rush new U.S. president to re-enter pact</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-25 09:33:00</td>
+      <td>Experts Blog</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/why-you-shouldnt-ask-a-charity-how-it-spends-your-donation-01606312613?mod=markets_minor_pos16">Why You Shouldn’t Ask a Charity How It Spends Your Donation</a></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-25 09:23:00</td>
+      <td>Economy</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/global-trade-stages-rapid-recovery-11606314229">Global Trade Stages Rapid Recovery</a></td>
+      <td>Led by China, the rebound in exports and imports of goods has been much quicker than in the aftermath of the global financial crisis</td>
+      <td><img src="../2020-11/img/im-264628.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-25 09:20:00</td>
+      <td>WSJ Logistics Report</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/todays-logistics-report-building-vaccine-supply-chains-deliverys-uphill-climb-farming-looks-up-11606314018?mod=business_minor_pos20">Today’s Logistics Report: Building Vaccine Supply Chains; Delivery’s Uphill Climb; Farming Looks Up</a></td>
+      <td>Today’s Top Supply Chain & Logistics News from WSJ</td>
+      <td><img src="../2020-11/img/im-264342.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-25 07:59:00</td>
+      <td>World</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/china-drugmakers-face-pressure-to-prove-their-covid-19-vaccines-work-11606309143?mod=world_major_2_pos6">China Drugmakers Face Pressure to Prove Their Covid-19 Vaccines Work</a></td>
+      <td>The companies haven’t released results of late-stage trials while data from Western drugmakers show three candidates to be highly promising</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-25 07:36:00</td>
+      <td>Business</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/exxon-documents-reveal-more-pessimistic-outlook-for-oil-prices-11606307763?mod=markets_minor_pos6">Exxon Documents Reveal More Pessimistic Outlook for Oil Prices</a></td>
+      <td>The oil giant has lowered its expectations for prices for much of the next decade, internal documents reviewed by The Wall Street Journal show</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-25 06:24:00</td>
+      <td>Markets</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/regulatory-pressure-mounts-on-coal-miner-that-rattled-chinas-bond-market-11606303492?mod=markets_minor_pos4">Regulatory Pressure Mounts on Coal Miner that Rattled China’s Bond Market</a></td>
+      <td>Investigation into state-owned Yongcheng Coal is escalated to country’s securities regulator</td>
+      <td><img src="../2020-11/img/im-264604.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-25 06:02:00</td>
+      <td>Moneybeat Blog</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/wsj-wealth-adviser-briefing-bank-application-boost-emerging-market-rebound-vacation-gift-ideas-01606302132?mod=markets_major_pos7">WSJ Wealth Adviser Briefing: Bank Application Boost, Emerging Market Rebound, Vacation Gift Ideas</a></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-25 05:40:00</td>
+      <td>Markets</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/dow-30000-covid-economy-market-buy-and-hold-11606238819?mod=markets_major_pos10">Behind Dow 30000: A Self-Perpetuating Upward Spiral</a></td>
+      <td>Low interest rates and a buy-the-dip mantra have put stocks in an ascending pattern, defying the pandemic and economic woes</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-25 05:34:00</td>
+      <td>World</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/europe-doubles-down-on-data-protection-to-ward-off-silicon-valley-chinese-influence-11606300456?mod=tech_lead_pos12">Europe Doubles Down on Data Protection to Ward Off Silicon Valley, Chinese Influence</a></td>
+      <td>New EU proposal aims to offer protections for corporate and public-service data as GDPR covers individuals</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-25 05:30:00</td>
+      <td>CFO Journal</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/coca-cola-cfo-helps-company-make-cuts-operational-changes-11606300200?mod=business_minor_pos13">Coca-Cola CFO Helps Company Make Cuts, Operational Changes</a></td>
+      <td>The beverage giant is reducing the number of its brands and shrinking head count</td>
+      <td><img src="../2020-11/img/im-264532.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-25 05:30:00</td>
+      <td>CIO Journal</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/climate-researchers-enlist-big-cloud-providers-for-big-data-challenges-11606300202">Climate Researchers Enlist Big Cloud Providers for Big Data Challenges</a></td>
+      <td>Amazon, Google and Microsoft increasingly are providing the computing muscle scientists need to glean insights from vast stores of climate data</td>
+      <td><img src="../2020-11/img/im-264156.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-24 18:58:00</td>
+      <td>Opinion</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/the-transition-begins-11606262297?mod=opinion_minor_pos3">The Transition Begins</a></td>
+      <td>But it’s still worth knowing what happened in Pennsylvania.</td>
+      <td><img src="../2020-11/img/im-264553.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-24 18:14:00</td>
+      <td>Economy</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/yellen-will-confront-a-cooling-economic-recovery-uncertain-stimulus-prospects-11606215601?mod=markets_major_pos13">Yellen Will Confront a Cooling Economic Recovery, Uncertain Stimulus Prospects</a></td>
+      <td>President-elect Joe Biden’s pick to head Treasury will need to forge a broad consensus on measures to maintain growth as virus cases rise</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-24 18:07:00</td>
+      <td>Business</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/what-questions-to-ask-in-a-job-interview-11606259284?mod=business_minor_pos3">What Questions to Ask in a Job Interview</a></td>
+      <td></td>
+      <td><img src="../2020-11/img/im-263687.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-24 17:58:00</td>
+      <td>Books</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/philanthropy-review-thanks-to-the-givers-11606258703?mod=ig_booksnovember28">‘Philanthropy’ Review: Thanks to the Givers</a></td>
+      <td>Criticizing the wealthy for do-goodism is an old sport. Yet who but they are willing to put money behind activities that lack public support?</td>
+      <td><img src="../2020-11/img/im-264450.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-24 17:56:00</td>
+      <td>CFO Journal</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/sealed-air-names-new-finance-chief-as-incumbents-contract-nears-end-11606258592?mod=business_minor_pos14">Sealed Air Names New Finance Chief as Incumbent’s Contract Nears End</a></td>
+      <td>The packaging company hires Christopher J. Stephens to take over its finances</td>
+      <td><img src="../2020-11/img/im-264424.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-24 17:54:00</td>
+      <td>Opinion</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/media-hysteria-is-the-trump-show-11606258495?mod=opinion_major_pos7">Media Hysteria Is the Trump Show</a></td>
+      <td>Every election must end but a queasy feeling lingers in our mail-in experiment.</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-24 17:49:00</td>
+      <td>Opinion</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/the-political-classs-hypocrisy-long-predates-covid-19-11606258191?mod=opinion_major_pos8">The Political Class’s Hypocrisy Long Predates Covid-19</a></td>
+      <td>Cuomo’s Thanksgiving troubles remind me of an encounter years ago at Reagan National Airport.</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-24 17:20:00</td>
+      <td>World</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/u-s-other-foreign-donors-pledge-billions-in-aid-to-afghanistan-11606251285?mod=world_major_1_pos8">U.S., Other Foreign Donors Pledge Billions in Aid to Afghanistan</a></td>
+      <td>Kabul draws about $3 billion in pledges for 2021, depending on progress of peace talks with Taliban</td>
+      <td><img src="../2020-11/img/im-264088.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-24 17:04:00</td>
+      <td>Risk & Compliance Journal</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/jpmorgan-chase-unit-to-pay-250-million-penalty-over-poor-internal-controls-11606255474?mod=business_minor_pos18">JPMorgan Chase Unit to Pay $250 Million Penalty Over Poor Internal Controls</a></td>
+      <td>Regulator cites bank’s weak risk-management practices and an insufficient framework for avoiding conflicts of interest</td>
+      <td><img src="../2020-11/img/im-264409.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-24 16:50:00</td>
+      <td>Economy</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/upbeat-investors-look-past-covid-19-related-woes-11606254616">Upbeat Investors Look Past Covid-19, Related Woes</a></td>
+      <td>Dow industrials close above 30000 for first time on hopes vaccines will set scene for economic recovery</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-24 15:15:00</td>
+      <td>Life & Arts</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/are-some-wines-simply-impossible-to-pair-with-food-11606248957">Are Some Wines Simply Impossible to Pair With Food?</a></td>
+      <td>Our wine columnist took on some notoriously unpairable wines, attempting to find a happy match. With persistence and some professional advice, she made a few discoveries.</td>
+      <td><img src="../2020-11/img/im-262305.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-24 15:14:00</td>
+      <td>Markets</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/accelerating-rally-in-oil-prices-signals-optimism-about-global-growth-11606233299?mod=markets_minor_pos5">Accelerating Rally in Oil Prices Signals Optimism About Global Growth</a></td>
+      <td>U.S. crude-oil hits highest level since early March following sixth gain in seven sessions</td>
+      <td><img src="../2020-11/img/im-264060.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-24 12:29:00</td>
+      <td>Opinion</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/republicans-are-souring-on-trumps-antics-11606238991?mod=opinion_major_pos9">Republicans Are Souring on Trump’s Antics</a></td>
+      <td>Mitch McConnell should join colleagues urging the president to accept his loss.</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-24 11:28:00</td>
+      <td>World</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/india-bans-more-chinese-apps-as-part-of-its-digital-campaign-to-pressure-beijing-11606235329?mod=tech_listb_pos1">India Bans More Chinese Apps as Part of Its Digital Campaign to Pressure Beijing</a></td>
+      <td>Tensions continue to simmer between two countries following deadly border clash earlier this year</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-24 10:32:00</td>
+      <td>Economy</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/consumer-confidence-dropped-in-november-amid-rising-covid-19-cases-11606231930">Consumer Confidence Dropped in November Amid Rising Covid-19 Cases</a></td>
+      <td>Conference Board index falls to 96.1 this month as Americans’ outlook on the U.S. economy darkened</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-24 09:53:00</td>
+      <td>Markets</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/vaccine-hopes-send-record-funds-to-emerging-markets-11606229611?mod=markets_minor_pos1">Covid Vaccine Hopes Send Record Funds to Emerging Markets</a></td>
+      <td>Money managers look to life after Covid-19, betting on a big rebound in emerging economies</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-24 09:10:00</td>
+      <td>Economy</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/u-s-home-price-growth-accelerated-in-september-11606227049">U.S. Home-Price Growth Accelerated in September</a></td>
+      <td>Index of average home prices in major metropolitan areas rose 7% in year ended in the month</td>
+      <td><img src="../2020-11/img/im-264057.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-24 08:13:00</td>
+      <td>Deals</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/mccormick-nears-deal-to-buy-hot-sauce-maker-cholula-11606188600?mod=markets_minor_pos7">McCormick Buys Hot-Sauce Maker Cholula</a></td>
+      <td>Seasonings company pays $800 million to private-equity firm L Catterton for the brand</td>
+      <td><img src="../2020-11/img/im-263905.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-24 08:00:00</td>
+      <td>Real Estate</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/u-k-tax-refund-repeal-is-a-new-headache-for-retail-property-owners-11606222802?mod=markets_minor_pos20">U.K. Tax-Refund Repeal Is a New Headache for Retail Property Owners</a></td>
+      <td>Business leaders worry that tourists will abandon London for other European shopping destinations</td>
+      <td><img src="../2020-11/img/im-263185.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-24 08:00:00</td>
+      <td>Tech</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/why-boys-are-more-at-risk-of-falling-behind-during-remote-school-11606222801?mod=tech_lista_pos2">Why Boys Are More at Risk of Falling Behind During Remote School</a></td>
+      <td>Distractions and lack of motivation while learning at home might be hurting boys more than girls—and researchers say that could widen the gender achievement gap</td>
+      <td><img src="../2020-11/img/im-263668.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-24 07:30:00</td>
+      <td>CMO Today</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/salesforce-puts-money-into-appsflyer-11606221000?mod=business_minor_pos9">Salesforce Puts Money Into AppsFlyer</a></td>
+      <td>The company, which says it is now valued at $2 billion, sells mobile analytics software that weighs the effectiveness of ad campaigns</td>
+      <td><img src="../2020-11/img/im-263886.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-24 07:00:00</td>
+      <td></td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/new-energy-capital-sees-renewable-energy-incentives-gaining-under-biden-11606219200?mod=markets_minor_pos6">New Energy Capital Sees Renewable-Energy Incentives Gaining Under Biden</a></td>
+      <td>The solar power investor expects the new president to extend incentives for renewable energy sources</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-24 06:02:00</td>
+      <td>Moneybeat Blog</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/wsj-wealth-adviser-briefing-love-and-money-teens-and-family-spending-moves-rental-nesting-fever-01606215731?mod=markets_major_pos8">WSJ Wealth Adviser Briefing: Love and Money, Teens and Family Spending Moves, Rental ‘Nesting Fever’</a></td>
+      <td>Curated news and analysis for wealth advisers and their clients from WSJ reporters and columnists</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-24 05:30:00</td>
+      <td>Tech</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/best-tech-gifts-2020-our-favorite-gadgets-11606213802?mod=tech_lead_pos10">Best Tech Gifts 2020: Our Favorite Gadgets</a></td>
+      <td>From smart steam ovens and self-lighting candles to the best phones, laptops and headphones to buy, it’s the WSJ Personal Tech team’s annual list of tested, recommended products</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-24 05:30:00</td>
+      <td>Real Estate</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/stock-market-titans-amazon-google-and-facebook-are-also-driving-commercial-real-estate-11606213801?mod=markets_minor_pos19">Stock-Market Titans Amazon, Google and Facebook Are Also Driving Commercial Real Estate</a></td>
+      <td>Tech’s soaring property demand has been mostly a boon for cities, although it has fueled some concerns over rising rents and gentrification</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-24 05:30:00</td>
+      <td>CIO Journal</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/coronavirus-pandemic-helps-speed-more-cios-toward-business-operations-accountability-11606213800">Coronavirus Pandemic Helps Speed More CIOs Toward Business Operations Accountability</a></td>
+      <td>Chief information officers working in large, traditional enterprises will effectively become, as Gartner calls it, “COO by proxy”</td>
+      <td><img src="../2020-11/img/im-263881.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-24 05:30:00</td>
+      <td>Business</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/some-peloton-buyers-are-sick-of-waiting-11606213803?mod=tech_listb_pos3">Some Peloton Buyers Are Sick of Waiting</a></td>
+      <td>Demand is straining company’s supply chain, causing monthslong waits and customer defections to Bowflex bikes and NordicTrack treadmills</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-23 19:30:00</td>
+      <td>Markets</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/blackrock-to-buy-equity-index-provider-aperio-for-1-billion-11606173777?mod=markets_minor_pos8">BlackRock to Buy Equity-Index Provider Aperio for $1 Billion</a></td>
+      <td>The all-cash deal is a move to add more personalization to its offerings</td>
+      <td><img src="../2020-11/img/im-263909.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-23 19:14:00</td>
+      <td>Business</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/apple-security-chief-offered-ipads-to-police-as-a-bribe-for-gun-permits-prosecutors-allege-11606176850?mod=tech_listb_pos4">Apple Security Chief Offered iPads to Police as a Bribe for Gun Permits, Prosecutors Allege</a></td>
+      <td>Thomas Moyer denies allegations that he agreed to give the Santa Clara County Sheriff’s Office 200 iPads in exchange for four concealed carry licenses for Apple employees</td>
+      <td><img src="../2020-11/img/im-263941.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-23 18:15:00</td>
+      <td>Books</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/noble-volunteers-review-the-men-beneath-the-red-coats-11606173354?mod=ig_booksnovember28">‘Noble Volunteers’ Review: The Men Beneath the Red Coats</a></td>
+      <td>Few caricatures from the American Revolution are as well-developed as that of the soldier who fought for Britain.</td>
+      <td><img src="../2020-11/img/im-263866.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-23 16:54:00</td>
+      <td>Pro Bankruptcy</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/u-s-found-not-liable-for-puerto-rico-bond-losses-11606168440?mod=markets_major_pos14">U.S. Found Not Liable for Puerto Rico Bond Losses</a></td>
+      <td>A Washington judge rules against bondholders seeking to hold Uncle Sam responsible for losses on a $3 billion bond</td>
+      <td><img src="../2020-11/img/im-263843.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-23 16:00:00</td>
+      <td>Pro Bankruptcy Beyond Bankruptcy</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/regal-cinemas-owner-lands-financial-lifeline-averting-bankruptcy-11606142823?mod=markets_major_pos15">Regal Cinemas Owner Lands Financial Lifeline, Averting Bankruptcy</a></td>
+      <td>Cineworld obtains a $450 million loan and other debt relief</td>
+      <td><img src="../2020-11/img/im-263573.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-23 13:17:00</td>
+      <td>Tech</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/best-holiday-gift-ideas-for-tech-gear-2020-11605895983?mod=tech_lista_pos1">Holiday Gift Ideas for Tech and Gear Fans—From Nintendo Collectibles to Smart Earbuds</a></td>
+      <td>These under-$300 presents are clever and practical enough to be put to good use before the clock strikes midnight on 2020</td>
+      <td><img src="../2020-11/img/im-261439.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-23 12:11:00</td>
+      <td>World</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/israel-uae-bahrain-deal-11597350194?mod=world_major_1_pos9">What’s in Israel’s Deal With Bahrain and the U.A.E.?</a></td>
+      <td>Pact marks third time Israel has reached diplomatic agreement with regional neighbors</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-23 11:48:00</td>
+      <td>Business</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/cargills-ceo-on-preventing-covid-19-surge-from-disrupting-the-food-supply-11606150115?mod=business_minor_pos2">Cargill’s CEO on Preventing Covid-19 Surge From Disrupting the Food Supply</a></td>
+      <td>David MacLennan discusses boosting employee safety while maintaining meat production, and why food-industry workers deserve priority vaccine consideration</td>
+      <td><img src="../2020-11/img/im-261884.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-23 11:34:00</td>
+      <td>Economy</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/europes-economy-set-to-contract-again-as-lockdowns-bite-11606130016">U.S. Economic Activity Picks Up on Postelection Lift, Vaccine Results</a></td>
+      <td>Europe falters as new lockdowns hit services industry hard</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-23 09:59:00</td>
+      <td>Business</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/google-plans-fiber-optic-network-to-connect-via-saudi-arabia-and-israel-for-first-time-11606143590?mod=tech_listb_pos2">Google Plans Fiber-Optic Network to Connect Via Saudi Arabia and Israel for First Time</a></td>
+      <td>New fiber-optic network would connect the historical enemies and open a new corridor for internet traffic</td>
+      <td><img src="../2020-11/img/im-262803.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-23 09:17:00</td>
+      <td>Politics</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/for-trump-and-gop-risks-in-post-election-fight-rise-11606141033">For Trump and GOP, Risks in Postelection Fight Rise</a></td>
+      <td>Undermining the legitimacy of a system that has benefited Republicans could leave president remembered more as a sore loser than consequential</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-23 06:02:00</td>
+      <td>Moneybeat Blog</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/wsj-wealth-adviser-briefing-mortgages-social-causes-did-america-tax-your-favorite-bordeaux-01606129331?mod=markets_major_pos9">WSJ Wealth Adviser Briefing: Mortgages, Social Causes, Did America Tax Your Favorite Bordeaux?</a></td>
+      <td>Curated news and analysis for wealth advisers and their clients from WSJ reporters and columnists</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-23 05:30:00</td>
+      <td>Markets</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/bitcoin-trades-again-near-record-driven-by-new-group-of-buyers-11606127401?mod=markets_minor_pos2">Bitcoin Trades Again Near Record, Driven by New Group of Buyers</a></td>
+      <td>Cryptocurrency attracts billionaires Paul Tudor Jones and Stanley Druckenmiller plus momentum investors</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-23 05:30:00</td>
+      <td>CIO Journal</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/dhls-warehouse-management-business-makes-it-easier-to-onboard-robots-11606127400">DHL’s Warehouse Management Business Makes It Easier to Onboard Robots</a></td>
+      <td>Hub built by Blue Yonder removes need for custom software configurations at each warehouse</td>
+      <td><img src="../2020-11/img/im-263046.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-23 05:30:00</td>
+      <td>CFO Journal</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/cfos-adjust-to-remote-due-diligence-as-deal-making-soars-11606127401?mod=business_minor_pos15">CFOs Adjust to Remote Due Diligence as Deal Making Soars</a></td>
+      <td>Finance chiefs are reviewing company books, assets and facilities using virtual tours and digital collaboration platforms</td>
+      <td><img src="../2020-11/img/im-263048.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-22 18:40:00</td>
+      <td>Real Estate</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/costar-in-advanced-talks-to-buy-homesnap-for-250-million-11606068000?mod=markets_minor_pos21">CoStar to Buy Homesnap for $250 Million</a></td>
+      <td>Purchase would mark the company’s first significant step into residential data</td>
+      <td><img src="../2020-11/img/im-263373.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-22 16:38:00</td>
+      <td>Books</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/vision-or-mirage-review-finding-the-key-to-the-kingdom-11606081093?mod=ig_booksnovember28">‘Vision or Mirage’ Review: Finding the Key to the Kingdom</a></td>
+      <td>With a nuanced policy, American ofﬁcials can encourage reform in Saudi Arabia without supporting its authoritarian tendencies.</td>
+      <td><img src="../2020-11/img/im-263408.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-22 15:00:00</td>
+      <td>Economy</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/economy-week-ahead-factories-layoffs-consumer-spending-11606075200">Economy Week Ahead: Factories, Layoffs, Consumer Spending</a></td>
+      <td>Surveys in the U.S., Europe are expected to indicate service-sector slowdowns amid new coronavirus restrictions</td>
+      <td><img src="../2020-11/img/im-263340.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-22 10:00:00</td>
+      <td>Economy</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/a-covid-19-vaccine-could-unleash-pent-up-demand-bringing-along-inflation-11606057200">A Covid-19 Vaccine Could Unleash Pent-Up Demand, Bringing Along Inflation</a></td>
+      <td>A return to pre-pandemic lives may bring a surge in spending, some analysts say</td>
+      <td><img src="../2020-11/img/im-263319.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-21 12:00:00</td>
+      <td>Tech</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/four-reasons-the-stay-at-home-economy-is-here-to-stay-11605934806?mod=tech_listb_pos5">Four Reasons the Stay-at-Home Economy Is Here to Stay</a></td>
+      <td>Even after a Covid-19 vaccine, changes to how we shop, dine, work out and entertain ourselves are likely to endure</td>
+      <td><img src="../2020-11/img/im-262863.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-21 09:00:00</td>
+      <td>Markets</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/how-to-survive-pandemic-money-fights-11605967201?mod=markets_major_pos5">How to Survive Pandemic Money Fights</a></td>
+      <td>Amid Covid-19 crisis, advisers say they are helping couples better navigate financial turbulence by running numbers</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-21 08:00:00</td>
+      <td>U.S. Economy</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/student-loan-losses-seen-costing-u-s-more-than-400-billion-11605963600">Student Loan Losses Seen Costing U.S. More Than $400 Billion</a></td>
+      <td>Projected toxic debt approaches subprime-mortgage losses incurred by lenders during financial crisis</td>
+      <td><img src="../2020-11/img/im-262337.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-20 19:27:00</td>
+      <td>Economy</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/ppp-borrowers-are-asked-to-justify-need-for-loans-over-2-million-11605903702">PPP Borrowers Are Asked to Justify Need for Loans Over $2 Million</a></td>
+      <td>Trade groups say agency is seeking disclosures that weren’t required when loans were first made</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-20 18:34:00</td>
+      <td>Markets</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/zurich-insurance-in-talks-to-acquire-metlifes-car-home-insurance-unit-11605915278?mod=markets_minor_pos9">Zurich Insurance in Talks to Acquire MetLife’s Car, Home Insurance Unit</a></td>
+      <td>Deal would be conducted through Zurich’s Farmers Group unit and expand its U.S. business</td>
+      <td><img src="../2020-11/img/im-263270.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-20 17:25:00</td>
+      <td>World</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/u-s-considers-moving-forces-out-of-somalia-11605911141?mod=world_major_2_pos3">U.S. Considers Moving Forces Out of Somalia</a></td>
+      <td>Relocation of 700 troops would shift course in Africa in waning weeks of Trump administration; move would follow troop cuts in Iraq, Afghanistan</td>
+      <td><img src="../2020-11/img/im-263174.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-20 16:16:00</td>
+      <td>Logistics Report</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/maritime-regulators-to-investigate-container-shortage-impact-on-u-s-exporters-11605906970?mod=business_minor_pos21">Maritime Regulators to Investigate Container Shortage Impact on U.S. Exporters</a></td>
+      <td>The Federal Maritime Commission will probe shipping lines that agricultural exporters say are holding back containers needed to reach foreign markets</td>
+      <td><img src="../2020-11/img/im-263055.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-20 14:15:00</td>
+      <td>Business</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/how-to-set-career-goals-and-plan-out-your-professional-future-11605899711?mod=business_minor_pos1">How to Set Career Goals and Plan Out Your Professional Future</a></td>
+      <td></td>
+      <td><img src="../2020-11/img/im-262445.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-19 19:23:00</td>
+      <td>Economy</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/mnuchin-declines-to-extend-to-several-fed-emergency-lending-programs-11605821608?mod=business_minor_pos6">Mnuchin Declines to Extend Several Fed Emergency Lending Programs</a></td>
+      <td>Fed’s corporate credit, municipal lending and Main Street Lending programs won’t be renewed</td>
+      <td><img src="../2020-11/img/im-262509.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-19 18:27:00</td>
+      <td>Business</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/buzzfeed-to-acquire-huffpost-in-stock-deal-with-verizon-media-11605808800?mod=business_minor_pos22">BuzzFeed to Acquire HuffPost in Stock Deal With Verizon Media</a></td>
+      <td>New-media companies have been exploring mergers as they try to jump-start growth</td>
+      <td><img src="../2020-11/img/im-262274.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-19 10:14:00</td>
+      <td>World</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/turkey-lifts-rates-after-erdogans-endorsement-of-austerity-11605785992?mod=markets_minor_pos3">Turkey Lifts Rates After Erdogan’s Endorsement of Austerity</a></td>
+      <td>Rate rise comes soon after the president signaled a change in approach on economic policy</td>
+      <td><img src="../2020-11/img/im-262148.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-17 16:12:00</td>
+      <td>Business</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/how-to-build-a-career-path-in-3-steps-11605647450?mod=business_minor_pos2">How to Build a Career Path in 3 Steps</a></td>
+      <td></td>
+      <td><img src="../2020-11/img/im-261258.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-17 11:48:00</td>
+      <td>Experts Blog</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/the-importance-of-writing-an-ethical-willfor-you-and-to-those-you-love-01605631733?mod=markets_minor_pos17">The Importance of Writing an Ethical Will–for You and to Those You Love</a></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-17 09:00:00</td>
+      <td>Tech</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/apples-m1-macbook-air-and-macbook-pro-review-the-laptops-biggest-leap-in-years-11605621601?mod=tech_lista_pos4">Apple’s M1 MacBook Air and MacBook Pro Review: The Laptop’s Biggest Leap in Years</a></td>
+      <td>Goodbye, loud fan noise, warm palm rests and multiple daily rechargings. Apple’s new chip fundamentally changes its 13-inch laptops.</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-17 08:00:00</td>
+      <td>Tech</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/twitter-launches-new-fleets-feature-for-posts-that-disappear-in-24-hours-11605618010?mod=business_minor_pos23">Twitter Launches New ‘Fleets’ Feature for Posts That Disappear in 24 Hours</a></td>
+      <td>Social media company is seeking more engagement from new, less experienced users</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-16 10:20:00</td>
+      <td>Politics</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/the-year-of-the-woman-really-finally-did-arrive-in-2020-11605539331">The Year of the Woman Really, Finally Did Arrive in 2020</a></td>
+      <td>As voters, as candidates and as campaign leaders, women were—and now are—in the driver’s seat as never before</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-16 07:26:00</td>
+      <td>Business</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/companies-tiptoeing-back-to-the-office-encounter-legal-minefield-11605529593?mod=business_minor_pos3">Companies Tiptoeing Back to the Office Encounter Legal Minefield</a></td>
+      <td>White-collar workplaces face liability threats and complex compliance issues that until recently applied more to industrial settings</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-14 10:35:00</td>
+      <td>World</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/opioid-deaths-in-canada-were-falling-then-came-coronavirus-11605368112?mod=world_major_2_pos7">Opioid Deaths in Canada Were Falling, Then Came Coronavirus</a></td>
+      <td>Public-health officials had made progress in curbing the death toll from overdoses, but lockdowns hindered users’ access to clinics and overdose-prevention sites</td>
+      <td><img src="../2020-11/img/im-260060.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-14 05:30:00</td>
+      <td>Markets</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/its-open-enrollment-season-is-an-hsa-still-right-for-you-11605349800?mod=markets_major_pos6">It’s Open-Enrollment Season. Is an HSA Still Right for You?</a></td>
+      <td>Here’s how to run the numbers between high-deductible plans with HSAs and conventional offerings</td>
+      <td><img src="../2020-11/img/im-258688.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-11-11 12:18:00</td>
+      <td>Economy</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/biden-beware-the-nationalist-moment-hasnt-passed-11605112395">Biden, Beware: The Nationalist Moment Hasn’t Passed</a></td>
+      <td>How president-elect handles trade, immigration and climate could soothe or inflame the backlash against globalization</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-11 11:19:00</td>
+      <td>Tech</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/social-media-companies-took-an-aggressive-stance-during-the-election-will-it-continue-11605111540?mod=business_minor_pos24">Social-Media Companies Took an Aggressive Stance During the Election. Will It Continue?</a></td>
+      <td>Platforms like Twitter and Facebook, which worked to slow the spread of misinformation, increasingly labeled posts during 2020 race</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-05 14:04:00</td>
+      <td>Economics Blog</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/parsing-the-fed-how-the-november-statement-changed-from-september-01604603089">Parsing the Fed: How the November Statement Changed From September</a></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-11-01 11:00:00</td>
+      <td>World</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/two-dead-in-quebec-city-stabbing-rampage-11604246410?mod=world_major_2_pos8">Two Dead in Quebec City Stabbing Rampage</a></td>
+      <td>Police arrest mid-20s man on suspicion of killing two, injuring five others</td>
+      <td><img src="../2020-11/img/im-253016.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-10-21 12:45:00</td>
+      <td>Experts Blog</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/the-case-for-delaying-social-securityeven-if-you-think-benefits-will-be-cut-01603298761?mod=markets_minor_pos18">The Case for Delaying Social Security–Even if You Think Benefits Will Be Cut</a></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-10-21 12:45:00</td>
+      <td>Experts Blog</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/the-case-for-delaying-social-securityeven-if-you-think-benefits-will-be-cut-01603298761?mod=markets_minor_pos18">The Case for Delaying Social Security–Even if You Think Benefits Will Be Cut</a></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2020-05-26 16:36:00</td>
+      <td>Markets</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/should-we-forgive-all-federal-student-loan-debt-11590525387?mod=markets_minor_pos13">Should We Forgive All Federal Student-Loan Debt?</a></td>
+      <td>A debate between a proponent who says the government should fix the debt crisis it created, and an opponent who says high repayments rates suggest the program is working for most</td>
+      <td><img src="../2020-05/img/im-190857.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-05-26 16:36:00</td>
+      <td>Markets</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/should-we-forgive-all-federal-student-loan-debt-11590525387?mod=markets_minor_pos13">Should We Forgive All Federal Student-Loan Debt?</a></td>
+      <td>A debate between a proponent who says the government should fix the debt crisis it created, and an opponent who says high repayments rates suggest the program is working for most</td>
+      <td><img src="../2020-05/img/im-190857.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-02-17 10:00:00</td>
+      <td>Markets</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/people-dont-save-enough-for-emergencies-but-there-are-ways-to-fix-that-11581951601?mod=markets_minor_pos14">People Don’t Save Enough for Emergencies, but There Are Ways to Fix That</a></td>
+      <td>Small changes to company retirement plans can make a big difference</td>
+      <td><img src="../2020-02/img/publicresourcesimagesB3-GD053_WERAIN_P_20200214182545.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-02-17 10:00:00</td>
+      <td>Markets</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/people-dont-save-enough-for-emergencies-but-there-are-ways-to-fix-that-11581951601?mod=markets_minor_pos14">People Don’t Save Enough for Emergencies, but There Are Ways to Fix That</a></td>
+      <td>Small changes to company retirement plans can make a big difference</td>
+      <td><img src="../2020-02/img/publicresourcesimagesB3-GD053_WERAIN_P_20200214182545.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-02-13 10:45:00</td>
+      <td>Markets</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/when-it-makes-sense-to-review-your-will-11581608714?mod=markets_minor_pos15">When It Makes Sense to Review Your Will</a></td>
+      <td>Estate plans should get a second look amid any significant financial changes in your life or changes in estate-tax law</td>
+      <td><img src="../2020-02/img/publicresourcesimagesB3-GC246_WEENCO_P_20200212141205.jpg"></td>
+    </tr>
+    <tr>
+      <td>2020-02-13 10:45:00</td>
+      <td>Markets</td>
+      <td><a target="_blank" href="https://www.wsj.com/articles/when-it-makes-sense-to-review-your-will-11581608714?mod=markets_minor_pos15">When It Makes Sense to Review Your Will</a></td>
+      <td>Estate plans should get a second look amid any significant financial changes in your life or changes in estate-tax law</td>
+      <td><img src="../2020-02/img/publicresourcesimagesB3-GC246_WEENCO_P_20200212141205.jpg"></td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+
+</body>
+</html>
