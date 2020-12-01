@@ -126,6 +126,7 @@ dmypy.json
 
 # project
 .idea/
+util/
 *.bat
 
 # wsj
