@@ -126,9 +126,3 @@ dmypy.json
 
 # project
 .idea/
-util/
-*.bat
-
-# wsj
-wsj/wsj/
-wsj/*.cfg
