@@ -118,7 +118,7 @@ $(document).ready(function() {
   $('.dataframe').DataTable({
     order: [[0, "desc"]],
     paging: true,
-    pageLength: 50
+    pageLength: 100
   });
 });
 </script>
