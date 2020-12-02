@@ -93,12 +93,13 @@ html3_1 = """
 <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap4.min.css">
 <style>
 body {font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji","SimHei", "PMingLiU", "Helvetica", "sans-serif";}
-.dataframe, .dataTables_info, .form-control-sm, label {font-size: 13px;}
+.dataframe {font-size: 13px;}
 .dataframe td:nth-child(1) {width: 10%;}
 .dataframe td:nth-child(2) {width: 10%;}
 .dataframe td:nth-child(3) {width: 30%;}
 .dataframe td:nth-child(4) {width: 40%;}
 .dataframe td:nth-child(5) {width: 10%;}
+.dataTables_info, .form-control-sm, label, .paginate_button {font-size: 12px;}
 </style>
 <script>
 $(document).ready(function() {
@@ -116,7 +117,8 @@ $(document).ready(function() {
   
   $('.dataframe').DataTable({
     order: [[0, "desc"]],
-    paging: false
+    paging: true,
+    pageLength: 50
   });
 });
 </script>
