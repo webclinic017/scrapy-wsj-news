@@ -1,0 +1,12 @@
+{
+    "url_original": "https://www.wsj.com/articles/in-battle-against-hackers-companies-try-to-deceive-the-deceivers-11607371200?mod=business_minor_pos6",
+    "url": "in-battle-against-hackers-companies-try-to-deceive-the-deceivers-11607371200",
+    "title": "In Battle Against Hackers, Companies Try to Deceive the Deceivers",
+    "sub_head": "The idea is to convince the attackers they have been successful, so that they will then reveal their methods",
+    "category_1": "Business",
+    "category_2": "Journal Reports: Technology",
+    "image_1_url": "https://images.wsj.net/im-269272?width=620&size=1.5",
+    "image_1": "im-269272.jpg",
+    "time": "2020-12-07 15:00:00",
+    "body": "An increasing number of companies are looking at an innovative approach to deal with hackers that break into their computer networks. They lure cybercriminals into thinking they’re getting close to the good stuff—and then they trap them.<br />That’s what Land O’Lakes, the suburban Minneapolis agricultural giant, is doing.<br />“Manufacturing-plant technology is difficult to protect, because those mills, generators and turbines were built 20 years ago with little consideration for security,” says Land O’ Lakes Chief Information-Security Officer Tony Taylor. If a hacker shuts down a dairy plant, “we lose hundreds of gallons of milk that we’ve already paid for. And we can’t make any butter.”<br />So, the company uses a tool called DeceptionGrid, created by Boston-based cybersecurity shop TrapX. The technology deploys an array of decoys and booby traps throughout the Land O’ Lakes network that mimic crucial information, to convince hackers that they have gotten access to the company’s crown jewels.<br />“Once any of the [decoys] are accessed or probed in any way, one centralized console alerts us, so we know to start investigating the source of that activity,” says Mr. Taylor. His team can then contain the intruder."
+}
