@@ -1,0 +1,11 @@
+{
+    "url_original": "https://www.wsj.com/articles/alexa-has-a-new-skill-asking-when-it-doesnt-know-11607732175?mod=tech_lead_pos12",
+    "url": "alexa-has-a-new-skill-asking-when-it-doesnt-know-11607732175",
+    "title": "Alexa Has a New Skill: Asking When It Doesn’t Know",
+    "sub_head": "‘Interactive teaching’ enables Amazon’s voice-assistant to solicit information when it encounters an unknown phrase. (Right now, it only works for lighting and temperature.)",
+    "category_1": "Artificial Intelligence",
+    "image_1_url": "https://images.wsj.net/im-272552?width=620&size=1.5",
+    "image_1": "im-272552.jpg",
+    "time": "2020-12-11 19:16:00",
+    "body": "Amazon.com Inc.  said this week that after years of research its Alexa voice assistant can now figure out the meaning of requests it has never heard before. The upgrade, which the company calls interactive teaching, could represent a significant advance in the way AI-powered voice assistants interpret and learn from everyday conversation, experts say.<br />Interactive teaching is powered by deep-learning models, and it works by having Alexa ask questions about a task-relevant phrase it is encountering for the first time.<br />For instance, if a user asks Alexa to set the lights to “reading mode” and the device hasn’t heard that phrase before, it will ask what it means. If the user says it means to set the lights at 50% brightness, Alexa will remember that for the next time.<br />Before this, teaching Alexa new terms required manual steps, such as having engineers program updates, or having users type in verbal triggers for actions in the Alexa app.<br />But with the new capability, Alexa is able to recognize gaps in its understanding and initiate the learning process, said Rohit Prasad, vice president and head scientist for Alexa AI at Amazon. The upgrade is available  in all U.S. Alexa devices."
+}
