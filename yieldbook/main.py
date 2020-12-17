@@ -109,3 +109,8 @@ file7_2 = os.path.join(path7_2, file7_1+'.csv')
 if os.path.exists(file7_2):
     os.remove(file7_2)
 df6_5.to_csv(file7_2)
+
+
+# 8.0
+path_git = os.path.join(path_root, 'run-git.bat')
+os.system(path_git)
