@@ -61,7 +61,7 @@ ctx5 = [v.get_text().strip() for v in soup.find_all('div')]
 date5 = ctx5[1].split(' ')
 years = ['january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october',
          'november', 'december']
-month = int(years.index(date5[4].lower()))
+month = int(years.index(date5[4].lower()))+1
 day = int(date5[5].replace(',', ''))
 year = int(date5[6])
 date5_1 = dt.date(year, month, day)
@@ -101,8 +101,8 @@ for df6 in tables:
     df6_5 = pd.concat([df6_5, df6_4], axis=0)
 
 # 7.0
-path7_1 = datetime.strftime(datetime.now(), '%Y-%m')
-file7_1 = datetime.strftime(datetime.now(), '%Y-%m-%d')
+path7_1 = datetime.strftime(date5_1, '%Y-%m')
+file7_1 = datetime.strftime(date5_1, '%Y-%m-%d')
 path7_2 = os.path.join(path1, path7_1)
 Path(path7_2).mkdir(parents=True, exist_ok=True)
 file7_2 = os.path.join(path7_2, file7_1+'.csv')
