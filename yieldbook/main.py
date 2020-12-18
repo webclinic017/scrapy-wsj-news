@@ -1,6 +1,7 @@
 import requests
 import os
 import camelot
+import json
 import datetime as dt
 import numpy as np
 import pandas as pd
@@ -21,12 +22,9 @@ path1 = os.path.join(path_root, 'data', 'yieldbook', 'factsheet_daily_usd')
 # 2.0
 path2 = os.path.join(path1, 'tmp')
 file2 = os.path.join(path2, 'tmp.pdf')
-# 2.1
 Path(path2).mkdir(parents=True, exist_ok=True)
-# 2.2
 if os.path.exists(file2):
     os.remove(file2)
-# 2.3
 with open(file2, 'wb') as fd:
     r = requests.get(url, stream=True)
     for chunk in r.iter_content(2000):
@@ -110,6 +108,12 @@ if os.path.exists(file7_2):
     os.remove(file7_2)
 df6_5.to_csv(file7_2)
 
+
+# 8.0
+file8 = datetime.strftime(date5_1, '%Y-%m-%d-%H%M%S')
+path_log = os.path.join(path_root, 'yieldbook', 'log', file8 + '.log')
+with open(path_log, 'w', encoding='utf-8') as f:
+    json.dump({'time': file8}, f, ensure_ascii=False, indent=4)
 
 # 8.0
 path_git = os.path.join(path_root, 'run-git.bat')
