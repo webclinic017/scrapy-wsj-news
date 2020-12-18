@@ -93,7 +93,7 @@ body {font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica
 # 5.0
 path5 = os.path.join(static_folder, 'html')
 Path(path5).mkdir(parents=True, exist_ok=True)
-path6 = os.path.join(path5, 'index-1.html')
+path6 = os.path.join(path5, 'index-3.html')
 writer3 = open(path6, "w", encoding="utf-8")
 writer3.write(htm4)
 writer3.close()
