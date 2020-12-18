@@ -14,12 +14,12 @@ from lxml import etree
 from bs4 import BeautifulSoup
 
 
-# 1.0
+# 1.0 环境设置
 url = 'https://www.yieldbook.com/x/ixFactSheet/factsheet_daily_usd.pdf'
 path_root = Path(__file__).parent.parent
 path1 = os.path.join(path_root, 'data', 'yieldbook', 'factsheet_daily_usd')
 
-# 2.0
+# 2.0 下载pdf
 path2 = os.path.join(path1, 'tmp')
 file2 = os.path.join(path2, 'tmp.pdf')
 Path(path2).mkdir(parents=True, exist_ok=True)
@@ -31,7 +31,7 @@ with open(file2, 'wb') as fd:
         fd.write(chunk)
 
 
-# 3.0
+# 3.0 转换html
 output = StringIO()
 html3 = os.path.join(path2, 'tmp.html')
 if os.path.exists(html3):
@@ -42,7 +42,7 @@ with open(html3, 'a') as html_file:
     html_file.write(output.getvalue())
 
 
-# 4.0
+# 4.0 解析1
 raw_html = output.getvalue()
 parser = etree.HTMLParser()
 tree = etree.parse(StringIO(raw_html), parser)
@@ -52,10 +52,9 @@ for div in divs:
 result = etree.tostring(tree.getroot(), pretty_print=True, method="html")
 
 
-# 5.0
+# 5.0 解析2
 soup = BeautifulSoup(raw_html, 'html.parser')
 ctx5 = [v.get_text().strip() for v in soup.find_all('div')]
-# 5.1
 date5 = ctx5[1].split(' ')
 years = ['january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october',
          'november', 'december']
@@ -65,7 +64,7 @@ year = int(date5[6])
 date5_1 = dt.date(year, month, day)
 
 
-# 6.0
+# 6.0 解析3
 tables = camelot.read_pdf(file2, pages='1,2', compress=False)
 df6_5 = pd.DataFrame()
 for df6 in tables:
@@ -91,14 +90,14 @@ for df6 in tables:
             data6_1 = np.reshape(r[1].split('\n'), shape6)
             data6_2 = np.reshape(r[2].split('\n'), shape6)
             data6_3 = np.reshape(r[3].split('\n'), shape6)
-    # 6.2
+    # 6.2 合并
     df6_1 = pd.DataFrame(data=data6_1, columns=types, index=names)
     df6_2 = pd.DataFrame(data=data6_2, columns=types, index=names)
     df6_3 = pd.DataFrame(data=data6_3, columns=types, index=names)
     df6_4 = pd.concat([df6_1, df6_2, df6_3], axis=1, keys=terms)
     df6_5 = pd.concat([df6_5, df6_4], axis=0)
 
-# 7.0
+# 7.0 储存csv
 path7_1 = datetime.strftime(date5_1, '%Y-%m')
 file7_1 = datetime.strftime(date5_1, '%Y-%m-%d')
 path7_2 = os.path.join(path1, path7_1)
@@ -109,12 +108,12 @@ if os.path.exists(file7_2):
 df6_5.to_csv(file7_2)
 
 
-# 8.0
-file8 = datetime.strftime(date5_1, '%Y-%m-%d-%H%M%S')
+# 8.0 log
+file8 = datetime.strftime(datetime.now(), '%Y%m%d-%H%M%S')
 path_log = os.path.join(path_root, 'yieldbook', 'log', file8 + '.log')
 with open(path_log, 'w', encoding='utf-8') as f:
     json.dump({'time': file8}, f, ensure_ascii=False, indent=4)
 
-# 8.0
+# 8.0 git
 path_git = os.path.join(path_root, 'run-git.bat')
 os.system(path_git)
