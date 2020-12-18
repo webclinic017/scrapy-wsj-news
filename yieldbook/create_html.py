@@ -74,7 +74,7 @@ body {font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica
 <script>
 $(document).ready(function() {
 
-  var colHide = [3, 4, 5, 6, 9];
+  var colHide = [4, 5, 6, 7, 10];
   for (var noCol of colHide) {
       var th = $(".dataframe tr th:nth-child("+noCol+")");
       th.addClass("d-none").addClass("d-md-table-cell");
