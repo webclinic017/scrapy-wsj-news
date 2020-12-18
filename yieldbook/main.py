@@ -12,6 +12,7 @@ from pdfminer.high_level import extract_text_to_fp
 from pdfminer.layout import LAParams
 from lxml import etree
 from bs4 import BeautifulSoup
+from time import sleep
 
 
 # 1.0 环境设置
@@ -114,6 +115,13 @@ path_log = os.path.join(path_root, 'yieldbook', 'log', file8 + '.log')
 with open(path_log, 'w', encoding='utf-8') as f:
     json.dump({'time': file8}, f, ensure_ascii=False, indent=4)
 
-# 8.0 git
+
+# 9.0
+path_py = os.path.join(path_root, 'yieldbook', 'create_html.py')
+os.system('python ' + path_py)
+sleep(10)
+
+
+# 10.0 git
 path_git = os.path.join(path_root, 'run-git.bat')
 os.system(path_git)
