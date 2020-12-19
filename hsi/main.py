@@ -1,8 +1,6 @@
 import requests
 import os
-import io
 import pandas as pd
-import win32com
 import win32com.client
 import numpy as np
 from pathlib import Path
@@ -31,6 +29,7 @@ sleep(5)
 wb = wps.Workbooks.Open(file2)
 data3 = wb.Worksheets('HSI')
 
+
 # 4.0
 names = []
 for i in range(2, 6):
@@ -53,10 +52,15 @@ while date4:
         i = i + 1
     else:
         break
+# 4.3
+df4.index = df4['date']
+df4.drop(columns=['date'], inplace=True)
+df4 = df4.replace('--', np.NaN)
 file4 = os.path.join(path1, 'hsi-pe-2.csv')
 if os.path.exists(file4):
     os.remove(file4)
 df4.to_csv(file4)
+
 
 wb.Close()
 wps.Quit()
