@@ -134,9 +134,9 @@ $(document).ready(function() {
 </div>
 
 
-<div class="container">
 <div class="row">
 <div class="col-12 col-sm-12">
+<div class="body-container">
 """ + html4_2.replace('NaN', '') + """
 </div>
 </div>
