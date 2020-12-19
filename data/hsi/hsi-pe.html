@@ -1,0 +1,463 @@
+
+<html>
+<head>
+<meta charset="UTF-8">
+<title>恒生指数市盈率-1</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+<script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap4.min.js"></script>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+<link rel="stylesheet" href="https://chankuang2008.github.io/kuang-style/css/kuang-style.css" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap4.min.css">
+<style>
+body {font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji","SimHei", "PMingLiU", "Helvetica", "sans-serif";}
+.dataframe {font-size: 13px;}
+</style>
+<script>
+$(document).ready(function() {
+
+  var colHide = [7, 8, 9, 10, 11, 12];
+  for (var noCol of colHide) {
+      var th = $(".dataframe tr th:nth-child("+noCol+")");
+      th.addClass("d-none").addClass("d-md-table-cell");
+
+      var td = $(".dataframe tr td:nth-child("+noCol+")");
+      td.addClass("d-none").addClass("d-md-table-cell");
+  }
+});
+</script>
+</head>
+<body>
+<div class="container">
+
+
+
+<div class="row">
+<div class="col-12 col-sm-12">
+<div class="body-container">
+目前市盈率： 12.42 <br />
+<table border="0" class="dataframe table table-sm table-striped">
+  <thead>
+    <tr style="text-align: left;">
+      <th></th>
+      <th>2020年起</th>
+      <th>2019年起</th>
+      <th>2018年起</th>
+      <th>2017年起</th>
+      <th>2016年起</th>
+      <th>2015年起</th>
+      <th>2014年起</th>
+      <th>2013年起</th>
+      <th>2012年起</th>
+      <th>2011年起</th>
+      <th>2010年起</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>nobs</th>
+      <td>11</td>
+      <td>23</td>
+      <td>35</td>
+      <td>47</td>
+      <td>59</td>
+      <td>71</td>
+      <td>83</td>
+      <td>95</td>
+      <td>107</td>
+      <td>119</td>
+      <td>131</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>9.27</td>
+      <td>9.27</td>
+      <td>9.27</td>
+      <td>9.27</td>
+      <td>7.9</td>
+      <td>7.9</td>
+      <td>7.9</td>
+      <td>7.9</td>
+      <td>7.9</td>
+      <td>7.9</td>
+      <td>7.9</td>
+    </tr>
+    <tr>
+      <th>q5%</th>
+      <td>10.51</td>
+      <td>10.62</td>
+      <td>11.06</td>
+      <td>11.56</td>
+      <td>11.37</td>
+      <td>11.25</td>
+      <td>11.02</td>
+      <td>11.01</td>
+      <td>10.88</td>
+      <td>10.98</td>
+      <td>11.25</td>
+    </tr>
+    <tr>
+      <th>q25%</th>
+      <td>10.11</td>
+      <td>10.315</td>
+      <td>10.405</td>
+      <td>10.615</td>
+      <td>10.405</td>
+      <td>10.33</td>
+      <td>10.365</td>
+      <td>10.405</td>
+      <td>10.335</td>
+      <td>10.335</td>
+      <td>10.39</td>
+    </tr>
+    <tr>
+      <th>q50%</th>
+      <td>10.51</td>
+      <td>10.62</td>
+      <td>11.06</td>
+      <td>11.56</td>
+      <td>11.37</td>
+      <td>11.25</td>
+      <td>11.02</td>
+      <td>11.01</td>
+      <td>10.88</td>
+      <td>10.98</td>
+      <td>11.25</td>
+    </tr>
+    <tr>
+      <th>q75%</th>
+      <td>10.89</td>
+      <td>11.35</td>
+      <td>11.71</td>
+      <td>13.6</td>
+      <td>12.985</td>
+      <td>12.13</td>
+      <td>11.71</td>
+      <td>11.615</td>
+      <td>11.565</td>
+      <td>11.65</td>
+      <td>12.5</td>
+    </tr>
+    <tr>
+      <th>q95%</th>
+      <td>11.895</td>
+      <td>11.658</td>
+      <td>13.984</td>
+      <td>15.587</td>
+      <td>15.401</td>
+      <td>15.365</td>
+      <td>15.351</td>
+      <td>15.297</td>
+      <td>15.192</td>
+      <td>15.361</td>
+      <td>16.99</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>12.42</td>
+      <td>12.42</td>
+      <td>17.58</td>
+      <td>17.58</td>
+      <td>17.58</td>
+      <td>17.58</td>
+      <td>17.58</td>
+      <td>17.58</td>
+      <td>17.58</td>
+      <td>17.58</td>
+      <td>18.39</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>10.545</td>
+      <td>10.774</td>
+      <td>11.445</td>
+      <td>12.219</td>
+      <td>11.842</td>
+      <td>11.558</td>
+      <td>11.47</td>
+      <td>11.409</td>
+      <td>11.269</td>
+      <td>11.381</td>
+      <td>11.872</td>
+    </tr>
+    <tr>
+      <th>sd</th>
+      <td>0.838</td>
+      <td>0.734</td>
+      <td>1.593</td>
+      <td>2.006</td>
+      <td>2.011</td>
+      <td>1.996</td>
+      <td>1.864</td>
+      <td>1.756</td>
+      <td>1.722</td>
+      <td>1.837</td>
+      <td>2.348</td>
+    </tr>
+    <tr>
+      <th>variance</th>
+      <td>0.772</td>
+      <td>0.564</td>
+      <td>2.613</td>
+      <td>4.11</td>
+      <td>4.114</td>
+      <td>4.04</td>
+      <td>3.516</td>
+      <td>3.116</td>
+      <td>2.995</td>
+      <td>3.402</td>
+      <td>5.556</td>
+    </tr>
+    <tr>
+      <th>skewness</th>
+      <td>0.566</td>
+      <td>0.028</td>
+      <td>1.967</td>
+      <td>0.768</td>
+      <td>0.775</td>
+      <td>0.847</td>
+      <td>1.019</td>
+      <td>1.16</td>
+      <td>1.24</td>
+      <td>1.321</td>
+      <td>1.103</td>
+    </tr>
+    <tr>
+      <th>kurtosis</th>
+      <td>0.144</td>
+      <td>-0.268</td>
+      <td>4.75</td>
+      <td>-0.432</td>
+      <td>0.149</td>
+      <td>0.409</td>
+      <td>1.019</td>
+      <td>1.616</td>
+      <td>1.907</td>
+      <td>1.994</td>
+      <td>0.358</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+
+
+<div class="container">
+<div class="row">
+<div class="col-12 col-sm-12">
+<table border="0" class="dataframe table table-sm table-striped">
+  <thead>
+    <tr style="text-align: left;">
+      <th></th>
+      <th>2020间</th>
+      <th>2019间</th>
+      <th>2018间</th>
+      <th>2017间</th>
+      <th>2016间</th>
+      <th>2015间</th>
+      <th>2014间</th>
+      <th>2013间</th>
+      <th>2012间</th>
+      <th>2011间</th>
+      <th>2010间</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>nobs</th>
+      <td>11</td>
+      <td>12</td>
+      <td>12</td>
+      <td>12</td>
+      <td>12</td>
+      <td>12</td>
+      <td>12</td>
+      <td>12</td>
+      <td>12</td>
+      <td>12</td>
+      <td>12</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>9.27</td>
+      <td>10.21</td>
+      <td>10.42</td>
+      <td>11.52</td>
+      <td>7.9</td>
+      <td>8.51</td>
+      <td>10.33</td>
+      <td>10.11</td>
+      <td>8.81</td>
+      <td>9.61</td>
+      <td>15.53</td>
+    </tr>
+    <tr>
+      <th>q5%</th>
+      <td>10.51</td>
+      <td>11.135</td>
+      <td>12.13</td>
+      <td>14.825</td>
+      <td>10.59</td>
+      <td>10.38</td>
+      <td>10.895</td>
+      <td>10.945</td>
+      <td>10.155</td>
+      <td>12.18</td>
+      <td>16.71</td>
+    </tr>
+    <tr>
+      <th>q25%</th>
+      <td>10.11</td>
+      <td>10.39</td>
+      <td>11.458</td>
+      <td>14.118</td>
+      <td>10.247</td>
+      <td>8.992</td>
+      <td>10.775</td>
+      <td>10.76</td>
+      <td>9.435</td>
+      <td>10.655</td>
+      <td>16.118</td>
+    </tr>
+    <tr>
+      <th>q50%</th>
+      <td>10.51</td>
+      <td>11.135</td>
+      <td>12.13</td>
+      <td>14.825</td>
+      <td>10.59</td>
+      <td>10.38</td>
+      <td>10.895</td>
+      <td>10.945</td>
+      <td>10.155</td>
+      <td>12.18</td>
+      <td>16.71</td>
+    </tr>
+    <tr>
+      <th>q75%</th>
+      <td>10.89</td>
+      <td>11.493</td>
+      <td>13.323</td>
+      <td>15.292</td>
+      <td>11.338</td>
+      <td>10.978</td>
+      <td>11.292</td>
+      <td>11.358</td>
+      <td>10.605</td>
+      <td>12.665</td>
+      <td>17.045</td>
+    </tr>
+    <tr>
+      <th>q95%</th>
+      <td>11.895</td>
+      <td>11.649</td>
+      <td>16.364</td>
+      <td>15.829</td>
+      <td>11.488</td>
+      <td>11.737</td>
+      <td>11.519</td>
+      <td>11.547</td>
+      <td>11.416</td>
+      <td>17.249</td>
+      <td>18.176</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>12.42</td>
+      <td>11.66</td>
+      <td>17.58</td>
+      <td>16.01</td>
+      <td>11.57</td>
+      <td>11.99</td>
+      <td>11.53</td>
+      <td>11.69</td>
+      <td>11.62</td>
+      <td>17.37</td>
+      <td>18.39</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>10.545</td>
+      <td>10.985</td>
+      <td>12.73</td>
+      <td>14.478</td>
+      <td>10.365</td>
+      <td>10.158</td>
+      <td>10.953</td>
+      <td>10.988</td>
+      <td>10.161</td>
+      <td>12.38</td>
+      <td>16.74</td>
+    </tr>
+    <tr>
+      <th>sd</th>
+      <td>0.838</td>
+      <td>0.546</td>
+      <td>1.964</td>
+      <td>1.224</td>
+      <td>1.18</td>
+      <td>1.152</td>
+      <td>0.383</td>
+      <td>0.425</td>
+      <td>0.811</td>
+      <td>2.426</td>
+      <td>0.811</td>
+    </tr>
+    <tr>
+      <th>variance</th>
+      <td>0.772</td>
+      <td>0.325</td>
+      <td>4.207</td>
+      <td>1.635</td>
+      <td>1.518</td>
+      <td>1.449</td>
+      <td>0.16</td>
+      <td>0.197</td>
+      <td>0.718</td>
+      <td>6.423</td>
+      <td>0.717</td>
+    </tr>
+    <tr>
+      <th>skewness</th>
+      <td>0.566</td>
+      <td>-0.166</td>
+      <td>1.168</td>
+      <td>-1.118</td>
+      <td>-1.164</td>
+      <td>0.034</td>
+      <td>-0.071</td>
+      <td>-0.291</td>
+      <td>0.127</td>
+      <td>1.042</td>
+      <td>0.507</td>
+    </tr>
+    <tr>
+      <th>kurtosis</th>
+      <td>0.144</td>
+      <td>-1.647</td>
+      <td>0.67</td>
+      <td>0.505</td>
+      <td>0.145</td>
+      <td>-1.457</td>
+      <td>-0.939</td>
+      <td>-0.524</td>
+      <td>-0.921</td>
+      <td>0.058</td>
+      <td>-0.417</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+
+
+
+</div>
+</body>
+</html>

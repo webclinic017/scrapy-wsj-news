@@ -65,3 +65,14 @@ df4.to_csv(file4)
 wb.Close()
 wps.Quit()
 del wps
+
+
+# 5.0
+path_py = os.path.join(path_root, 'hsi', 'create_html.py')
+os.system('python ' + path_py)
+sleep(10)
+
+
+# 6.0 git
+path_git = os.path.join(path_root, 'run-git.bat')
+# os.system(path_git)
