@@ -83,4 +83,4 @@ sleep(10)
 
 # 7.0 git
 path_git = os.path.join(path_root, 'run-git.bat')
-# os.system(path_git)
+os.system(path_git)
