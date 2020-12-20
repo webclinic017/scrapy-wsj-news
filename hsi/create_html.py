@@ -3,6 +3,7 @@ import json
 import pandas as pd
 import numpy as np
 import datetime as dt
+import matplotlib.pyplot as plt
 from os import walk
 from pathlib import Path
 from datetime import datetime
@@ -56,7 +57,7 @@ for i in range(0, 11):
     mask3 = ((df2['date'].dt.date >= pre_year) & (df2['date'].dt.date <= pre_year2))
     df3_5 = df2.loc[mask3]
     # print(df3_5.shape, df3_5.iloc[0].date, df3_5.iloc[-1].date)
-    df3_4 = df3_4.append(compute(df3_5, names[1], str(pre_year.year)+'间'), ignore_index=True)
+    df3_4 = df3_4.append(compute(df3_5, names[1], str(pre_year.year)+'年间'), ignore_index=True)
 
 df3_1.index = df3_1['year']
 df3_1.drop(['year'], axis=1, inplace=True)
@@ -80,11 +81,35 @@ df4_2 = pd.DataFrame(data=data4_2)
 html4_2 = df4_2.to_html(classes='table table-sm table-striped', escape=False, border=0, justify='left')
 
 # 4.1
-last = df2.iloc[-1][names[1]]
+last4 = df2.iloc[-1][names[1]]
+date4 = df2.iloc[-1]['date'].date()
 
-path4 = os.path.join(static_folder, 'hsi-pe.html')
-if os.path.exists(path4):
-    os.remove(path4)
+# 4.2.0
+plt.rcParams['font.sans-serif']=['SimHei']
+plt.rcParams['axes.unicode_minus'] = False
+plt.figure()
+# 4.2.1
+data4_3 = df3_4.copy(deep=True)
+data4_3.drop(['nobs', 'mean', 'sd', 'variance', 'skewness', 'kurtosis'], axis=1, inplace=True)
+plot = data4_3.plot(figsize=(10.5, 5.5))
+fig = plot.get_figure()
+path4_1 = os.path.join(static_folder, 'hsi-pe-1.png')
+if os.path.exists(path4_1):
+    os.remove(path4_1)
+plt.yticks(ticks=np.linspace(8, 19, ((19-8)*2)+1))
+plt.xticks(ticks=np.arange(data4_3.shape[0]), labels=data4_3.index.values.tolist())
+plt.xlabel('')
+plt.ylabel('')
+plt.title('恒生指数市盈率 (截至：'+str(date4)+')', loc='left')
+plt.tight_layout()
+plt.grid()
+fig.savefig(path4_1, dpi=100)
+plt.clf()
+
+# 4.3
+path4_3 = os.path.join(static_folder, 'hsi-pe.html')
+if os.path.exists(path4_3):
+    os.remove(path4_3)
 
 htm4 = """
 <html>
@@ -127,7 +152,9 @@ $(document).ready(function() {
 <div class="row">
 <div class="col-12 col-sm-12">
 <div class="body-container">
-目前市盈率： """ + str(last) + """ <br />
+目前市盈率：""" + str(last4) + """
+(截至：""" + str(date4) + """)
+<br />
 """ + html4_1.replace('NaN', '') + """
 </div>
 </div>
@@ -143,6 +170,15 @@ $(document).ready(function() {
 </div>
 
 
+<div class="row">
+<div class="col-12 col-sm-12">
+<div class="body-container">
+<img src="./hsi-pe-1.png">
+</div>
+</div>
+</div>
+
+
 
 </div>
 </body>
@@ -150,6 +186,6 @@ $(document).ready(function() {
 """
 
 # 5.0
-writer3 = open(path4, "w", encoding="utf-8")
+writer3 = open(path4_3, "w", encoding="utf-8")
 writer3.write(htm4)
 writer3.close()

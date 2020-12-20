@@ -1,5 +1,6 @@
 import requests
 import os
+import json
 import pandas as pd
 import win32com.client
 import numpy as np
@@ -67,12 +68,19 @@ wps.Quit()
 del wps
 
 
-# 5.0
+# 5.0 log
+file5 = datetime.strftime(datetime.now(), '%Y%m%d-%H%M%S')
+path_log = os.path.join(path_root, 'hsi', 'log', file5 + '.log')
+with open(path_log, 'w', encoding='utf-8') as f:
+    json.dump({'time': file5}, f, ensure_ascii=False, indent=4)
+
+
+# 6.0
 path_py = os.path.join(path_root, 'hsi', 'create_html.py')
 os.system('python ' + path_py)
 sleep(10)
 
 
-# 6.0 git
+# 7.0 git
 path_git = os.path.join(path_root, 'run-git.bat')
 # os.system(path_git)
