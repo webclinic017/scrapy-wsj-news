@@ -1,0 +1,12 @@
+{
+    "url_original": "https://www.wsj.com/articles/the-cyber-threat-is-real-and-growing-11608484291?mod=opinion_lead_pos6",
+    "url": "the-cyber-threat-is-real-and-growing-11608484291",
+    "title": "The Cyber Threat Is Real and Growing",
+    "sub_head": "The U.S. must respond proportionally to the SolarWinds breach—and prepare for the next attack.",
+    "category_1": "Opinion",
+    "category_2": "Commentary",
+    "image_1_url": "https://images.wsj.net/im-275711?width=620&size=1.5",
+    "image_1": "im-275711.jpg",
+    "time": "2020-12-20 12:11:00",
+    "body": "The  SolarWinds  breach could be the most significant cyber incident in American history. Russian intelligence—likely the SVR, the foreign-intelligence branch—infiltrated and sat undetected on U.S. government networks for nearly 10 months. It was a sophisticated, smart and savvy attack that should alarm the public and private sectors.<br />We may not know the full extent of the damage for some time. Don’t be surprised if more government entities disclose that they too were victims of this attack. Don’t be surprised either if it emerges that private companies were hit. SolarWinds says it has more than 300,000 customers, including 400 companies in the Fortune 500. That’s a lot of potential victims.<br />It appears that this was purely an intelligence-gathering effort. The SVR sat on government networks collecting as much data as it could, whenever and however it wanted. It was less like tapping into phone lines and more like breaking into the library and wandering around.<br />Every country conducts espionage. That’s not the alarming part. What is truly scary is that the Russians are inside the house now. Who knows where they’ve planted malware, corrupted or deleted data, locked users out of systems, or destroyed systems entirely? Turning off the system and uninstalling SolarWinds software isn’t enough. It may take years and thousands of hours to unpack fully where the Russians hid themselves and their code.<br />Using a network-management company’s supply chain of updates to penetrate targeted networks is exceptionally smart. This tactic will spawn imitators, and not only among governments. Tools and techniques used by state actors quickly end up in the hands of criminals, especially when they work. Look how ransomware spread a few years ago."
+}
