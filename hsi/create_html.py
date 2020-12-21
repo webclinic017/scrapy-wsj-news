@@ -28,7 +28,7 @@ df3_1 = pd.DataFrame(columns=columns)
 df3_4 = pd.DataFrame(columns=columns)
 date3_1 = df2.iloc[-1]['date'].year
 date3_2 = df2.iloc[0]['date'].year
-for i in range(0, 11):
+for i in range(0, 13):
     def compute(df3_3, name3, title3):
         df3_3 = df3_3[name3]
         stats3 = stats.describe(df3_3.values)
@@ -85,7 +85,7 @@ last4 = df2.iloc[-1][names[1]]
 date4 = df2.iloc[-1]['date'].date()
 
 # 4.2.0
-plt.rcParams['font.sans-serif']=['SimHei']
+plt.rcParams['font.sans-serif'] = ['SimHei']
 plt.rcParams['axes.unicode_minus'] = False
 plt.figure()
 # 4.2.1
@@ -96,8 +96,9 @@ fig = plot.get_figure()
 path4_1 = os.path.join(static_folder, 'hsi-pe-1.png')
 if os.path.exists(path4_1):
     os.remove(path4_1)
-plt.yticks(ticks=np.linspace(8, 19, ((19-8)*2)+1))
-plt.xticks(ticks=np.arange(data4_3.shape[0]), labels=data4_3.index.values.tolist())
+plt.yticks(ticks=np.linspace(7, 20, ((20-7)*2)+1))
+x_labels = data4_3.index.values.tolist()
+plt.xticks(ticks=np.arange(data4_3.shape[0]), labels=x_labels)
 plt.xlabel('')
 plt.ylabel('')
 plt.title('恒生指数市盈率 (截至：'+str(date4)+')', loc='left')
@@ -133,7 +134,7 @@ body {font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica
 <script>
 $(document).ready(function() {
 
-  var colHide = [7, 8, 9, 10, 11, 12];
+  var colHide = [7, 8, 9, 10, 11, 12, 13, 14];
   for (var noCol of colHide) {
       var th = $(".dataframe tr th:nth-child("+noCol+")");
       th.addClass("d-none").addClass("d-md-table-cell");

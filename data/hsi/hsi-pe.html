@@ -20,7 +20,7 @@ body {font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica
 <script>
 $(document).ready(function() {
 
-  var colHide = [7, 8, 9, 10, 11, 12];
+  var colHide = [7, 8, 9, 10, 11, 12, 13, 14];
   for (var noCol of colHide) {
       var th = $(".dataframe tr th:nth-child("+noCol+")");
       th.addClass("d-none").addClass("d-md-table-cell");
@@ -57,6 +57,8 @@ $(document).ready(function() {
       <th>2012年起</th>
       <th>2011年起</th>
       <th>2010年起</th>
+      <th>2009年起</th>
+      <th>2008年起</th>
     </tr>
   </thead>
   <tbody>
@@ -73,6 +75,8 @@ $(document).ready(function() {
       <td>107</td>
       <td>119</td>
       <td>131</td>
+      <td>143</td>
+      <td>155</td>
     </tr>
     <tr>
       <th>min</th>
@@ -87,6 +91,8 @@ $(document).ready(function() {
       <td>7.9</td>
       <td>7.9</td>
       <td>7.9</td>
+      <td>7.61</td>
+      <td>7.61</td>
     </tr>
     <tr>
       <th>q5%</th>
@@ -101,6 +107,8 @@ $(document).ready(function() {
       <td>10.88</td>
       <td>10.98</td>
       <td>11.25</td>
+      <td>11.3</td>
+      <td>11.33</td>
     </tr>
     <tr>
       <th>q25%</th>
@@ -115,6 +123,8 @@ $(document).ready(function() {
       <td>10.335</td>
       <td>10.335</td>
       <td>10.39</td>
+      <td>10.405</td>
+      <td>10.405</td>
     </tr>
     <tr>
       <th>q50%</th>
@@ -129,6 +139,8 @@ $(document).ready(function() {
       <td>10.88</td>
       <td>10.98</td>
       <td>11.25</td>
+      <td>11.3</td>
+      <td>11.33</td>
     </tr>
     <tr>
       <th>q75%</th>
@@ -143,6 +155,8 @@ $(document).ready(function() {
       <td>11.565</td>
       <td>11.65</td>
       <td>12.5</td>
+      <td>13.26</td>
+      <td>13.81</td>
     </tr>
     <tr>
       <th>q95%</th>
@@ -157,6 +171,8 @@ $(document).ready(function() {
       <td>15.192</td>
       <td>15.361</td>
       <td>16.99</td>
+      <td>17.348</td>
+      <td>17.634</td>
     </tr>
     <tr>
       <th>max</th>
@@ -171,6 +187,8 @@ $(document).ready(function() {
       <td>17.58</td>
       <td>17.58</td>
       <td>18.39</td>
+      <td>19.57</td>
+      <td>19.57</td>
     </tr>
     <tr>
       <th>mean</th>
@@ -185,6 +203,8 @@ $(document).ready(function() {
       <td>11.269</td>
       <td>11.381</td>
       <td>11.872</td>
+      <td>12.14</td>
+      <td>12.207</td>
     </tr>
     <tr>
       <th>sd</th>
@@ -199,6 +219,8 @@ $(document).ready(function() {
       <td>1.722</td>
       <td>1.837</td>
       <td>2.348</td>
+      <td>2.696</td>
+      <td>2.76</td>
     </tr>
     <tr>
       <th>variance</th>
@@ -213,6 +235,8 @@ $(document).ready(function() {
       <td>2.995</td>
       <td>3.402</td>
       <td>5.556</td>
+      <td>7.317</td>
+      <td>7.665</td>
     </tr>
     <tr>
       <th>skewness</th>
@@ -227,6 +251,8 @@ $(document).ready(function() {
       <td>1.24</td>
       <td>1.321</td>
       <td>1.103</td>
+      <td>1.013</td>
+      <td>0.895</td>
     </tr>
     <tr>
       <th>kurtosis</th>
@@ -241,6 +267,8 @@ $(document).ready(function() {
       <td>1.907</td>
       <td>1.994</td>
       <td>0.358</td>
+      <td>0.192</td>
+      <td>-0.042</td>
     </tr>
   </tbody>
 </table>
@@ -267,12 +295,16 @@ $(document).ready(function() {
       <th>2012年间</th>
       <th>2011年间</th>
       <th>2010年间</th>
+      <th>2009年间</th>
+      <th>2008年间</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>nobs</th>
       <td>11</td>
+      <td>12</td>
+      <td>12</td>
       <td>12</td>
       <td>12</td>
       <td>12</td>
@@ -297,6 +329,8 @@ $(document).ready(function() {
       <td>8.81</td>
       <td>9.61</td>
       <td>15.53</td>
+      <td>7.61</td>
+      <td>8.22</td>
     </tr>
     <tr>
       <th>q5%</th>
@@ -311,6 +345,8 @@ $(document).ready(function() {
       <td>10.155</td>
       <td>12.18</td>
       <td>16.71</td>
+      <td>15.975</td>
+      <td>13.62</td>
     </tr>
     <tr>
       <th>q25%</th>
@@ -325,6 +361,8 @@ $(document).ready(function() {
       <td>9.435</td>
       <td>10.655</td>
       <td>16.118</td>
+      <td>12.515</td>
+      <td>10.17</td>
     </tr>
     <tr>
       <th>q50%</th>
@@ -339,6 +377,8 @@ $(document).ready(function() {
       <td>10.155</td>
       <td>12.18</td>
       <td>16.71</td>
+      <td>15.975</td>
+      <td>13.62</td>
     </tr>
     <tr>
       <th>q75%</th>
@@ -353,6 +393,8 @@ $(document).ready(function() {
       <td>10.605</td>
       <td>12.665</td>
       <td>17.045</td>
+      <td>18.68</td>
+      <td>14.945</td>
     </tr>
     <tr>
       <th>q95%</th>
@@ -367,6 +409,8 @@ $(document).ready(function() {
       <td>11.416</td>
       <td>17.249</td>
       <td>18.176</td>
+      <td>19.542</td>
+      <td>18.021</td>
     </tr>
     <tr>
       <th>max</th>
@@ -381,6 +425,8 @@ $(document).ready(function() {
       <td>11.62</td>
       <td>17.37</td>
       <td>18.39</td>
+      <td>19.57</td>
+      <td>18.34</td>
     </tr>
     <tr>
       <th>mean</th>
@@ -395,6 +441,8 @@ $(document).ready(function() {
       <td>10.161</td>
       <td>12.38</td>
       <td>16.74</td>
+      <td>15.061</td>
+      <td>13.011</td>
     </tr>
     <tr>
       <th>sd</th>
@@ -409,6 +457,8 @@ $(document).ready(function() {
       <td>0.811</td>
       <td>2.426</td>
       <td>0.811</td>
+      <td>4.133</td>
+      <td>3.329</td>
     </tr>
     <tr>
       <th>variance</th>
@@ -423,6 +473,8 @@ $(document).ready(function() {
       <td>0.718</td>
       <td>6.423</td>
       <td>0.717</td>
+      <td>18.632</td>
+      <td>12.088</td>
     </tr>
     <tr>
       <th>skewness</th>
@@ -437,6 +489,8 @@ $(document).ready(function() {
       <td>0.127</td>
       <td>1.042</td>
       <td>0.507</td>
+      <td>-0.644</td>
+      <td>-0.086</td>
     </tr>
     <tr>
       <th>kurtosis</th>
@@ -451,6 +505,8 @@ $(document).ready(function() {
       <td>-0.921</td>
       <td>0.058</td>
       <td>-0.417</td>
+      <td>-0.878</td>
+      <td>-1.079</td>
     </tr>
   </tbody>
 </table>
