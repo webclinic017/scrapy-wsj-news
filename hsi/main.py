@@ -27,7 +27,6 @@ with open(file2, 'wb') as f:
 wps = win32com.client.Dispatch("ket.Application")
 wps.Visible = False
 sleep(5)
-print(file2)
 wb = wps.Workbooks.Open(file2)
 data3 = wb.Worksheets('HSI')
 
