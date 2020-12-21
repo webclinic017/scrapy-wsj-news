@@ -27,7 +27,10 @@ with open(file2, 'wb') as f:
 wps = win32com.client.Dispatch("ket.Application")
 wps.Visible = False
 sleep(5)
-wb = wps.Workbooks.Open(file2)
+try:
+    wb = wps.Workbooks.Open(file2)
+except:
+    wb = wps.Workbooks.Open('D:\PycharmProjects\scrapy-001\data\hsi\hsi-pe.xls')
 data3 = wb.Worksheets('HSI')
 
 
