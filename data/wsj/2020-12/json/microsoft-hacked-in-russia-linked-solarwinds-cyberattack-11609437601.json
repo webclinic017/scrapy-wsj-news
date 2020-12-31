@@ -1,0 +1,9 @@
+{
+    "url_original": "https://www.wsj.com/articles/microsoft-hacked-in-russia-linked-solarwinds-cyberattack-11609437601?mod=business_minor_pos4",
+    "url": "microsoft-hacked-in-russia-linked-solarwinds-cyberattack-11609437601",
+    "title": "Microsoft Hacked in Russia-Linked SolarWinds Cyberattack",
+    "sub_head": "Software giant says it saw ‘unusual activity’ on a few accounts that led it to discover the breach",
+    "category_1": "Tech",
+    "time": "2020-12-31 15:55:00",
+    "body": "The Russia-linked hackers behind a widespread cyber-intrusion into U.S. corporate and government systems were able to access internal systems within  Microsoft Corp.  and view internal source code, used to build software products, the company said Thursday.<br />Microsoft had previously confirmed that it had downloaded malicious software from a vendor called  SolarWinds Corp.  that had been modified by the hackers. Thursday’s disclosure is the first indication that the hackers were able to access internal systems at Microsoft.<br />“We detected unusual activity with a small number of internal accounts and upon review, we discovered one account had been used to view source code in a number of source code repositories,” Microsoft said in a statement.<br />This compromised account was able to view Microsoft’s source code, but not make changes, the company said.<br />Microsoft’s disclosure raises the specter that the hackers may have targeted and then compromised other technology companies as well, said Sherri Davidoff, chief executive of the security consulting firm LMG Security LLC. “That’s why these hackers are going after these companies,” she said. “They don’t want access to just one company. They want access to everything.”"
+}
