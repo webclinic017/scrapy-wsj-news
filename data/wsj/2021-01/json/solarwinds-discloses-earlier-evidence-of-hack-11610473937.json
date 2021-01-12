@@ -1,0 +1,11 @@
+{
+    "url_original": "https://www.wsj.com/articles/solarwinds-discloses-earlier-evidence-of-hack-11610473937?mod=business_lead_pos7",
+    "url": "solarwinds-discloses-earlier-evidence-of-hack-11610473937",
+    "title": "SolarWinds Discloses Earlier Evidence of Hack",
+    "sub_head": "New findings in cyberattack investigation fill out timeline of Russia-linked campaign",
+    "category_1": "Tech",
+    "image_1_url": "https://images.wsj.net/im-283958?width=620&size=1.5",
+    "image_1": "im-283958.jpg",
+    "time": "2021-01-12 12:52:00",
+    "body": "SolarWinds Corp.  said a computer breach tied to Russia-linked hackers who accessed U.S. government systems and corporate networks after manipulating some of the software provider’s code began at least a month earlier than first disclosed.<br />Hackers were accessing its systems in early September 2019, the network-management company said Tuesday, based on a continuing investigation. Cybersecurity experts suspect preparations for the attack go back far longer. A month later, a version of the company’s Orion Platform software appears to have contained modifications designed to test the hackers ability to insert malicious code into the system. The code was added starting Feb. 20, 2020, SolarWinds said, and the compromised software was available to its customers by March 26, 2020.<br />Intelligence officials have said the attack was one of the most sophisticated cyber intrusions of U.S. systems they had seen.<br />SolarWinds, working with hired cybersecurity experts, said it reverse-engineered the malicious code, called Sunburst, allowing them to learn more about the hack. The Austin, Texas-based company said an analysis suggests that hackers circumvented detection by mimicking legitimate network traffic that was run through U.S. servers. It is still trying to establish how the code entered its software and went undetected, the company said.<br />The investigation showed that the hackers removed the code from the system in June. SolarWinds said it learned of the breach on Dec. 12."
+}
