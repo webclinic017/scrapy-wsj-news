@@ -42,11 +42,13 @@ for k3, df3 in data.items():
 
 # 4.0
 html4_1 = ''
+html4_2 = ''
 i = 1
 for k4, df4 in data3.items():
-    html4_1 += '<h6>'+str(i)+'. '+k4+'</h6>'
+    html4_1 += '<h6 id="div-'+str(i)+'">'+str(i)+'. '+k4+'</h6>'
     html4_1 += df4.to_html(classes='table table-sm table-striped', index=False, escape=False, border=0, justify='left')
     html4_1 += '<br />'
+    html4_2 += '<a class="a-context" href="#div-'+str(i)+'">'+str(i)+'. '+k4+'</a><br />'
     i = i + 1
 
 htm4 = """
@@ -72,6 +74,7 @@ body {font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica
 .dataframe td:nth-child(1), .dataframe td:nth-child(4), .dataframe td:nth-child(7) {
   border-right: 1px solid #cbced2;
 }
+.a-context {line-height: 2; font-size: 14px;}
 </style>
 <script>
 $(document).ready(function() {
@@ -88,8 +91,16 @@ $(document).ready(function() {
 </script>
 </head>
 <body>
-
 <div class="container">
+
+<div class="row">
+<div class="col-12 col-sm-12">
+<div class="body-container">
+"""+html4_2.replace('NaN', '')+"""
+</div>
+</div>
+</div>
+
 <div class="row">
 <div class="col-12 col-sm-12">
 <div class="body-container">
@@ -97,8 +108,8 @@ $(document).ready(function() {
 </div>
 </div>
 </div>
-</div>
 
+</div>
 </body>
 </html>
 """
