@@ -1,0 +1,11 @@
+{
+    "url_original": "https://www.wsj.com/articles/solarwinds-hackers-attack-on-email-security-company-raises-new-red-flags-11610510375?mod=business_minor_pos4",
+    "url": "solarwinds-hackers-attack-on-email-security-company-raises-new-red-flags-11610510375",
+    "title": "SolarWinds Hackers’ Attack on Email Security Company Raises New Red Flags",
+    "sub_head": "Customers of Mimecast were targeted in cyberattack, showing the multiple layers of potential victims at risk in massive hack",
+    "category_1": "Tech",
+    "image_1_url": "https://images.wsj.net/im-284504?width=620&size=1.5",
+    "image_1": "im-284504.jpg",
+    "time": "2021-01-12 22:59:00",
+    "body": "A breach at email security provider Mimecast Inc. underscores that Russia-linked hackers appear to have targeted victims along multiple avenues of attack in what is shaping up to be one of the most successful cyber campaigns of U.S. government and corporate systems.<br />The attack potentially adds thousands of victims to the yearslong intelligence operation and likely aimed at gaining access to email systems, security experts say. Mimecast, in a Tuesday blog post, said the hackers were able to obtain a digital certificate used by the company to access its customers’  Microsoft  365 office productivity services.<br />The Mimecast hackers used tools and techniques that link them to the hackers who broke into Austin, Texas-based SolarWinds Corp., according to people familiar with the investigation. The link to the SolarWinds hackers was reported earlier by Reuters.<br />U.S. government officials have blamed Russia for the SolarWinds attack. Moscow has denied involvement.<br />Most of the companies and government agencies identified as victims to date were compromised via a piece of network management software called Orion that belongs to SolarWinds. But the Mimecast case, in which the vendor’s customers became targets, highlights that not all victims had to be SolarWinds users themselves to be targeted."
+}
