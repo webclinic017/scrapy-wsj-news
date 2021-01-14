@@ -1,0 +1,9 @@
+{
+    "url_original": "https://www.wsj.com/articles/stripes-ban-on-trump-campaign-isnt-absolute-11610632728?mod=business_minor_pos7",
+    "url": "stripes-ban-on-trump-campaign-isnt-absolute-11610632728",
+    "title": "Stripe Bans Trump, but Donations Still Come Through",
+    "sub_head": "Visitors to the president’s campaign website are directed to WinRed, a Stripe customer, to make donations",
+    "category_1": "Business",
+    "time": "2021-01-14 08:58:00",
+    "body": "Stripe Inc. has stopped processing payments for President Trump’s fundraising apparatus. Directly, that is.<br />The financial-technology company continues to process payments for intermediaries that route donations to Mr. Trump, after cutting off his campaign for violating its policies against encouraging violence.<br />Visitors to the Trump campaign website who click on a button to contribute are directed to a webpage hosted by WinRed, the small-dollar fundraising platform for Republican candidates and political-action committees. WinRed is a Stripe customer, and Stripe processes payments submitted over WinRed via that link, according to a review of its source code and people familiar with the matter.<br />The WinRed-hosted webpage tells visitors that donations go to the Trump Make America Great Again Committee, a joint fundraising committee composed of the Trump campaign, Mr. Trump’s Save America political-action committee and the Republican National Committee.<br />A Stripe spokesman declined to comment. Representatives for Mr. Trump’s campaign didn’t respond to a request for comment."
+}
