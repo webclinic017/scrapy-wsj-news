@@ -1,0 +1,12 @@
+{
+    "url_original": "https://www.wsj.com/articles/the-promise-and-peril-of-facial-recognition-11610579445?mod=opinion_lead_pos7",
+    "url": "the-promise-and-peril-of-facial-recognition-11610579445",
+    "title": "The Promise and Peril of Facial Recognition",
+    "sub_head": "Agencies are using the technology to identify the Capitol rioters.",
+    "category_1": "Opinion",
+    "category_2": "Commentary",
+    "image_1_url": "https://images.wsj.net/im-284435?width=620&size=1.5",
+    "image_1": "im-284435.jpg",
+    "time": "2021-01-13 18:10:00",
+    "body": "Federal, state and local law-enforcement agencies are using facial-recognition technology to identify the members of the mob that assaulted the U.S. Capitol last week.<br />Elsewhere, facial recognition and artificial intelligence are increasingly being used for nefarious purposes—including by China to persecute minorities and to identify Hong Kong dissidents.<br />We represent Clearview AI, the U.S. facial-recognition startup that became controversial a year ago when its existence came to light in the media. Clearview AI maintains a database of billions of publicly posted photographs that have been lawfully downloaded from the Internet, where users posted them on public websites, including social media. Clearview AI downloads photographs from the public internet that are available to any user from any computer around the world without the consent of the person photographed.<br />Licensed clients of Clearview AI—which are limited to law-enforcement agencies—can run a photo of an unidentified person through Clearview AI’s database for after-the-crime investigations. Clearview AI uses algorithms to create facial vectors, or “faceprints,” of the photo’s subject.<br />The question for policy makers is how to regulate this technology to allow its legitimate use and prevent abuse. A patchwork of state and local laws seek to restrict or even prohibit the use of biometrics, including faceprints. These are of dubious constitutionality, since the Supreme Court has made plain that “the creation and dissemination of information are speech within the meaning of the First Amendment.”"
+}
