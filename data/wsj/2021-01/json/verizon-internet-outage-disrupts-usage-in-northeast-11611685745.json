@@ -1,0 +1,11 @@
+{
+    "url_original": "https://www.wsj.com/articles/verizon-internet-outage-disrupts-usage-in-northeast-11611685745?mod=business_lead_pos12",
+    "url": "verizon-internet-outage-disrupts-usage-in-northeast-11611685745",
+    "title": "Verizon Internet Outage Disrupts Usage in Northeast",
+    "sub_head": "Midday network slowdown mars service around New York, Philadelphia and Washington, D.C.",
+    "category_1": "Tech",
+    "image_1_url": "https://images.wsj.net/im-290575?width=620&size=1.5",
+    "image_1": "im-290575.jpg",
+    "time": "2021-01-26 15:43:00",
+    "body": "A  Verizon Communications Inc.  network failure on Tuesday slowed Internet service for some major business customers in the Northeast U.S., triggering a cascade of outages that blocked access to many online applications.<br />The company hadn’t pinned down the source of the failure as of Tuesday afternoon. A spokesman for Verizon said the network suffered degraded service, which caused some high-bandwidth applications to stop working. A separate fiber-optic line cut in Brooklyn interrupted broadband service for about 1,000 customers but wasn’t tied to the region’s broader network issues, according to the spokesman.<br />Network engineers writing on public message boards reported trouble reaching Verizon and other services that rely on its systems from roughly 11:30 a.m. Eastern Time through the early afternoon. The lapse affected customers around New York, Philadelphia and Washington, D.C. Service later returned to normal levels.<br />Several Twitter users reported problems with services  Slack Technologies Inc.,   Zoom Video Communications Inc.,  Amazon Web Services and Google’s Gmail.<br />At 12:20 p.m., AWS said on its status page that it was “investigating connectivity issues with an internet provider, mainly affecting the East Coast of the United States, outside of the AWS Network.”"
+}
