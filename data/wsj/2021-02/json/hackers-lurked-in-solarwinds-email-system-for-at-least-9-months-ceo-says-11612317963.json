@@ -1,0 +1,11 @@
+{
+    "url_original": "https://www.wsj.com/articles/hackers-lurked-in-solarwinds-email-system-for-at-least-9-months-ceo-says-11612317963?mod=business_lead_pos10",
+    "url": "hackers-lurked-in-solarwinds-email-system-for-at-least-9-months-ceo-says-11612317963",
+    "title": "Hackers Lurked in SolarWinds Email System for at Least 9 Months, CEO Says",
+    "sub_head": "Investigators still don’t know how the company was breached in attack that will cost millions",
+    "category_1": "Business",
+    "image_1_url": "https://images.wsj.net/im-294058?width=620&size=1.5",
+    "image_1": "im-294058.jpg",
+    "time": "2021-02-02 21:06:00",
+    "body": "The newly appointed chief executive of  SolarWinds Corp.  is still trying to unravel how his company became a primary vector for hackers in a massive attack revealed last year, but said evidence is emerging that they were lurking in the company’s Office 365 email system for months.<br />The hackers had accessed at least one of the company’s Office 365 accounts by December 2019, and then leapfrogged to other Office 365 accounts used by the company, Sudhakar Ramakrishna said in an interview Tuesday. “Some email accounts were compromised. That led them to compromise other email accounts and as a result our broader [Office] 365 environment was compromised,” he said.<br />It is the latest development in the eight-week investigation into one of the worst breaches in U.S. history. SolarWinds, previously a little-known but critical maker of network-management software, is still trying to understand how the hackers first got into the company’s network and when exactly that happened.<br />One possibility is that the hackers may have compromised the company’s Office 365 accounts even earlier and then used that as the initial point of entry into the company, although that is one of several theories being pursued, Mr. Ramakrishna said.<br />Investigators are trying to determine how widespread the damage has been. So far only several dozen victims have been identified, but the attack could have ultimately affected close to 18,000 of the company’s customers."
+}
