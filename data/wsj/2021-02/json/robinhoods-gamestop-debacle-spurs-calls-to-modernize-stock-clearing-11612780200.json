@@ -1,0 +1,10 @@
+{
+    "url_original": "https://www.wsj.com/articles/robinhoods-gamestop-debacle-spurs-calls-to-modernize-stock-clearing-11612780200?mod=markets_lead_pos2",
+    "url": "robinhoods-gamestop-debacle-spurs-calls-to-modernize-stock-clearing-11612780200",
+    "title": "Robinhood’s GameStop Debacle Spurs Calls to Modernize Stock Clearing",
+    "sub_head": "Nearly $1.7 trillion of securities trades are processed each day by Depository Trust & Clearing Corp.",
+    "category_1": "Markets",
+    "category_2": "Finance",
+    "time": "2021-02-08 05:30:00",
+    "body": "When Robinhood Markets Inc. and other brokers abruptly restricted trading in  GameStop Corp. , it cast a spotlight on a normally obscure corner of the financial markets: the clearinghouse that processes U.S. stock trades.<br />Robinhood’s move infuriated its customers, prompted dozens of lawsuits against the Menlo Park, Calif.-based startup and will be scrutinized in a hearing on Capitol Hill next week. Initially, many investors assumed the firm’s decision to limit buying GameStop shares was directed by hedge funds that had bet against the stock or by high-frequency trading firms. In fact, the move was prompted by something more mundane—a $3 billion margin call from the Depository Trust & Clearing Corp.<br />Robinhood and others are now calling for a modernization of the way DTCC processes nearly $1.7 trillion of securities trades each day to help prevent such an occurrence from repeating.<br />The DTCC is responsible for clearing and settling U.S. stock trades. In other words, after every trade, it ensures that the shares are delivered to the buyer and cash is delivered to the seller, a process that takes two business days.<br />To protect against the risk that a buyer or seller will default during those two days, a DTCC subsidiary known as the National Securities Clearing Corp. maintains a multibillion-dollar fund to be tapped in case of such a failure. The fund is maintained by deposits from brokerages including units of many Wall Street banks as well as  Charles Schwab Corp.  and Robinhood."
+}
