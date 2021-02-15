@@ -27,8 +27,8 @@ class IndexPipeline:
 
         if item['ucode'] == 'hsi' or item['ucode'] == 'hstech' or item['ucode'] == 'hsce':
             tb_name = 's_' + item['ucode']
-            data = [item['stime'], item['ucode'], item['last'], item['high'], item['low'], '', '']
-            stmt = "REPLACE INTO "+tb_name+" (stime, code, close, high, low, open, volume) VALUES (?, ?, ?, ?, ?, ?, ?)"
+            data = [item['stime'], item['ucode'], item['last'], item['high'], item['low'], item['turnover']]
+            stmt = "REPLACE INTO "+tb_name+" (stime, code, close, high, low, turnover) VALUES (?, ?, ?, ?, ?, ?)"
             conn.execute(stmt, data)
 
         conn.commit()
