@@ -24,12 +24,14 @@ class IndexPipeline:
 
     def process_item(self, item, spider):
         conn = sqlite3.connect(self.path_sqlite)
-
         if item['ucode'] == 'hsi' or item['ucode'] == 'hstech' or item['ucode'] == 'hsce':
-            tb_name = 's_' + item['ucode']
-            data = [item['stime'], item['ucode'], item['last'], item['high'], item['low'], item['turnover']]
-            stmt = "REPLACE INTO "+tb_name+" (stime, code, close, high, low, turnover) VALUES (?, ?, ?, ?, ?, ?)"
-            conn.execute(stmt, data)
+            if 'stime' in item and 'last' in item and 'high' in item and 'low' in item and 'turnover' in item:
+                tb_name = 's_' + item['ucode']
+                data = [item['stime'], item['ucode'], item['last'], item['high'], item['low'], item['turnover']]
+                stmt = "REPLACE INTO "+tb_name+" (stime, code, close, high, low, turnover) VALUES (?, ?, ?, ?, ?, ?)"
+                conn.execute(stmt, data)
+            else:
+                print('^_^')
 
         conn.commit()
         conn.close()
