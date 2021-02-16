@@ -25,7 +25,7 @@ class MarketwatchSpiderSpider(scrapy.Spider):
                     url = 'https://www.marketwatch.com/investing/stock/'+ucode+'/download-data?countrycode=hk&mod=mw_quote_tab'
                     start_urls.append({'url': url, 'ucode': ucode2})
 
-        start_urls = [{'url': 'https://www.marketwatch.com/investing/stock/2800/download-data?countrycode=hk&mod=mw_quote_tab', 'ucode': '02800'}]
+        # start_urls = [{'url': 'https://www.marketwatch.com/investing/stock/2800/download-data?countrycode=hk&mod=mw_quote_tab', 'ucode': '02800'}]
         for data in start_urls:
             yield scrapy.Request(url=data['url'], headers=get_random_header(), callback=self.parse, meta=data)
 
@@ -34,7 +34,8 @@ class MarketwatchSpiderSpider(scrapy.Spider):
         html = bs4.BeautifulSoup(response.body, 'lxml')
         item['ucode'] = response.meta.get('ucode')
 
-        for v1 in html.find_all('div', {'class': 'download-data'}):
+        data = html.find_all('div', {'class': 'download-data'})
+        for v1 in [data[0]]:
             for v2 in v1.find_all('tr', {'class': 'table__row'}):
                 stime = v2.find('div', {'class': 'fixed--cell'})
                 if stime is not None and len(list(stime.getText())) == 10:
