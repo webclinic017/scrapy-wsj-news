@@ -36,8 +36,10 @@ class IndexPipeline:
             if 'turnover' in item:
                 data = [item['turnover'], item['stime']]
                 stmt = "UPDATE "+tb_name+" SET turnover=? WHERE stime=?"
-                conn.execute(stmt, data)
-
+                try:
+                    conn.execute(stmt, data)
+                except sqlite3.Error as err:
+                    print(err)
             elif 'vol' in item:
                 data = [item['stime'], ucode2, item['last'], item['high'], item['low'], item['open'], item['vol']]
                 stmt = "REPLACE INTO "+tb_name+" (stime, code, close, high, low, open, volume) VALUES (?, ?, ?, ?, ?, ?, ?)"
