@@ -24,14 +24,25 @@ class IndexPipeline:
 
     def process_item(self, item, spider):
         conn = sqlite3.connect(self.path_sqlite)
-        if item['ucode'] == 'hsi' or item['ucode'] == 'hstech' or item['ucode'] == 'hsce':
-            if 'stime' in item and 'last' in item and 'high' in item and 'low' in item and 'turnover' in item:
+        if item['ucode'] == 'hstech':
+            if 'turnover' in item:
                 tb_name = 's_' + item['ucode']
                 data = [item['stime'], item['ucode'], item['last'], item['high'], item['low'], item['turnover']]
                 stmt = "REPLACE INTO "+tb_name+" (stime, code, close, high, low, turnover) VALUES (?, ?, ?, ?, ?, ?)"
                 conn.execute(stmt, data)
-            else:
-                print('^_^')
+
+        else:
+            if 'turnover' in item:
+                tb_name = 's_' + item['ucode']
+                data = [item['turnover'], item['stime']]
+                stmt = "UPDATE "+tb_name+" turnover=? WHERE stime=?"
+                conn.execute(stmt, data)
+
+            elif 'vol' in item:
+                tb_name = 's_' + item['ucode']
+                data = [item['stime'], item['ucode'], item['last'], item['high'], item['low'], item['open'], item['vol']]
+                stmt = "REPLACE INTO "+tb_name+" (stime, code, close, high, low, open, volume) VALUES (?, ?, ?, ?, ?, ?, ?)"
+                conn.execute(stmt, data)
 
         conn.commit()
         conn.close()

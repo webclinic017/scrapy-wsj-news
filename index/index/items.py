@@ -16,4 +16,6 @@ class IndexItem(scrapy.Item):
     turnover = scrapy.Field()
     high = scrapy.Field()
     low = scrapy.Field()
+    open = scrapy.Field()
+    vol = scrapy.Field()
     pass
