@@ -20,8 +20,8 @@ class YahooSpiderSpider(scrapy.Spider):
                       {'ucode': 'hsce', 'url': 'https://hk.finance.yahoo.com/quote/%5EHSCE/history?p=%5EHSCE'},
                       {'ucode': 'dji', 'url': 'https://hk.finance.yahoo.com/quote/%5EDJI/history?p=%5EDJI'},
                       {'ucode': 'sp500', 'url': 'https://hk.finance.yahoo.com/quote/%5EGSPC/history?p=%5EGSPC'},
-                      {'ucode': 'ssec', 'url': 'https://hk.finance.yahoo.com/quote/000001.SS?p=000001.SS'},
-                      {'ucode': 'sci300', 'url': 'https://hk.finance.yahoo.com/quote/000300.SS?p=000300.SS'}]
+                      {'ucode': 'ssec', 'url': 'https://hk.finance.yahoo.com/quote/000001.SS/history?p=000001.SS'},
+                      {'ucode': 'csi300', 'url': 'https://hk.finance.yahoo.com/quote/000300.SS/history?p=000300.SS'}]
         for data in start_urls:
             yield scrapy.Request(url=data['url'], headers=get_random_header(), callback=self.parse, meta=data)
 
@@ -36,7 +36,7 @@ class YahooSpiderSpider(scrapy.Spider):
             if len(td) == 7:
                 item['stime'] = datetime.datetime.strptime(td[0].getText(), '%Y年%m月%d日')
                 item['stime'] = item['stime'].strftime('%Y-%m-%d')
-                if not td[1].getText() == '-':
+                if not td[1].getText() == '-' and not td[6].getText() == '-':
                     item['open'] = float(td[1].getText().replace(',', ''))
                     item['high'] = float(td[2].getText().replace(',', ''))
                     item['low'] = float(td[3].getText().replace(',', ''))
