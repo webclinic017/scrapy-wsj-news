@@ -19,7 +19,9 @@ class YahooSpiderSpider(scrapy.Spider):
         start_urls = [{'ucode': 'hsi', 'url': 'https://hk.finance.yahoo.com/quote/%5EHSI/history?p=%5EHSI'},
                       {'ucode': 'hsce', 'url': 'https://hk.finance.yahoo.com/quote/%5EHSCE/history?p=%5EHSCE'},
                       {'ucode': 'dji', 'url': 'https://hk.finance.yahoo.com/quote/%5EDJI/history?p=%5EDJI'},
-                      {'ucode': 'sp500', 'url': 'https://hk.finance.yahoo.com/quote/%5EGSPC/history?p=%5EGSPC'}]
+                      {'ucode': 'sp500', 'url': 'https://hk.finance.yahoo.com/quote/%5EGSPC/history?p=%5EGSPC'},
+                      {'ucode': 'ssec', 'url': 'https://hk.finance.yahoo.com/quote/000001.SS?p=000001.SS'},
+                      {'ucode': 'sci300', 'url': 'https://hk.finance.yahoo.com/quote/000300.SS?p=000300.SS'}]
         for data in start_urls:
             yield scrapy.Request(url=data['url'], headers=get_random_header(), callback=self.parse, meta=data)
 
