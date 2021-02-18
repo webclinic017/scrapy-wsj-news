@@ -24,8 +24,7 @@ var ui = {};
 $(document).ready(function() {
   initUI();
   
-  var ucodes = ['hsi', 'hsce', 'ssec', 'csi300', 'sp500', 'dji', '02800', '03033', '02822', '03188', '00700', '03690', '09988', '09618', '06993', '09992', '09999', '01024']
-  
+  var ucodes = ui.tvCodes.val().replace(/\s/g, '').split(',');
   var html = '';
   var cutTime = moment().format('YYYYMMDD-HHmmss');
   for (var ucode of ucodes) {
@@ -39,7 +38,8 @@ $(document).ready(function() {
 });
 
 function initUI() {
-  ui.content = $('.body-container');
+  ui.content = $('.content');
+  ui.tvCodes = $('#ucodes');
 }
 </script>
 </head>
@@ -47,9 +47,19 @@ function initUI() {
 <div class="container">
 
 <div class="row body-container">
+<div class="col-12">
+  <form action="javascript:void(0);">
+  <div class="form-group">
+  <label for="ucodes">股票編號</label>
+  <input type="text" class="form-control form-control-sm" id="ucodes" value="hsi, hsce, ssec, csi300, sp500, dji, 02800, 03033, 02822, 03188, 00700, 03690, 09988, 09618, 06993, 09992, 09999, 01024">
+  </div>
+  <button class="btn btn-sm btn-primary">Update</button>
+  </form>
+</div>
 </div>
 
-
+<div class="row body-container content">
+</div>
 
 </div>
 </body>
