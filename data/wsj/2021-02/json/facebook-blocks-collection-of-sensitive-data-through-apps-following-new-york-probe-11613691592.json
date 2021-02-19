@@ -1,0 +1,11 @@
+{
+    "url_original": "https://www.wsj.com/articles/facebook-blocks-collection-of-sensitive-data-through-apps-following-new-york-probe-11613691592?mod=business_lead_pos4",
+    "url": "facebook-blocks-collection-of-sensitive-data-through-apps-following-new-york-probe-11613691592",
+    "title": "Facebook Blocks Collection of Sensitive Data Through Apps Following New York Probe",
+    "sub_head": "Investigation followed Wall Street Journal article detailing unauthorized sharing of personal information with the social-media giant",
+    "category_1": "Business",
+    "image_1_url": "https://images.wsj.net/im-301231?width=620&size=1.5",
+    "image_1": "im-301231.jpg",
+    "time": "2021-02-18 18:39:00",
+    "body": "Facebook  Inc.  has taken steps to prevent it from collecting unauthorized data about people’s medical conditions, religious practices and finances but should do more to limit the sharing of such sensitive information, the New York Department of Financial Services said Thursday in an investigative report that was sharply critical of the social-media giant.<br />The regulator concluded that Facebook has failed to appropriately investigate its past collection of sensitive data and called for further federal action.<br />The state’s investigation began after The Wall Street Journal reported in 2019 that personal health apps, including a popular period and pregnancy tracker called Flo, were quietly passing data to Facebook.<br />The transfer occurred through a snippet of code known as a software development kit without providing users notice or obtaining consent. Facebook would then match the app users’ sensitive data to their social media accounts, allowing the developers to target ads at them.<br />Officially, Facebook’s terms of service prohibited app developers from providing the platform with data from children or about health, finance or other sensitive topics. But the company told the New York regulator that it had “routinely obtained” such data from developers, contrary to its own policies."
+}
