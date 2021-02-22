@@ -126,7 +126,6 @@ dmypy.json
 
 # project
 .idea/
-sina/
 algo/
 aastock-2.db
 server_data.py
