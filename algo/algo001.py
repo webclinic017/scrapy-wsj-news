@@ -206,3 +206,10 @@ function initUI() {
 writer = open(path_html, "w", encoding="utf-8")
 writer.write(html)
 writer.close()
+
+# 6.0
+path_git = os.path.join(path_root, 'run-git.bat')
+if not os.path.exists(path_git):
+    path_git = os.path.join(path_root2, 'run-git.bat')
+print(path_git)
+os.system(path_git)
