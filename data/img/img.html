@@ -24,22 +24,37 @@ var ui = {};
 $(document).ready(function() {
   initUI();
   
+  
+  ui.btn.click(function() {
+    var code = $(this).data("code");
+    if (code=='custom')
+      var ucodes = ui.tvCodes.val().replace(/\s/g, '').split(',');
+    else
+      var ucodes = code.replace(/\s/g, '').split(',');
+    draw(ucodes);
+  });
+  
   var ucodes = ui.tvCodes.val().replace(/\s/g, '').split(',');
-  var html = '';
-  var cutTime = moment().format('YYYYMMDD-HHmmss');
-  for (var ucode of ucodes) {
-    html += '<div class="col-6 col-sm-4 ml-0 pr-0 pl-2">'
-    html += ucode.toUpperCase()
-    html += '<img src="./'+ucode+'.png?'+cutTime+'">'
-    html += '<br /><br />'
-    html += '</div>'
+  draw(ucodes);
+  
+  function draw(ucodes) {
+    var html = '';
+    var cutTime = moment().format('YYYYMMDD-HHmmss');
+    for (var ucode of ucodes) {
+      html += '<div class="col-6 col-sm-4 ml-0 pr-0 pl-2">'
+      html += ucode.toUpperCase()
+      html += '<img src="./'+ucode+'.png?'+cutTime+'">'
+      html += '<br /><br />'
+      html += '</div>'
+    }
+    ui.content.html(html);
   }
-  ui.content.html(html);
 });
 
 function initUI() {
   ui.content = $('.content');
   ui.tvCodes = $('#ucodes');
+  ui.btn = $('.btn-sm');
 }
 </script>
 </head>
@@ -51,10 +66,17 @@ function initUI() {
   <form action="javascript:void(0);">
   <div class="form-group">
   <label for="ucodes">股票編號</label>
-  <input type="text" class="form-control form-control-sm" id="ucodes" value="hsi, hsce, ssec, sp500, dji, 02800, 03033, 02822, 03188, 00700, 03690, 09988, 09618, 06993, 09992, 09999, 01024, 03968, 02318, 02020, 02319, 02382, 01810, 01833, 00388, pddo">
+  <input type="text" class="form-control form-control-sm" id="ucodes" value="hsi, hsce, ssec, sp500, dji, 02800, 03033, 02822, 03188, 00700, 03690, 09988, 09618, 06993, 09992, 09999, 01024, 03968, 02318, 02020, 02319, 02382, 01810, 01833, 00388">
   </div>
-  <button class="btn btn-sm btn-primary">Update</button>
+  <button class="btn btn-sm btn-primary" data-code="custom">Update</button>
   </form>
+</div>
+</div>
+
+<div class="row body-container">
+<div class="col-12">
+  <button class="btn btn-sm btn-secondary" data-code="00700, 01810, 00388, pddo, 09999, 09988, 03690, 02331">易方達中國股票股息基金</button>
+  <button class="btn btn-sm btn-secondary" data-code="00700, 09618, 01299">汇添富中港策略基金</button>
 </div>
 </div>
 
