@@ -58,7 +58,10 @@ for k, _df in data1.items():
     df = df.tail(no_days)
     prop = fm.FontProperties(fname='D:/PycharmProjects/quant_trading_1/msjh.ttf')
     style = mpf.make_mpf_style(base_mpf_style='charles', rc={'font.size':12, 'font.family' : 'SimHei'}, gridaxis='both')
-    title = _df['nmll'].iloc[1]
+    if _df['nmll'].shape[0] > 0:
+        title = _df['nmll'].iloc[1]
+    else:
+        title = ''
 
     path_img = os.path.join(path_root, 'data', 'img')
     if os.path.exists(path_img):
