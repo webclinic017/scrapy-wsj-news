@@ -25,7 +25,7 @@ class MarketwatchSpiderSpider(scrapy.Spider):
                     url = 'https://www.marketwatch.com/investing/stock/'+ucode+'/download-data?countrycode=hk&mod=mw_quote_tab'
                     start_urls.append({'url': url, 'ucode': ucode2})
 
-        # start_urls = [{'url': 'https://www.marketwatch.com/investing/stock/2800/download-data?countrycode=hk&mod=mw_quote_tab', 'ucode': '02800'}]
+        start_urls = [{'url': 'https://www.marketwatch.com/investing/stock/6618/download-data?countrycode=hk&mod=mw_quote_tab', 'ucode': '06618'}]
         for data in start_urls:
             yield scrapy.Request(url=data['url'], headers=get_random_header(), callback=self.parse, meta=data)
 

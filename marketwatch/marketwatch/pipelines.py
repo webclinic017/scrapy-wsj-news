@@ -26,6 +26,9 @@ class MarketwatchPipeline:
         conn = sqlite3.connect(self.path_sqlite)
         tb_name = 's_' + item['ucode']
 
+        conn.execute("CREATE TABLE IF NOT EXISTS %s (stime TEXT PRIMARY KEY, code TEXT NOT NULL, close REAL, "
+                     "high REAL, low REAL, open REAL, volume REAL)" % tb_name)
+
         data = [item['stime'], item['ucode'][-4:]+'.HK', item['last'], item['high'], item['low'], item['open'], item['vol'],]
         stmt = "REPLACE INTO "+tb_name+" (stime, code, close, high, low, open, volume) VALUES (?, ?, ?, ?, ?, ?, ?)"
         conn.execute(stmt, data)
