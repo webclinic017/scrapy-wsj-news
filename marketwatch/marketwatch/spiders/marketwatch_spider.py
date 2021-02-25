@@ -21,13 +21,14 @@ class MarketwatchSpiderSpider(scrapy.Spider):
             for v1 in v:
                 if '.HK' in v1:
                     ucode = v1.replace('.HK', '').zfill(4)
-                    ucode2 = v1.replace('.HK', '').zfill(5)
                     url = 'https://www.marketwatch.com/investing/stock/'+ucode+'/download-data?countrycode=hk&mod=mw_quote_tab'
-                    start_urls.append({'url': url, 'ucode': ucode2})
+                    start_urls.append({'url': url, 'ucode': ucode+'.HK', 'tb_name': ucode.zfill(5)})
                 elif '.O' in v1 or '.K' in v1:
                     ucode = v1.replace('.O', '').replace('.K', '').lower()
                     url = 'https://www.marketwatch.com/investing/stock/'+ucode+'/download-data?mod=mw_quote_tab'
-                    start_urls.append({'url': url, 'ucode': ucode})
+                    ucode2 = v1.replace('.', '').lower()
+                    start_urls.append({'url': url, 'ucode': v1, 'tb_name': ucode2})
+                    start_urls.append({'url': url, 'ucode': v1, 'tb_name': ucode})
 
         # start_urls = [{'url': 'https://www.marketwatch.com/investing/stock/6618/download-data?countrycode=hk&mod=mw_quote_tab', 'ucode': '06618'}]
         for data in start_urls:
@@ -37,6 +38,7 @@ class MarketwatchSpiderSpider(scrapy.Spider):
         item = MarketwatchItem()
         html = bs4.BeautifulSoup(response.body, 'lxml')
         item['ucode'] = response.meta.get('ucode')
+        item['tb_name'] = response.meta.get('tb_name')
 
         data = html.find_all('div', {'class': 'download-data'})
         for v1 in [data[0]]:

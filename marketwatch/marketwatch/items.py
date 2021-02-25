@@ -8,6 +8,7 @@ import scrapy
 
 class MarketwatchItem(scrapy.Item):
     # define the fields for your item here like:
+    tb_name = scrapy.Field()
     ucode = scrapy.Field()
     stime = scrapy.Field()
     last = scrapy.Field()
