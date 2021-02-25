@@ -24,9 +24,12 @@ class MarketwatchSpiderSpider(scrapy.Spider):
                     ucode2 = v1.replace('.HK', '').zfill(5)
                     url = 'https://www.marketwatch.com/investing/stock/'+ucode+'/download-data?countrycode=hk&mod=mw_quote_tab'
                     start_urls.append({'url': url, 'ucode': ucode2})
+                elif '.O' in v1 or '.K' in v1:
+                    ucode = v1.replace('.O', '').replace('.K', '').lower()
+                    url = 'https://www.marketwatch.com/investing/stock/'+ucode+'/download-data?mod=mw_quote_tab'
+                    start_urls.append({'url': url, 'ucode': ucode})
 
-        start_urls = [{'url': 'https://www.marketwatch.com/investing/stock/6618/download-data?countrycode=hk&mod=mw_quote_tab', 'ucode': '06618'},
-                      {'url': 'https://www.marketwatch.com/investing/stock/6606/download-data?countrycode=hk&mod=mw_quote_tab', 'ucode': '06606'}]
+        # start_urls = [{'url': 'https://www.marketwatch.com/investing/stock/6618/download-data?countrycode=hk&mod=mw_quote_tab', 'ucode': '06618'}]
         for data in start_urls:
             yield scrapy.Request(url=data['url'], headers=get_random_header(), callback=self.parse, meta=data)
 
@@ -44,7 +47,7 @@ class MarketwatchSpiderSpider(scrapy.Spider):
                     item['stime'] = stime2.strftime('%Y-%m-%d')
                     v3 = v2.find_all('td', {'class': 'overflow__cell'})
                     for i in [1, 2, 3, 4, 5]:
-                        v4 = float(v3[i].getText().replace('HK$', '').replace(',', ''))
+                        v4 = float(v3[i].getText().replace('HK', '').replace('$', '').replace(',', ''))
                         if i == 1:
                             item['open'] = v4
                         elif i == 2:
