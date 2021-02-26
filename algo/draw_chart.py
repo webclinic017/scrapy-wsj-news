@@ -32,6 +32,8 @@ for k, v in get_ucodes().items():
     for v1 in v:
         if '.HK' in v1:
             ucodes.append(v1.replace('.HK', '').zfill(5))
+        elif ('.SS' in v1  and not v1 == '.SSEC') or ('.SZ' in v1 and not v1 == '.SZI'):
+            ucodes.append(v1.replace('.SS', '').replace('.SZ', '').zfill(6))
         else:
             ucodes.append(v1.lower().replace('.', ''))
 
@@ -59,7 +61,11 @@ for k, _df in data1.items():
     prop = fm.FontProperties(fname='D:/PycharmProjects/quant_trading_1/msjh.ttf')
     style = mpf.make_mpf_style(base_mpf_style='charles', rc={'font.size':12, 'font.family' : 'SimHei'}, gridaxis='both')
 
-    stime = _df['sdate'].iloc[-1]
+    if _df['sdate'].shape[0] > 0:
+        stime = _df['sdate'].iloc[-1]
+    else:
+        stime = ''
+
     if _df['nmll'].shape[0] > 0:
         title = _df['nmll'].iloc[1]+' '+stime
     else:
