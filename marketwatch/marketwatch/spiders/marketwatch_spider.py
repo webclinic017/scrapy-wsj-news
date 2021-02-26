@@ -28,6 +28,9 @@ class MarketwatchSpiderSpider(scrapy.Spider):
                     url = 'https://www.marketwatch.com/investing/stock/'+ucode+'/download-data?mod=mw_quote_tab'
                     ucode2 = v1.replace('.', '').lower()
                     start_urls.append({'url': url, 'ucode': v1, 'tb_name': ucode2})
+                elif '.SS' in v1 or '.SZ' in v1:
+                    ucode = v1.replace('.SS', '').replace('.SZ', '').lower()
+                    url = 'https://www.marketwatch.com/investing/stock/'+ucode+'/download-data?countryCode=CN'
                     start_urls.append({'url': url, 'ucode': v1, 'tb_name': ucode})
 
         # start_urls = [{'url': 'https://www.marketwatch.com/investing/stock/6618/download-data?countrycode=hk&mod=mw_quote_tab', 'ucode': '06618'}]
@@ -49,7 +52,7 @@ class MarketwatchSpiderSpider(scrapy.Spider):
                     item['stime'] = stime2.strftime('%Y-%m-%d')
                     v3 = v2.find_all('td', {'class': 'overflow__cell'})
                     for i in [1, 2, 3, 4, 5]:
-                        v4 = float(v3[i].getText().replace('HK', '').replace('$', '').replace(',', ''))
+                        v4 = float(v3[i].getText().replace('HK', '').replace('$', '').replace(',', '').replace('¥', ''))
                         if i == 1:
                             item['open'] = v4
                         elif i == 2:
