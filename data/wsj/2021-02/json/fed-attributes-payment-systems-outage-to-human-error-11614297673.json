@@ -1,0 +1,12 @@
+{
+    "url_original": "https://www.wsj.com/articles/fed-attributes-payment-systems-outage-to-human-error-11614297673",
+    "url": "fed-attributes-payment-systems-outage-to-human-error-11614297673",
+    "title": "Fed Attributes Payment Systems Outage to ‘Human Error’",
+    "sub_head": "Mistake caused key financial services to shut down for about four hours Wednesday",
+    "category_1": "Economy",
+    "category_2": "U.S. Economy",
+    "image_1_url": "https://images.wsj.net/im-304147?width=620&size=1.5",
+    "image_1": "im-304147.jpg",
+    "time": "2021-02-25 19:01:00",
+    "body": "The Federal Reserve said an outage of its key financial services on Wednesday was caused by a maintenance mistake and it is taking steps to prevent a recurrence.<br />“The incident was caused by an operational error involving an automated data center maintenance process that was inadvertently triggered during business hours,” a Fed spokeswoman said. Such tasks are normally performed after-hours, she said, adding, “This was human error.”<br />The disruption shut down all the Fed’s financial services Wednesday for about four hours, halting electronic systems used by banks, businesses and government agencies to move money. While the problem was resolved after the Fed extended its business hours to clear a backlog of payments, it prompted banks to initiate emergency protocols and raised questions about the resilience of critical financial plumbing.<br />“When things like this happen it undermines public confidence,” said Andrew Levin, a Dartmouth College economics professor who served at the Fed from 1992 to 2012.<br />One person familiar with the Fed’s systems said they rely on a geographically dispersed network of data centers, servers and mainframes. Problems that occur in a key location at the wrong time can require the systems to be rebooted, which is what the Fed did Wednesday."
+}
