@@ -1,0 +1,11 @@
+{
+    "url_original": "https://www.wsj.com/articles/solarwinds-hack-pits-microsoft-against-dell-ibm-over-how-companies-store-data-11614456066?mod=business_lead_pos2",
+    "url": "solarwinds-hack-pits-microsoft-against-dell-ibm-over-how-companies-store-data-11614456066",
+    "title": "SolarWinds Hack Pits Microsoft Against Dell, IBM Over How Companies Store Data",
+    "sub_head": "Microsoft argues the cloud offers more protection; rivals point to the need of firms to hold, access their information on-premise",
+    "category_1": "Tech",
+    "image_1_url": "https://images.wsj.net/im-305315?width=620&size=1.5",
+    "image_1": "im-305315.jpg",
+    "time": "2021-02-27 15:01:00",
+    "body": "The cyberattack that compromised many U.S. government and corporate networks is fueling a debate among big tech companies over what the safest way is for customers to store critical data.<br />It pits Microsoft Corp., which is urging clients to rely on cloud-computing systems, against others including Dell Technologies Inc. and  International Business Machines Corp. , who argue customers want to mix the cloud with the more traditional on-premise data-storage systems in a construct called hybrid-cloud.<br />Government and industry cybersecurity experts for about two months have been trying to unravel details of the incident that is causing a reassessment of long-held networking-security assumptions. The hackers, investigators believe, gained access via networking company SolarWinds Corp. and other avenues of attack.<br />In a House committee hearing about the hack Friday, Microsoft President Brad Smith said in prepared remarks, that “cloud migration is critical to improving security maturity across many organizations.” All of the attacks the company has identified involved on-premise systems, he has previously said.<br />The debate is part of the fallout from the suspected Russia-led hack that Senate Intelligence Committee Chairman Sen. Mark Warner (D., Va.), on Tuesday said may be in scope and scale “beyond any that we’ve confronted as a nation.”"
+}
