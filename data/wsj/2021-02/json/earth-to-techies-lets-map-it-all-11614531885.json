@@ -1,0 +1,12 @@
+{
+    "url_original": "https://www.wsj.com/articles/earth-to-techies-lets-map-it-all-11614531885?mod=opinion_lead_pos8",
+    "url": "earth-to-techies-lets-map-it-all-11614531885",
+    "title": "Earth to Techies: Let’s Map It All",
+    "sub_head": "Imaging the world down to the meter will soon spur a navigation breakthrough.",
+    "category_1": "Opinion",
+    "category_2": "Inside View",
+    "image_1_url": "https://images.wsj.net/im-305337?width=620&size=1.5",
+    "image_1": "im-305337.jpg",
+    "time": "2021-02-28 12:04:00",
+    "body": "To make nuclear bombs, you float a gaseous uranium compound down long distances until molecules with the heavier U-238 isotope fall away, leaving only highly fissionable U-235. That’s why during the Cold War the U.S. flew U-2 spy planes over the Soviet Union to film the ground, so that analysts with lightboards and magnifying glasses could study photos looking for long, narrow buildings. And you thought your job was tedious? We’ve come a long way. But that was a while ago—what’s possible today?<br />To find out, I recently spent some (Zoom) time with Dan Jablonsky, CEO of Maxar Technologies, a Westminster, Colo.-based satellite and imaging company that, as far as I can tell, is the state of the art.<br />Circling every 94 minutes, Maxar’s satellites survey 3.5 million square kilometers of the Earth every day to capture images that are accurate down to a meter and are stored in a massive data set. Each satellite’s camera can be swung up to 50 degrees from overhead. Maxar has 17 years of imaging history. It stores 120 petabytes of data on Amazon’s servers.<br />The military, naturally, is its most important customer. Maxar’s data set and 3-D point clouds can track enemy missile launchers or tanks or anything else, and note changes in case of a threat. Generals then have the option, as Mr. Jablonsky put it with one of my new favorite expressions, to “send kinetic energy down range.”<br />Google Maps is a customer too, using the imagery to help create maps and look for changes—the shops in an average strip mall turn over by 25% every year. Autonomous-vehicle manufacturers will be an emerging market, to map terrain and then to deal with the growing complexity of insurance. Google probably doesn’t want to be liable in an accident, so autonomous car makers may need to purchase their own mapping data."
+}
