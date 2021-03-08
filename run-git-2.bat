@@ -17,4 +17,4 @@ SET stage=git add -A
 SET commit=git commit -m "Updated data"
 SET push=git push origin main
 
-cmd /c "cd /d %venv% & %act% & cd /d %full_path%"
+cmd /c "cd /d %venv% & %act% & cd /d %full_path% & %stage% & %commit% & %push%"
