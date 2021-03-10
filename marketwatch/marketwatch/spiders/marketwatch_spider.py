@@ -19,7 +19,11 @@ class MarketwatchSpiderSpider(scrapy.Spider):
         start_urls = []
         for k, v in get_ucodes().items():
             for v1 in v:
-                if '.HK' in v1:
+                if k == '指數ETF' or k == '指數ETFx' or k == '反向指數ETFx':
+                    ucode = v1.replace('.HK', '').zfill(4)
+                    url = 'https://www.marketwatch.com/investing/fund/'+ucode+'/download-data?countrycode=hk&mod=mw_quote_tab'
+                    start_urls.append({'url': url, 'ucode': ucode+'.HK', 'tb_name': ucode.zfill(5)})
+                elif '.HK' in v1:
                     ucode = v1.replace('.HK', '').zfill(4)
                     url = 'https://www.marketwatch.com/investing/stock/'+ucode+'/download-data?countrycode=hk&mod=mw_quote_tab'
                     start_urls.append({'url': url, 'ucode': ucode+'.HK', 'tb_name': ucode.zfill(5)})
@@ -47,27 +51,28 @@ class MarketwatchSpiderSpider(scrapy.Spider):
         item['tb_name'] = response.meta.get('tb_name')
 
         data = html.find_all('div', {'class': 'download-data'})
-        for v1 in [data[0]]:
-            for v2 in v1.find_all('tr', {'class': 'table__row'}):
-                stime = v2.find('div', {'class': 'fixed--cell'})
-                if stime is not None and len(list(stime.getText())) == 10:
-                    stime2 = datetime.datetime.strptime(stime.getText(), '%m/%d/%Y')
-                    item['stime'] = stime2.strftime('%Y-%m-%d')
-                    v3 = v2.find_all('td', {'class': 'overflow__cell'})
-                    for i in [1, 2, 3, 4, 5]:
-                        if i >= len(v3):
-                            break
-                        v4 = float(v3[i].getText().replace('HK', '').replace('$', '').replace(',', '').replace('¥', ''))
-                        if i == 1:
-                            item['open'] = v4
-                        elif i == 2:
-                            item['high'] = v4
-                        elif i == 3:
-                            item['low'] = v4
-                        elif i == 4:
-                            item['last'] = v4
-                        elif i == 5:
-                            item['vol'] = v4
-                    if 'vol' not in item:
-                        item['vol'] = 0
-                    yield item
+        if data:
+            for v1 in [data[0]]:
+                for v2 in v1.find_all('tr', {'class': 'table__row'}):
+                    stime = v2.find('div', {'class': 'fixed--cell'})
+                    if stime is not None and len(list(stime.getText())) == 10:
+                        stime2 = datetime.datetime.strptime(stime.getText(), '%m/%d/%Y')
+                        item['stime'] = stime2.strftime('%Y-%m-%d')
+                        v3 = v2.find_all('td', {'class': 'overflow__cell'})
+                        for i in [1, 2, 3, 4, 5]:
+                            if i >= len(v3):
+                                break
+                            v4 = float(v3[i].getText().replace('HK', '').replace('$', '').replace(',', '').replace('¥', ''))
+                            if i == 1:
+                                item['open'] = v4
+                            elif i == 2:
+                                item['high'] = v4
+                            elif i == 3:
+                                item['low'] = v4
+                            elif i == 4:
+                                item['last'] = v4
+                            elif i == 5:
+                                item['vol'] = v4
+                        if 'vol' not in item:
+                            item['vol'] = 0
+                        yield item
