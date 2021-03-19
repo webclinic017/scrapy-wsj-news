@@ -26,14 +26,14 @@ class YahooSpiderSpider(scrapy.Spider):
             yield scrapy.Request(url=data['url'], headers=get_random_header(), callback=self.parse, meta=data)
 
     def parse(self, response):
-        item = IndexItem()
         html = bs4.BeautifulSoup(response.body, 'lxml')
-        item['ucode'] = response.meta.get('ucode')
 
         tb = html.find('table', {'data-test': 'historical-prices'})
         for tr in tb.find_all('tr'):
             td = tr.find_all('td')
             if len(td) == 7:
+                item = IndexItem()
+                item['ucode'] = response.meta.get('ucode')
                 item['stime'] = datetime.datetime.strptime(td[0].getText(), '%Y年%m月%d日')
                 item['stime'] = item['stime'].strftime('%Y-%m-%d')
                 if not td[1].getText() == '-' and not td[6].getText() == '-':

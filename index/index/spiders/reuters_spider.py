@@ -22,13 +22,25 @@ class YahooSpiderSpider(scrapy.Spider):
             yield scrapy.Request(url=url, headers=get_random_header(), callback=self.parse)
 
     def parse(self, response):
-        item = IndexItem()
         data = json.loads(response.body)
         for v in data['market_data']['indices']:
+            item = IndexItem()
             item['ucode'] = v['ric'].replace('.', '').lower()
             if item['ucode'] == 'spx':
                 item['ucode'] = 'sp500'
             item['last'] = float(v['last'])
-            item['chng'] = float(v['net_change'])
-            item['pchng'] = float(v['percent_change'])
-            print(item)
+            if v['net_change']:
+                item['chng'] = float(v['net_change'])
+            if v['percent_change']:
+                item['pchng'] = float(v['percent_change'])
+            if v['day_high']:
+                item['high'] = float(v['day_high'])
+            if v['day_low']:
+                item['low'] = float(v['day_low'])
+            if v['open']:
+                item['open'] = float(v['open'])
+            if v['volume']:
+                item['vol'] = int(v['volume'])
+            if v['modified']:
+                item['stime'] = datetime.datetime.strptime(v['modified'], '%Y-%m-%d %H:%M:%S').strftime("%Y-%m-%d")
+            yield item
