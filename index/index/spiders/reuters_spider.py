@@ -25,4 +25,10 @@ class YahooSpiderSpider(scrapy.Spider):
         item = IndexItem()
         data = json.loads(response.body)
         for v in data['market_data']['indices']:
-            print(v)
+            item['ucode'] = v['ric'].replace('.', '').lower()
+            if item['ucode'] == 'spx':
+                item['ucode'] = 'sp500'
+            item['last'] = float(v['last'])
+            item['chng'] = float(v['net_change'])
+            item['pchng'] = float(v['percent_change'])
+            print(item)
