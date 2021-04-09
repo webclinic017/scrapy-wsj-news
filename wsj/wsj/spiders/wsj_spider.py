@@ -88,7 +88,8 @@ class WsjSpider(scrapy.Spider):
             # 月
             month5 = re.sub(r'\d+', '', time5.split(',')[0].lower()).replace('.', '').replace('updated', '')
             month5 = "".join(month5.split())
-            month6 = {'jan': 1, 'feb': 2, 'mar': 3, 'apr': 4, 'may': 5, 'jun': 6, 'jul': 7, 'aug': 8, 'sep': 9, 'oct': 10, 'nov': 11, 'dec': 12}
+            month6 = {'jan': 1, 'feb': 2, 'mar': 3, 'apr': 4, 'may': 5, 'jun': 6, 'jul': 7, 'aug': 8, 'sep': 9, 'oct': 10, 'nov': 11, 'dec': 12,
+                      'january': 1, 'february': 2, 'march': 3, 'april': 4, 'may': 5, 'june': 6, 'july': 7, 'august': 8, 'september': 9, 'october': 10, 'november': 11, 'december': 12}
             month7 = None
             if month5 in month6:
                 month7 = month6[month5]
