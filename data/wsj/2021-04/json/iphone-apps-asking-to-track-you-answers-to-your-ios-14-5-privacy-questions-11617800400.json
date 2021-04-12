@@ -1,0 +1,12 @@
+{
+    "url_original": "https://www.wsj.com/articles/iphone-apps-asking-to-track-you-answers-to-your-ios-14-5-privacy-questions-11617800400?mod=tech_featst_pos3",
+    "url": "iphone-apps-asking-to-track-you-answers-to-your-ios-14-5-privacy-questions-11617800400",
+    "title": "iPhone Apps Asking to Track You? Answers to Your iOS 14.5 Privacy Questions",
+    "sub_head": "Ad-tracking permission pop-ups are coming to nearly every app on your iPhone. Here’s why—and what’s happening behind the scenes.",
+    "category_1": "Tech",
+    "category_2": "Personal Technology: Review",
+    "image_1_url": "https://images.wsj.net/im-321357?width=620&size=custom_1755x1170",
+    "image_1": "im-321357.jpg",
+    "time": "2021-04-07 09:00:00",
+    "body": "“Allow ‘The Sims’ to track your activity?” “Allow ‘Merriam-Webster’ to track your activity?” “Allow ‘WSJ’ to track your activity?”<br />Welcome to the start of iPhone and iPad privacy pop-upalooza. Expect a whole lot more of it in the coming weeks. In  Apple ’s  next software release, iOS 14.5, apps that track user data for advertising purposes or share data with data brokers will be required to show you a prompt asking permission to track. Some developers have already implemented the prompt, which is why you may be seeing the pop-ups right now.<br />On these pop-ups, you’ll have two options to choose from: “Allow” or “Ask App Not to Track.” The idea is that instead of digging through complicated settings to opt out of tracking that you don’t really see or are even aware of, you can now opt in, if you enjoy targeted ads. Apps will now ask you before sharing your data with other apps—or third-party advertisers or data brokers. It’s all part of Apple’s effort to present you with more privacy controls.<br />But while the choices might seem simple, there’s quite a lot happening behind the scenes. What exactly do these options mean, and how will they impact your privacy? Here’s a breakdown of what Apple is calling App Tracking Transparency, and what happens if you opt out or opt in.<br />Oh, yes, apps have been tracking you. You know how you may search for something on one website and then the ad for that product can follow you around the web? Well, instead of using web-browser tracking tools like cookies, iPhone apps tend to use a secret string of numbers on your phone. It’s called the IDFA—Identifier for Advertisers—and is used for tracking and identifying what you do in apps and across apps. (Android has something similar.)"
+}
