@@ -1,0 +1,12 @@
+{
+    "url_original": "https://www.wsj.com/articles/researchers-uncover-advertising-scam-targeting-streaming-tv-apps-11619006400?mod=tech_lead_pos10",
+    "url": "researchers-uncover-advertising-scam-targeting-streaming-tv-apps-11619006400",
+    "title": "Researchers Uncover Advertising Scam Targeting Streaming-TV Apps",
+    "sub_head": "Fraudsters mimicked popular apps, siphoned off revenue from unsuspecting advertisers, cybersecurity firm says",
+    "category_1": "Business",
+    "category_2": "Media & Marketing",
+    "image_1_url": "https://images.wsj.net/im-328034?width=620&size=1.5",
+    "image_1": "im-328034.jpg",
+    "time": "2021-04-21 08:00:00",
+    "body": "Fraudsters infected nearly one million mobile devices with software that mimicked streaming-TV apps and collected revenue from unsuspecting advertisers, according to cybersecurity company Human Security Inc., exposing vulnerabilities in a fast-growing corner of the digital ad market.<br />The fraudsters spoofed an average of 650 million ad placement opportunities a day in online ad exchanges, stealing ad dollars meant for streaming apps available on popular streaming-TV platforms run by  Roku Inc.,   Amazon.com Inc.,  Apple Inc. and  Alphabet Inc.’s  Google, Human Security said.<br />The researchers described the fraud operation as sophisticated, but said it could be stymied if digital ad players strictly followed industry guidelines for tracking the origins of traffic and implemented certain security features. Human Security didn’t provide an estimate for how much money the fraudsters collected.<br />Roku said the scheme didn’t affect advertisers who bought ads from Roku directly. “Roku is committed to fighting ad fraud in every form and to the development of leading practices for staying ahead of fraud globally,” said Willard Simmons, vice president of product management at Roku.<br />A Google spokesman said that the company has sophisticated defenses in place to protect its ad systems against fraud and issues credits or refunds when necessary."
+}
