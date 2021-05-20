@@ -1,4 +1,5 @@
 @echo off
+TITLE JupyterLab
 
 :: get currect path
 SET currect_path=%~dp0
