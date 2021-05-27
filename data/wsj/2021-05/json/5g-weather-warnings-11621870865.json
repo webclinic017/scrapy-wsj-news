@@ -1,0 +1,12 @@
+{
+    "url_original": "https://www.wsj.com/articles/5g-weather-warnings-11621870865?mod=tech_featst_pos2",
+    "url": "5g-weather-warnings-11621870865",
+    "title": "How 5G May Improve Early Warnings of Severe Weather",
+    "sub_head": "Researchers are using wireless signals to better predict tornadoes",
+    "category_1": "Business",
+    "category_2": "Journal Reports: Technology",
+    "image_1_url": "https://images.wsj.net/im-342813?width=620&size=1.5",
+    "image_1": "im-342813.jpg",
+    "time": "2021-05-25 14:00:00",
+    "body": "In a small office across from a dry cleaner in Wake Forest, N.C., a team of engineers is exploring the possibility of using data found in 5G wireless signals to measure a key factor in the early detection of tornadoes.<br />The group is part of a nonprofit test lab and engineering consulting firm called the Wireless Research Center, or WRC, which specializes in testing wireless technology and antennas. The team already has proved that humidity can be measured based on changes in signals that 4G and 5G cell towers emit. Now it wants to further test the technology to show that these same signals can help save lives by helping meteorologists forecast severe weather much sooner than current methods allow.<br />Meteorologists typically use weather stations or satellites to measure humidity. Both methods have their limitations. Weather stations are sparse and cover large areas, which can give less-precise readings. For a satellite, atmospheric conditions, such as clouds, and the satellite’s position can hinder its ability to measure humidity precisely.<br />Cellular service, by contrast, is nearly ubiquitous—and with the rollout of 5G, even more equipment is being installed. The signals from which humidity data can be measured are known as reference signals. Cell towers emit them about every millisecond to help cellphones detect how strong or weak their connections are. These signals don’t travel in straight lines. Their paths are affected by refraction, or the bending of waves, which increases when there is water vapor in the air. The change in the signals caused by refraction can be measured and used to derive humidity. The effect is particularly visible in weather fronts in which dry air mixes with a lot of humid air.<br />“If you measured a [cellular] signal coming through that, the signal would hit that wet air and all of a sudden it’s going to bend another way,” says Mike Barts, a senior engineer at WRC."
+}
