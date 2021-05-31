@@ -59,7 +59,7 @@ for k, _df in data1.items():
     df.index = pd.to_datetime(df.sdate)
     df = df.tail(no_days)
     prop = fm.FontProperties(fname='D:/PycharmProjects/scrapy-001/algo/msjh.ttf')
-    style = mpf.make_mpf_style(base_mpf_style='charles', rc={'font.size':12, 'font.family' : 'SimSun'}, gridaxis='both')
+    style = mpf.make_mpf_style(base_mpf_style='charles', rc={'font.size':12, 'font.family': 'SimSun'}, gridaxis='both')
 
     if _df['sdate'].shape[0] > 0:
         stime = _df['sdate'].iloc[-1]
