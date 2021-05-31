@@ -1,0 +1,11 @@
+{
+    "url_original": "https://www.wsj.com/articles/ai-ethics-teams-bulk-up-in-size-influence-at-tech-firms-11622113202?mod=tech_featst_pos1",
+    "url": "ai-ethics-teams-bulk-up-in-size-influence-at-tech-firms-11622113202",
+    "title": "AI Ethics Teams Bulk Up in Size, Influence at Tech Firms",
+    "sub_head": "A flaw in a photo-cropping algorithm at Twitter prompted the attention of its ethics team",
+    "category_1": "Artificial Intelligence",
+    "image_1_url": "https://images.wsj.net/im-345287?width=620&size=1.5",
+    "image_1": "im-345287.jpg",
+    "time": "2021-05-27 07:00:00",
+    "body": "Artificial intelligence ethics teams are playing a greater role at tech companies and helping them deal with bias and fairness issues that have cropped up at companies such as  Twitter Inc.<br />The social-media company’s ethics group recently helped address concerns about an automatic cropping feature, released in 2018, that appeared to display a racial bias, said Rumman Chowdhury, who leads the group, called the Machine Learning Ethics, Transparency and Accountability team or META.<br />The algorithm worked by estimating what a person might want to see first in a picture so that the system could determine how to crop the image to an easily viewable size. Late last year, Twitter started receiving feedback from its users that the feature was biased toward white people.<br />An investigation by the META team earlier this month found that the algorithm deviated from demographic parity by 4 percentage points—meaning that when all things in the photo were equal, the cropping function would prefer a white individual over a Black individual. The META team’s finding supported the company’s decision to stop using the algorithm, according to Ms. Chowdhury.<br />The conclusion: Not every feature on Twitter is a good candidate for an algorithm and how to crop an image is a decision best made by people, Ms. Chowdhury said."
+}
