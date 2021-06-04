@@ -1,0 +1,10 @@
+{
+    "url_original": "https://www.wsj.com/articles/the-covid-calculus-of-herd-immunity-11622748230",
+    "url": "the-covid-calculus-of-herd-immunity-11622748230",
+    "title": "The Covid Calculus of Herd Immunity",
+    "sub_head": "An equation developed to explain population growth also applies to the spread of a virus and how to stop it",
+    "category_1": "Life & Arts",
+    "category_2": "Ideas",
+    "time": "2021-06-03 15:23:00",
+    "body": "Mathematician Eugenia Cheng explores the uses of math beyond the classroom. Read more columns here.<br />As the roll out for Covid-19 vaccines continues, many people have questions about the idea of herd immunity. After all, vaccines are not just for those who receive them; they are also intended to protect those who can’t or don’t get the shot. Herd immunity doesn’t mean that everyone is somehow immune by association. Rather, it means something quite precise mathematically.<br />The starting point is that viruses spread exponentially: Each person infects, say, three people on average, and each of those people goes on to infect three people, and so on. The number of infected people is repeatedly multiplied by 3 (in this hypothetical example), and repeated multiplication is the definition of an exponential in mathematics.<br />If we repeatedly multiply by any number greater than 1, the result grows increasingly rapidly; this is exponential growth. If we repeatedly multiply by any number less than 1, even 0.999, the result gets smaller and will eventually be very close to 0. That is exponential decay. The aim is to get the infection rate to less than 1—even slightly—so that the virus will die out.<br />In practice, however, even if the infection rate remains above 1, the virus can’t keep spreading forever, because we have a finite population and at some point the virus will run out of people to infect. So the rate at which a virus spreads is proportional to the number of infected people and the number who remain uninfected and not immune."
+}
