@@ -1,0 +1,10 @@
+{
+    "url_original": "https://www.wsj.com/articles/alibaba-falls-victim-to-chinese-web-crawler-in-large-data-leak-11623774850?mod=world_major_2_pos4",
+    "url": "alibaba-falls-victim-to-chinese-web-crawler-in-large-data-leak-11623774850",
+    "title": "Alibaba Falls Victim to Chinese Web Crawler in Large Data Leak",
+    "sub_head": "Software developer scrapes 1.1 billion pieces of user data, including IDs and phone numbers, over eight months",
+    "category_1": "World",
+    "category_2": "Asia",
+    "time": "2021-06-15 12:34:00",
+    "body": "A Chinese software developer trawled  Alibaba Group Holding Ltd. ’s popular Taobao shopping website for eight months, clandestinely collecting more than 1.1 billion pieces of user information before Alibaba noticed the scraping, a Chinese court verdict said.<br />The software developer began using web-crawling software he designed on Taobao’s site starting in November 2019, gathering information including user IDs, mobile-phone numbers and customer comments, according to a verdict released this month by a district court in China’s central Henan province. When Alibaba noticed the data leaks from Taobao, one of China’s most-visited online retail sites, the company informed the police, the court said.<br />An Alibaba spokeswoman said the company proactively discovered and addressed the incident and was working with law enforcement to protect its users. She wouldn’t elaborate on how many people were affected. No user information was sold to a third party and no economic loss occurred, she said.<br />About 925 million people use Alibaba’s Chinese retail platforms at least once a month, according to the company.<br />While the developer didn’t obtain encrypted information such as passwords, some of the data he scraped, including phone numbers and a portion of usernames, isn’t publicly presented on the website."
+}
