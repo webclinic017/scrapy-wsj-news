@@ -1,0 +1,12 @@
+{
+    "url_original": "https://www.wsj.com/articles/how-ai-is-taking-over-our-gadgets-11624680004?mod=tech_lead_pos10",
+    "url": "how-ai-is-taking-over-our-gadgets-11624680004",
+    "title": "How AI Is Taking Over Our Gadgets",
+    "sub_head": "AI is moving from data centers to devices, making everything from phones to tractors faster and more private. These newfound smarts also come with pitfalls.",
+    "category_1": "Tech",
+    "category_2": "Keywords: Christopher Mims",
+    "image_1_url": "https://images.wsj.net/im-359618?width=620&size=1.5",
+    "image_1": "im-359618.jpg",
+    "time": "2021-06-26 12:00:00",
+    "body": "If you think of AI as something futuristic and abstract, start thinking different.<br />We’re now witnessing a turning point for artificial intelligence, as more of it comes down from the clouds and into our smartphones and automobiles. While it’s fair to say that AI that lives on the “edge”—where you and I are—is still far less powerful than its datacenter-based counterpart, it’s potentially far more meaningful to our everyday lives.<br />One key example: This fall, Apple’s Siri assistant will start processing voice on iPhones. Right now, even your request to set a timer is sent as an audio recording to the cloud, where it is processed, triggering a response that’s sent back to the phone. By processing voice on the phone, says Apple, Siri will respond more quickly. This will only work on the iPhone XS and newer models, which have a compatible built-for-AI processor Apple calls a “neural engine.” People might also feel more secure knowing that their voice recordings aren’t being sent to unseen computers in faraway places.<br />Google actually led the way with on-phone processing: In 2019, it introduced a Pixel phone that could transcribe speech to text and perform other tasks without any connection to the cloud. One reason Google decided to build its own phones was that the company saw potential in creating custom hardware tailor-made to run AI, says Brian Rakowski, product manager of the Pixel group at Google.<br />These so-called edge devices can be pretty much anything with a microchip and some memory, but they tend to be the newest and most sophisticated of smartphones, automobiles, drones, home appliances, and industrial sensors and actuators. Edge AI has the potential to deliver on some of the long-delayed promises of AI, like more responsive smart assistants, better automotive safety systems, new kinds of robots, even autonomous military machines."
+}

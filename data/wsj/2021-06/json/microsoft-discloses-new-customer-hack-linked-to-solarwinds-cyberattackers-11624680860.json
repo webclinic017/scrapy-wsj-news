@@ -1,0 +1,9 @@
+{
+    "url_original": "https://www.wsj.com/articles/microsoft-discloses-new-customer-hack-linked-to-solarwinds-cyberattackers-11624680860?mod=business_lead_pos2",
+    "url": "microsoft-discloses-new-customer-hack-linked-to-solarwinds-cyberattackers-11624680860",
+    "title": "Microsoft Discloses New Customer Hack Linked to SolarWinds Cyberattackers",
+    "sub_head": "Hackers previously linked to Russia’s Foreign Intelligence Service were behind recent attack on a customer support system, the company says",
+    "category_1": "Tech",
+    "time": "2021-06-26 12:14:00",
+    "body": "Microsoft Corp. said hackers, linked by U.S. authorities to Russia’s Foreign Intelligence Service, installed malicious information-stealing software on one of its systems and used information gleaned there to attack its customers.<br />The hackers compromised a computer used by a Microsoft customer support employee that could have provided access to different types of information, including ”metadata” of accounts and billing contact information for the organization, a Microsoft spokesman said.<br />Microsoft is aware of three customers that were affected by the recent activity, the company said in a blog post.<br />“The actor used this information in some cases to launch highly-targeted attacks as part of their broader campaign,” Microsoft said. “We responded quickly, removed the access and secured the device.”<br />The incident was part of a broader campaign—which involved other hacking techniques beyond leveraging the information taken from its support system—that primarily targeted technology companies and government agencies in 36 countries."
+}
