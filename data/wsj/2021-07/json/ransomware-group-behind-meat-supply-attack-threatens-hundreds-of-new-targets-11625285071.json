@@ -1,0 +1,11 @@
+{
+    "url_original": "https://www.wsj.com/articles/ransomware-group-behind-meat-supply-attack-threatens-hundreds-of-new-targets-11625285071?mod=business_minor_pos4",
+    "url": "ransomware-group-behind-meat-supply-attack-threatens-hundreds-of-new-targets-11625285071",
+    "title": "Ransomware Group Behind Meat-Supply Attack Threatens Hundreds of New Targets",
+    "sub_head": "Security firm says REvil hacking group targeted Kaseya software to compromise new targets",
+    "category_1": "U.S.",
+    "image_1_url": "https://images.wsj.net/im-364339?width=620&size=1.5",
+    "image_1": "im-364339.jpg",
+    "time": "2021-07-03 12:04:00",
+    "body": "The ransomware group that collected an $11 million payment from meat producer JBS SA about a month ago has begun a widespread attack that could affect hundreds of organizations world-wide, according to cybersecurity experts.<br />The group, known as REvil, has focused its attack on Kaseya VSA, software used by large companies and technology-service providers to manage and distribute software updates to systems on computer networks, according to security researchers and VSA’s maker, Kaseya Ltd.<br />The use of trusted partners like software makers or service providers to identify and compromise new victims, often called a supply-chain attack, is unusual in cases of ransomware, in which hackers shut down the systems of institutions and demand payment to allow them to regain control. The Kaseya incident appears to be the “largest and most significant” such attack to date, said Brett Callow, a threat analyst for cybersecurity company Emsisoft.<br />Upon learning of the attack Friday, Kaseya immediately shut down its servers and began warning customers, the company said. As of Friday evening only customers running the software on their own servers, rather than users of Kaseya’s online service, appear to have been affected, the company said.<br />The Department of Homeland Security’s Cybersecurity and Infrastructure Security Agency advised Kaseya users to shut down their VSA servers immediately. “CISA is closely monitoring this situation and we are working with the FBI to gather information about its impact,” said Eric Goldstein, the agency’s executive assistant director for cybersecurity, in a statement."
+}
