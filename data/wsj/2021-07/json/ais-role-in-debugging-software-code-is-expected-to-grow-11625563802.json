@@ -1,0 +1,8 @@
+{
+    "url_original": "https://www.wsj.com/articles/ais-role-in-debugging-software-code-is-expected-to-grow-11625563802?mod=tech_featst_pos2",
+    "url": "ais-role-in-debugging-software-code-is-expected-to-grow-11625563802",
+    "title": "AI’s Role in Debugging Software Code Is Expected to Grow",
+    "sub_head": "Intel, Amazon Web Services and Microsoft are offering or building AI that can find and fix software problems",
+    "time": "2021-07-06 05:30:00",
+    "body": "Technology companies are offering artificial-intelligence-powered tools to find and fix bugs in code, as software maintenance grows beyond developers’ capabilities.<br />Intel Corp., Amazon.com Inc.’s Amazon Web Services and Microsoft Corp. are among the large tech companies developing AI-based tools that can analyze many millions of lines of code, flag errors and suggest fixes or best practices. Some of these tools are already in use, while others are set to launch in coming months.<br />Developers..."
+}
