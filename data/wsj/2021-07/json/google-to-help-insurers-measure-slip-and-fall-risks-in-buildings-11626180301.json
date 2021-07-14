@@ -1,0 +1,11 @@
+{
+    "url_original": "https://www.wsj.com/articles/google-to-help-insurers-measure-slip-and-fall-risks-in-buildings-11626180301?mod=business_lead_pos2",
+    "url": "google-to-help-insurers-measure-slip-and-fall-risks-in-buildings-11626180301",
+    "title": "Google to Help Insurers Measure Slip-and-Fall Risks in Buildings",
+    "sub_head": "BlueZoo will place sensors in buildings that will send occupancy data to Google Cloud for analysis",
+    "category_1": "Business",
+    "image_1_url": "https://images.wsj.net/im-367881?width=620&size=1.5",
+    "image_1": "im-367881.jpg",
+    "time": "2021-07-13 08:45:00",
+    "body": "Google is aiming to help small-business insurers more accurately measure occupancy of buildings where they are on the hook for slip-and-fall accidents and other risks.<br />The endeavor is part of a partnership between Google Cloud and Menlo Park, Calif.-based BlueZoo Inc. It is the latest publicly announced initiative of the  Alphabet Inc.  unit as property and casualty insurers explore a wider range of new technologies to better size up risk, hold down policyholders’ costs and speed up claims processes.<br />Google is pushing to make its cloud-computing unit a leading choice for data and analytical services. The cloud-computing industry is currently facing growing competitive pressure to identify new customers and drive revenue gains for their parent companies.<br />Financial terms weren’t disclosed.<br />Under the BlueZoo and Google Cloud partnership, small sensors in buildings listen for Wi-Fi probes spontaneously emitted by mobile phones. The sensors encrypt and compress these probes and forward them to analytics servers in the cloud, the companies said. BlueZoo arranges for the installation, often on ceilings."
+}
