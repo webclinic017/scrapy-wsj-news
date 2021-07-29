@@ -23,6 +23,10 @@ class MarketwatchSpiderSpider(scrapy.Spider):
                     ucode = v1.replace('.HK', '').zfill(4)
                     url = 'https://www.marketwatch.com/investing/fund/'+ucode+'/download-data?countrycode=hk&mod=mw_quote_tab'
                     start_urls.append({'url': url, 'ucode': ucode+'.HK', 'tb_name': ucode.zfill(5)})
+                elif k == '美國ETF':
+                    ucode = v1
+                    url = f'https://www.marketwatch.com/investing/fund/{ucode}/download-data?mod=mw_quote_tab'
+                    start_urls.append({'url': url, 'ucode': ucode, 'tb_name': ucode})
                 elif '.HK' in v1:
                     ucode = v1.replace('.HK', '').zfill(4)
                     url = 'https://www.marketwatch.com/investing/stock/'+ucode+'/download-data?countrycode=hk&mod=mw_quote_tab'

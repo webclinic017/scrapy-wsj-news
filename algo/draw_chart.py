@@ -87,8 +87,8 @@ for k, _df in data1.items():
                             volume=True, figratio=(18,10), figscale=1, xrotation=0, datetime_format="%Y-%m-%d", show_nontrading=False,
                             tight_layout=True, scale_width_adjustment=dict(volume=0.6,candle=1), returnfig=True, savefig=path_save)
         print('draw: '+k+' '+path_save)
-    except:
-        print('err: '+k)
+    except Exception as e:
+        print(f'err: {k} | {e}')
 
 path_git = os.path.join(path_root, 'run-git.bat')
 if not os.path.exists(path_git):
