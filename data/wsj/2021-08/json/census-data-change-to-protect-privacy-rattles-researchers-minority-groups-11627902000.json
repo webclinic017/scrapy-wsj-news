@@ -1,0 +1,11 @@
+{
+    "url_original": "https://www.wsj.com/articles/census-data-change-to-protect-privacy-rattles-researchers-minority-groups-11627902000?mod=politics_lead_pos3",
+    "url": "census-data-change-to-protect-privacy-rattles-researchers-minority-groups-11627902000",
+    "title": "Census Data Change to Protect Privacy Rattles Researchers, Minority Groups",
+    "sub_head": "Funding and representation could shift because of adjustment aimed at shielding individuals’ information",
+    "category_1": "U.S.",
+    "image_1_url": "https://images.wsj.net/im-378292?width=860&height=573",
+    "image_1": "im-378292.jpg",
+    "time": "2021-08-02 07:00:00",
+    "body": "A plan to protect the confidentiality of Americans’ responses to the 2020 census by injecting small, calculated distortions into the results is raising concerns that it will erode their usability for research and distribution of state and federal funds.<br />The Census Bureau is due to release the first major results of the decennial count in mid-August. They will offer the first detailed look at the population and racial makeup of thousands of counties and cities, as well as tribal areas, neighborhoods, school districts and smaller areas that will be used to redraw congressional, legislative and local districts to balance their populations.<br />The bureau will adjust most of those statistics to prevent someone from recombining them in a way that would disclose information about an individual respondent. Testing by the bureau shows that improvements in data science, computing power and commercial databases make that feasible.<br />Last week the bureau’s acting director said the plan was a necessary update of older methods to protect confidentiality. Ron Jarmin said the agency searched for alternatives before settling on differential privacy, a systematic approach to add statistical noise to data, something it has done in some fashion for years.<br />“I’m pretty confident that it’s going to meet users’ expectations,” Mr. Jarmin said at a panel during an online conference of government data users. “We have to deal with the technology as it is and as it evolves.”"
+}
