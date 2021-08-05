@@ -1,0 +1,11 @@
+{
+    "url_original": "https://www.wsj.com/articles/facebook-cuts-off-access-for-nyu-research-into-political-ad-targeting-11628052204?mod=business_lead_pos10",
+    "url": "facebook-cuts-off-access-for-nyu-research-into-political-ad-targeting-11628052204",
+    "title": "Facebook Cuts Off Access for NYU Research Into Political-Ad Targeting",
+    "sub_head": "Researchers say the data provided information on misinformation in political ads; Facebook says the work violated its terms of service",
+    "category_1": "Tech",
+    "image_1_url": "https://images.wsj.net/im-379979?width=860&height=573",
+    "image_1": "im-379979.jpg",
+    "time": "2021-08-04 12:43:00",
+    "body": "Facebook Inc.  cut off a New York University research project’s accounts and access to the platform, effectively shutting down a study of the social-media giant’s targeting of political ads.<br />The NYU Ad Observatory, launched last September by the university’s engineering school, recruited more than 6,500 volunteers to use a special browser extension to collect data about the political ads Facebook shows them. Soon after, Facebook, which hadn’t given permission for the project, demanded the researchers cease collecting the data.<br />On Tuesday, Facebook disabled the accounts, apps, Facebook pages and platform access associated with the project and its operators.<br />“NYU’s Ad Observatory project studied political ads using unauthorized means to access and collect data from Facebook, in violation of our Terms of Service,” Mike Clark, Facebook’s product management director, said in a statement posted to the company’s website Tuesday. Facebook, he said, moved to stop unauthorized scraping and comply with an agreement the company entered into with the U.S. government to address past privacy missteps.<br />Mr. Clark says the project’s browser extension was programmed to evade Facebook’s detection systems and scrape data including usernames, ads, links to user profiles and “Why am I seeing this ad?” information—some of which isn’t publicly viewable on the site by other users. The extension also gathered data about users who didn’t install it or consent to its collection, Mr. Clark said."
+}
