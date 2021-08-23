@@ -1,0 +1,11 @@
+{
+    "url_original": "https://www.wsj.com/articles/t-mobile-says-6-million-more-customer-files-accessed-in-data-breach-11629468163?mod=business_lead_pos13",
+    "url": "t-mobile-says-6-million-more-customer-files-accessed-in-data-breach-11629468163",
+    "title": "T-Mobile Says 6 Million More Customer Files Accessed in Data Breach",
+    "sub_head": "Hack also exposed serial numbers tied to cellphones, company says",
+    "category_1": "Business",
+    "image_1_url": "https://images.wsj.net/im-388885?width=860&height=573",
+    "image_1": "im-388885.jpg",
+    "time": "2021-08-20 19:58:00",
+    "body": "T-Mobile  US Inc. said the hack of its user database exposed an additional six million customers’ details, bringing the total number of compromised user records to more than 54 million as the carrier continues to investigate the extent of the intrusion.<br />In an update Friday, the company said 5.3 million more current T-Mobile accounts had their names, addresses, birth dates and phone numbers exposed, though their Social Security numbers or driver’s license details weren’t included. The company also identified a further 667,000 former clients who had some personal information compromised.<br />T-Mobile also said the hack accessed IMEI and IMSI data—serial numbers tied to phones—from current customers. These phone records were taken from the 5.3 million accounts as well as 7.8 million customers that T-Mobile had identified as victims earlier this week. The Bellevue, Wash., company didn’t disclose the number of people tied to those accounts. The average account covers more than one phone line.<br />Security researchers said the phone-specific serial numbers, when paired with other personal information, could prove particularly damaging in the hands of criminals who use the data to commit fraud. Attackers with information about a person’s subscriber identity module, or SIM, can use the information to impersonate a victim and take over his or her phone line.<br />“Our investigation is ongoing and will continue for some time, but at this point, we are confident that we have closed off the access and egress points the bad actor used in the attack,” the company said."
+}

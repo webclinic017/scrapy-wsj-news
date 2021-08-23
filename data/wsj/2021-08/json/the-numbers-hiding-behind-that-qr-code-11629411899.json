@@ -1,0 +1,12 @@
+{
+    "url_original": "https://www.wsj.com/articles/the-numbers-hiding-behind-that-qr-code-11629411899?mod=business_minor_pos9",
+    "url": "the-numbers-hiding-behind-that-qr-code-11629411899",
+    "title": "The Numbers Hiding Behind That QR Code",
+    "sub_head": "The now-familiar square of little black boxes added a second dimension to bar codes—and holds exponentially more data",
+    "category_1": "Life & Work",
+    "category_2": "Ideas",
+    "image_1_url": "https://images.wsj.net/im-387822?width=860&height=860",
+    "image_1": "im-387822.jpg",
+    "time": "2021-08-19 18:24:00",
+    "body": "Mathematician Eugenia Cheng explores the uses of math beyond the classroom. Read more columns here.<br />I have cautiously resumed dining in restaurants occasionally, and so have found myself scanning QR codes to access the menu online. It’s a quick and easy process hiding a surprisingly large amount of math.<br />QR stands for Quick Response, and these codes were invented in 1994 by Masahiro Hara at the Japanese automotive company Denso Wave. Their original purpose was to track inventory in factories, but broader uses became possible with the advent and ubiquity of smartphones.<br />QR codes are essentially a two-dimensional version of bar codes, which are a clever way of encoding information in an image using vertical lines of different thicknesses that a scanner can detect. Hara’s 2-dimensional version uses a square grid of small black and white squares, apparently inspired by the board game Go.<br />The extra dimension allows for a huge increase in capacity: Where 1-dimensional bar codes typically encode around 20 digits of information, a QR code can hold 4,000 or more depending on the version used. A small increase in the width of the grid yields a much larger increase in the number of small squares available, because of how the math of squaring works."
+}
