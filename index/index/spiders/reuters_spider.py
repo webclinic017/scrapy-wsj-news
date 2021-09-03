@@ -17,7 +17,7 @@ class YahooSpiderSpider(scrapy.Spider):
     name = 'reuters_spider'
 
     def start_requests(self):
-        start_urls = ['https://www.reuters.com/companies/api/getFetchQuotes/.DJI,.SPX,.IXIC,.HSI,.HSCE,.SSEC,.CSI300']
+        start_urls = ['https://www.reuters.com/companies/api/getFetchQuotes/.DJI,.SPX,.IXIC,.HSI,.HSCE,.SSEC,.CSI300,.FTSE,.GDAXI,.FCHI,.N225,.TWII,.KS11']
         for url in start_urls:
             yield scrapy.Request(url=url, headers=get_random_header(), callback=self.parse)
 
