@@ -39,6 +39,8 @@ class MarketwatchSpiderSpider(scrapy.Spider):
                 elif '.SS' in v1 or '.SZ' in v1:
                     ucode = v1.replace('.SS', '').replace('.SZ', '').lower()
                     url = 'https://www.marketwatch.com/investing/stock/'+ucode+'/download-data?countryCode=CN'
+                    if ucode == '000016': # 上證50
+                        url = 'https://www.marketwatch.com/investing/index/'+ucode+'/download-data?countrycode=cn&mod=mw_quote_tab'
                     start_urls.append({'url': url, 'ucode': v1, 'tb_name': ucode})
                 elif k == '指數2':
                     url = 'https://www.marketwatch.com/investing/index/'+v1+'/download-data?countrycode=xx&mod=mw_quote_tab'
