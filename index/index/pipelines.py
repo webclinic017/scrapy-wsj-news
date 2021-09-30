@@ -44,6 +44,10 @@ class IndexPipeline:
                 data = [item['stime'], ucode2, item['last'], item['high'], item['low'], item['open'], item['vol']]
                 stmt = "REPLACE INTO "+tb_name+" (stime, code, close, high, low, open, volume) VALUES (?, ?, ?, ?, ?, ?, ?)"
                 conn.execute(stmt, data)
+            elif 'ucode' in item and 'stime' in item and 'last' in item:
+                data = [item['stime'], ucode2, item['last']]
+                stmt = f"INSERT OR IGNORE INTO {tb_name} (stime, code, close) VALUES (?, ?, ?)"
+                conn.execute(stmt, data)
 
         conn.commit()
         conn.close()
