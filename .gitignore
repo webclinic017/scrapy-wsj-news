@@ -129,3 +129,5 @@ dmypy.json
 aastock-2.db
 server_data.py
 components/
+algo/現代資產組合
+algo/
