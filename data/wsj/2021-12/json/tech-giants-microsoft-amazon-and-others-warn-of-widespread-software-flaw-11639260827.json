@@ -1,0 +1,11 @@
+{
+    "url_original": "https://www.wsj.com/articles/tech-giants-microsoft-amazon-and-others-warn-of-widespread-software-flaw-11639260827?mod=tech_lead_pos1",
+    "url": "tech-giants-microsoft-amazon-and-others-warn-of-widespread-software-flaw-11639260827",
+    "title": "Tech Giants Microsoft, Amazon and Others Warn of Widespread Software Flaw",
+    "sub_head": "Cybersecurity researchers say they have seen thousands of attempts to exploit the bug",
+    "category_1": "Tech",
+    "image_1_url": "https://images.wsj.net/im-450659?width=860&height=573",
+    "image_1": "im-450659.jpg",
+    "time": "2021-12-11 17:41:00",
+    "body": "Cybersecurity officials at major tech companies are scrambling to patch a serious flaw in a widely used piece of internet software that security experts warn could unleash a new round of cyberattacks.<br />The bug, hidden in an obscure piece of server software called Log4j, has prompted investigations into the depth of the problem within  Amazon.com Inc.,   Twitter Inc.  and  Cisco Systems Inc.,  according to the companies."
+}
