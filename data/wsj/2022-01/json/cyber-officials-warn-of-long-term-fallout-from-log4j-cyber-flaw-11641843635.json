@@ -1,0 +1,10 @@
+{
+    "url_original": "https://www.wsj.com/articles/cyber-officials-warn-of-long-term-fallout-from-log4j-cyber-flaw-11641843635?mod=business_minor_pos7",
+    "url": "cyber-officials-warn-of-long-term-fallout-from-log4j-cyber-flaw-11641843635",
+    "title": "Cyber Officials Warn of Long-Term Fallout From Log4j Cyber Flaw",
+    "sub_head": "While the bug’s impact has been muted so far, U.S. official says there are limits to what CISA may know",
+    "category_1": "Politics",
+    "category_2": "National Security",
+    "time": "2022-01-10 14:40:00",
+    "body": "WASHINGTON—Senior U.S. security officials said Monday they hadn’t yet seen significant disruptive or destructive cyberattacks, such as ransomware attacks, linked to a massive internet flaw discovered one month ago, but warned that the bug could aid the nefarious activity of criminals and foreign governments for months or years to come.<br />The Biden administration hasn’t identified any confirmed breaches of federal government agencies that relied on the flaw in the widely used software code known as Log4j, nor has it detected foreign governments developing attacks that exploit the bug to carry out a network intrusion, officials said during a press briefing."
+}
