@@ -1,0 +1,10 @@
+{
+    "url_original": "https://www.wsj.com/articles/how-game-theory-changed-poker-11642087507?mod=life_work_minor_pos5",
+    "url": "how-game-theory-changed-poker-11642087507",
+    "title": "How Game Theory Changed Poker",
+    "sub_head": "Professional players are learning from computers how to make their play more unpredictable and harder to beat.",
+    "category_1": "Life & Work",
+    "category_2": "Ideas",
+    "time": "2022-01-13 10:25:00",
+    "body": "Michael Bowling, a computer scientist at the University of Alberta, keeps a tidy office, unlike many of his colleagues, whose spaces overflow with technological detritus. Prof. Bowling’s only clutter is the dense, inscrutable formulas and graphs scrawled with technicolor markers on a wall-size whiteboard. He needs the elaborate mathematics because he is trying to make sense of a very complex world: the game of poker. “Even the smallest variant of poker has a billion billion decision points,” he told me.<br />The Computer Poker Research Group at the university was formed in 1996, following Garry Kasparov’s chess matches with  IBM ’s  Deep Blue that year. Poker’s mathematical complexity rivals that of chess—or exceeds it, depending on the variant—and poker adds randomness and hidden information, bringing it closer to the “real world” that AI researchers so badly want to influence. The researchers in the poker group aren’t interested in conquering the game per se. They see it as a testing ground for doing good science."
+}
