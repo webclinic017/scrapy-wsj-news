@@ -1,0 +1,10 @@
+{
+    "url_original": "https://www.wsj.com/articles/official-beijing-2022-olympics-mobile-app-is-marred-by-security-flaws-researchers-say-11642511957?mod=business_minor_pos7",
+    "url": "official-beijing-2022-olympics-mobile-app-is-marred-by-security-flaws-researchers-say-11642511957",
+    "title": "Official Beijing 2022 Olympics Mobile App Is Marred by Security Flaws, Researchers Say",
+    "sub_head": "Compulsory software potentially exposes sensitive personal data, including health information, from athletes, officials and others, according to Citizen Lab",
+    "category_1": "World",
+    "category_2": "Asia",
+    "time": "2022-01-18 08:19:00",
+    "body": "A mobile app that’s mandatory for all participants in next month’s Winter Olympics in Beijing contains security flaws that could make it easy for a hacker to steal sensitive personal information, cybersecurity researchers in Canada warn.<br />The China-built app, My 2022, will be used to monitor the health of attendees, as well as facilitate information sharing, leading up to and throughout the 2022 Games. Technicians with Citizen Lab, a human rights-focused cybersecurity and censorship research group at the University of Toronto, said they found the app failed to authenticate the identity of certain websites, leaving transfers of personal data open to attackers."
+}
