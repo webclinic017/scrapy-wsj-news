@@ -1,0 +1,10 @@
+{
+    "url_original": "https://www.wsj.com/articles/u-s-state-governments-hit-in-chinese-hacking-spree-11646751601?mod=politics_lead_pos7",
+    "url": "u-s-state-governments-hit-in-chinese-hacking-spree-11646751601",
+    "title": "U.S. State Governments Hit in Chinese Hacking Spree",
+    "sub_head": "At least six states were hacked in campaign that took advantage of widespread Log4J security flaw, according to Mandiant",
+    "category_1": "Politics",
+    "category_2": "National Security",
+    "time": "2022-03-08 12:12:00",
+    "body": "WASHINGTON—Hackers believed to be sponsored by the Chinese government have accessed computer systems in six U.S. state governments in a continuing espionage campaign that included the use of the widespread Log4J computer bug detected late last year, according to cybersecurity researchers.<br />The hacks, which took advantage of vulnerable internet-facing web applications, date to at least May 2021, according to new findings made public Tuesday by the U.S.-based cybersecurity firm  Mandiant .  As recently as February, two of the victims were hacked again by the same group."
+}
