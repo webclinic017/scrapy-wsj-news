@@ -1,0 +1,10 @@
+{
+    "url_original": "https://www.wsj.com/articles/this-stablecoin-wasnt-on-terra-firma-11652373663?mod=markets_lead_pos11",
+    "url": "this-stablecoin-wasnt-on-terra-firma-11652373663",
+    "title": "Luna Wasn’t on Terra Firma",
+    "sub_head": "Algorithmic stablecoin TerraUSD shared the weaknesses of fiat currencies like the dollar but without many of its strengths",
+    "category_1": "Markets",
+    "category_2": "Heard on the Street",
+    "time": "2022-05-12 17:30:00",
+    "body": "Algorithmic stablecoins might be a novel creation, but they couldn’t avoid some very old problems.<br />TerraUSD is, or was, the largest. The stablecoin part refers to how it aims to always be worth one U.S. dollar, making it a useful digital substitute for the greenback. The algorithmic part describes how it aims to accomplish this: By being swappable for another token, Luna, that had no fixed value. If the value of TerraUSD moved below $1, it could be “burned” and exchanged for a dollar’s worth of Luna—and vice versa. But that mechanism evidently broke down, and TerraUSD has ceased to be worth $1. It now fetches around 40 cents."
+}
